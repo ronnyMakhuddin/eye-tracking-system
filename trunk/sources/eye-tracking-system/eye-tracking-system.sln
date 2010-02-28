@@ -1,0 +1,24 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eye-tracking-system", "eye-tracking-system\eye-tracking-system.csproj", "{514ED890-B201-4176-AF49-BF99762EC392}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "eye-tracking-system-installer", "eye-tracking-system-installer\eye-tracking-system-installer.vdproj", "{B666D891-CC37-4698-BAF9-5FB7B603F13F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{514ED890-B201-4176-AF49-BF99762EC392}.Debug|x86.ActiveCfg = Debug|x86
+		{514ED890-B201-4176-AF49-BF99762EC392}.Debug|x86.Build.0 = Debug|x86
+		{514ED890-B201-4176-AF49-BF99762EC392}.Release|x86.ActiveCfg = Release|x86
+		{514ED890-B201-4176-AF49-BF99762EC392}.Release|x86.Build.0 = Release|x86
+		{B666D891-CC37-4698-BAF9-5FB7B603F13F}.Debug|x86.ActiveCfg = Debug
+		{B666D891-CC37-4698-BAF9-5FB7B603F13F}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
