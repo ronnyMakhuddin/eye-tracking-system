@@ -7,7 +7,7 @@
  *
  * See the tutorial at 
  * http://nashruddin.com/Real_Time_Eye_Tracking_and_Blink_Detection
- */
+ *
 
 #include <stdio.h>
 #include "cv.h"

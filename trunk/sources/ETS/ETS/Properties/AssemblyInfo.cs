@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("eye-tracking-system")]
+[assembly: AssemblyTitle("ETS")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("eye-tracking-system")]
+[assembly: AssemblyProduct("ETS")]
 [assembly: AssemblyCopyright("Copyright ©  2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("647132f2-473b-4aa5-9880-28033eac88f7")]
+[assembly: Guid("82b118c2-0371-4a31-955d-b53db2108c7a")]
 
 // Version information for an assembly consists of the following four values:
 //
