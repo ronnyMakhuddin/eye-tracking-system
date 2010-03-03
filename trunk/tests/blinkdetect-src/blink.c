@@ -8,10 +8,12 @@
  * See the tutorial at 
  * http://nashruddin.com/Real_Time_Eye_Tracking_and_Blink_Detection
  *
-
+*/
 #include <stdio.h>
-#include "cv.h"
 #include "highgui.h"
+#include "cv.h"
+
+
 
 #define FRAME_WIDTH		240
 #define FRAME_HEIGHT	180
