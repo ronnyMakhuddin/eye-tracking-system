@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="8,00"
+	Version="9,00"
 	Name="refactored"
 	ProjectGUID="{6C24DDB5-97D0-4ACB-AB83-BA38D9561F87}"
+	RootNamespace="refactored"
+	TargetFrameworkVersion="131072"
 	>
 	<Platforms>
 		<Platform
@@ -49,6 +51,8 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="cv200d.lib cxcore200d.lib highgui200d.lib"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -67,9 +71,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -109,6 +110,8 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
 			/>
 			<Tool
 				Name="VCALinkTool"
@@ -127,9 +130,6 @@
 			/>
 			<Tool
 				Name="VCAppVerifierTool"
-			/>
-			<Tool
-				Name="VCWebDeploymentTool"
 			/>
 			<Tool
 				Name="VCPostBuildEventTool"
@@ -241,6 +241,41 @@
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
 		</Filter>
+		<File
+			RelativePath=".\cv200d.dll"
+			DeploymentContent="true"
+			>
+		</File>
+		<File
+			RelativePath=".\cvaux200d.dll"
+			DeploymentContent="true"
+			>
+		</File>
+		<File
+			RelativePath=".\cxcore200d.dll"
+			DeploymentContent="true"
+			>
+		</File>
+		<File
+			RelativePath=".\cxts200d.dll"
+			DeploymentContent="true"
+			>
+		</File>
+		<File
+			RelativePath=".\highgui200d.dll"
+			DeploymentContent="true"
+			>
+		</File>
+		<File
+			RelativePath=".\ml200d.dll"
+			DeploymentContent="true"
+			>
+		</File>
+		<File
+			RelativePath=".\opencv_ffmpeg200d.dll"
+			DeploymentContent="true"
+			>
+		</File>
 	</Files>
 	<Globals>
 	</Globals>

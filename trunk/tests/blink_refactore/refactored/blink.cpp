@@ -93,7 +93,7 @@ main(int argc, char** argv)
 		cvCvtColor(frame, gray, CV_BGR2GRAY);
 
 		nc = get_connected_components(gray, prev, window, &comp);
-
+		printf("%d\n",nc);
 		if (stage == STAGE_INIT && is_eye_pair(comp, nc, &eye))
 		{
 			delay_frames(5);
@@ -149,7 +149,8 @@ get_connected_components(IplImage* img, IplImage* prev, CvRect window, CvSeq** c
 	cvSetImageROI(img, window);
 	cvSetImageROI(prev, window);
 	cvSetImageROI(diff, window);
-
+printf("were %d %d %d %d",window.x,window.y,window.width,window.height);
+		
 	/* motion analysis */
 	cvSub(img, prev, diff, NULL);
 	cvThreshold(diff, diff, 5, 255, CV_THRESH_BINARY);
@@ -163,6 +164,8 @@ get_connected_components(IplImage* img, IplImage* prev, CvRect window, CvSeq** c
 	_diff = (IplImage*)cvClone(diff);
 
 	/* get connected components */
+	
+	
 	int nc = cvFindContours(_diff, storage, comp, sizeof(CvContour), 
 							CV_RETR_CCOMP, CV_CHAIN_APPROX_SIMPLE, cvPoint(0,0));
 
@@ -396,22 +399,14 @@ init()
 	cvInitFont(&font, CV_FONT_HERSHEY_SIMPLEX, 0.4, 0.4, 0, 1, 8);
 	cvNamedWindow(wnd_name, 1);
 
-	for (delay = 20, i = 0; i < 6; i++, delay = 20)
-		while (delay)
-		{
-			frame = cvQueryFrame(capture);
-			if (!frame)
-				exit_nicely("cannot query frame!");
-			DRAW_TEXT(frame, msg[i], delay, 0);
-			cvShowImage(wnd_name, frame);
-			cvWaitKey(30);
-		}
+	
 
 	storage = cvCreateMemStorage(0);
 	if (!storage)
 		exit_nicely("cannot allocate memory storage!");
 
 	kernel = cvCreateStructuringElementEx(3, 3, 1, 1, CV_SHAPE_CROSS, NULL);
+	
 	gray   = cvCreateImage(cvGetSize(frame), 8, 1);
 	prev   = cvCreateImage(cvGetSize(frame), 8, 1);
 	diff   = cvCreateImage(cvGetSize(frame), 8, 1);
