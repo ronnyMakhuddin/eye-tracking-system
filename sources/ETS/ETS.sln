@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETS", "ETS\ETS.csproj", "{1
 EndProject
 Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ETS-Installer", "ETS-Installer\ETS-Installer.vdproj", "{E0F7BE3C-7E35-4FB7-8EC0-899C3EBFF74C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ETS-Data", "ETS-Data\ETS-Data.csproj", "{D99F6FC5-BC8B-4118-A3CE-2FA5D5FE0C37}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +19,10 @@ Global
 		{18B8ED32-9907-4A39-8741-9507A478EC62}.Release|Any CPU.Build.0 = Release|Any CPU
 		{E0F7BE3C-7E35-4FB7-8EC0-899C3EBFF74C}.Debug|Any CPU.ActiveCfg = Debug
 		{E0F7BE3C-7E35-4FB7-8EC0-899C3EBFF74C}.Release|Any CPU.ActiveCfg = Release
+		{D99F6FC5-BC8B-4118-A3CE-2FA5D5FE0C37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D99F6FC5-BC8B-4118-A3CE-2FA5D5FE0C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D99F6FC5-BC8B-4118-A3CE-2FA5D5FE0C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D99F6FC5-BC8B-4118-A3CE-2FA5D5FE0C37}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

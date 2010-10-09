@@ -329,6 +329,7 @@ namespace ETS
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Title = Resources.OpenSession;
             ofd.Filter = Resources.SessionFileFilter;
+        
             if (ofd.ShowDialog() == System.Windows.Forms.DialogResult.OK && !string.IsNullOrEmpty(ofd.FileName))
             {
                 using (StreamReader sr = new StreamReader(ofd.FileName))
