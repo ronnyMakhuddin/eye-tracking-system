@@ -18,6 +18,21 @@
     <UpgradeBackupLocation />
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,6 +70,8 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
@@ -74,6 +91,16 @@
     <Compile Include="controls\AdvancedSlider.Designer.cs">
       <DependentUpon>AdvancedSlider.cs</DependentUpon>
     </Compile>
+    <Compile Include="StimDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StimDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StimulusTypeDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StimulusTypeDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="tracker\CaptureManager.cs" />
     <Compile Include="tracker\Session.cs" />
     <Compile Include="tracker\Template.cs" />
@@ -84,11 +111,29 @@
     <Compile Include="ui\AddTemplateForm.Designer.cs">
       <DependentUpon>AddTemplateForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ui\EditPatientsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\EditPatientsForm.Designer.cs">
+      <DependentUpon>EditPatientsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditStimulusForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\EditStimulusForm.Designer.cs">
+      <DependentUpon>EditStimulusForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ui\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ui\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\MainFormOLd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\MainFormOLd.Designer.cs">
+      <DependentUpon>MainFormOLd.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,8 +145,15 @@
       <DependentUpon>AddTemplateForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ui\EditStimulusForm.resx">
+      <DependentUpon>EditStimulusForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ui\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\MainFormOLd.resx">
+      <DependentUpon>MainFormOLd.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -126,13 +178,64 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Util.cs" />
+    <None Include="StimDataSet.xsc">
+      <DependentUpon>StimDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StimDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StimDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StimDataSet.xss">
+      <DependentUpon>StimDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StimulusTypeDataSet.xsc">
+      <DependentUpon>StimulusTypeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StimulusTypeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StimulusTypeDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StimulusTypeDataSet.xss">
+      <DependentUpon>StimulusTypeDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DB.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DB.mdf</DependentUpon>
+    </Content>
     <Content Include="lib\Emgu.CV.dll" />
     <Content Include="lib\Emgu.CV.ML.dll" />
     <Content Include="lib\Emgu.CV.UI.dll" />
     <Content Include="lib\Emgu.Util.dll" />
     <None Include="Resources\Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Sql.Server.Express.9.2">
+      <Visible>False</Visible>
+      <ProductName>SQL Server 2005 Express Edition SP2 %28x86%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
