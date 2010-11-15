@@ -31,7 +31,8 @@ namespace ETS.ui
 
         private void miViewPatients_Click(object sender, EventArgs e)
         {
-            
+            EditPatientsForm epf = new EditPatientsForm();
+            epf.Show();
         }
 
         private void miEditStimuluses_Click(object sender, EventArgs e)

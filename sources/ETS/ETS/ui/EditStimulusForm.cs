@@ -32,7 +32,7 @@ namespace ETS.ui
 
         private void grdStimuluses_DataError(object sender, DataGridViewDataErrorEventArgs e)
         {
-            MessageBox.Show(e.Exception.Message);
+            Util.ShowError(e.Exception.Message);
         }
 
         private void btnCancel_Click(object sender, EventArgs e)

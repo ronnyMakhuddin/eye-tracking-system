@@ -91,6 +91,11 @@
     <Compile Include="controls\AdvancedSlider.Designer.cs">
       <DependentUpon>AdvancedSlider.cs</DependentUpon>
     </Compile>
+    <Compile Include="datasets\PatientsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PatientsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="StimDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,6 +150,10 @@
       <DependentUpon>AddTemplateForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="ui\EditPatientsForm.resx">
+      <DependentUpon>EditPatientsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="ui\EditStimulusForm.resx">
       <DependentUpon>EditStimulusForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +177,17 @@
     </Compile>
     <None Include="app.config" />
     <None Include="ClassDiagram1.cd" />
+    <None Include="datasets\PatientsDataSet.xsc">
+      <DependentUpon>PatientsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="datasets\PatientsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PatientsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="datasets\PatientsDataSet.xss">
+      <DependentUpon>PatientsDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -202,10 +222,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DB.mdf">
+    <Content Include="Resources\DB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="DB_log.ldf">
+    <Content Include="Resources\DB_log.ldf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DB.mdf</DependentUpon>
     </Content>
