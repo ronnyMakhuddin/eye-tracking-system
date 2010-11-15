@@ -96,12 +96,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PatientsDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="StimDataSet.Designer.cs">
+    <Compile Include="datasets\StimDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StimDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="StimulusTypeDataSet.Designer.cs">
+    <Compile Include="datasets\StimulusTypeDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>StimulusTypeDataSet.xsd</DependentUpon>
@@ -175,7 +175,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="app.config" />
+    <None Include="app.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="ClassDiagram1.cd" />
     <None Include="datasets\PatientsDataSet.xsc">
       <DependentUpon>PatientsDataSet.xsd</DependentUpon>
@@ -198,26 +200,26 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="Util.cs" />
-    <None Include="StimDataSet.xsc">
+    <None Include="datasets\StimDataSet.xsc">
       <DependentUpon>StimDataSet.xsd</DependentUpon>
     </None>
-    <None Include="StimDataSet.xsd">
+    <None Include="datasets\StimDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>StimDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="StimDataSet.xss">
+    <None Include="datasets\StimDataSet.xss">
       <DependentUpon>StimDataSet.xsd</DependentUpon>
     </None>
-    <None Include="StimulusTypeDataSet.xsc">
+    <None Include="datasets\StimulusTypeDataSet.xsc">
       <DependentUpon>StimulusTypeDataSet.xsd</DependentUpon>
     </None>
-    <None Include="StimulusTypeDataSet.xsd">
+    <None Include="datasets\StimulusTypeDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>StimulusTypeDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="StimulusTypeDataSet.xss">
+    <None Include="datasets\StimulusTypeDataSet.xss">
       <DependentUpon>StimulusTypeDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>

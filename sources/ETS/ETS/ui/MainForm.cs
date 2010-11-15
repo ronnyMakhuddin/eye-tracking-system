@@ -14,13 +14,6 @@ namespace ETS.ui
     {
         public MainForm()
         {
-            DataSet ds = new DataSet("test");
-            SqlConnection ccc = new SqlConnection(@"Data Source=.\SQLEXPRESS;AttachDbFilename=|DataDirectory|\DB.mdf;Integrated Security=True;User Instance=True");
-            ccc.Open();
-            SqlCommand select = ccc.CreateCommand();
-             select.CommandText = "SELECT * FROM Stimulus";
-            object r = select.ExecuteScalar();
-            ccc.Close();
             InitializeComponent();
         }
 

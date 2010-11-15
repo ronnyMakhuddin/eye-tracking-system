@@ -1,4 +1,5 @@
-﻿namespace ETS.ui
+﻿using ETS.datasets;
+namespace ETS.ui
 {
     partial class EditStimulusForm
     {
@@ -31,11 +32,11 @@
             this.components = new System.ComponentModel.Container();
             this.grdStimuluses = new System.Windows.Forms.DataGridView();
             this.stimulusTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stimulusTypeDataSet = new ETS.StimulusTypeDataSet();
+            this.stimulusTypeDataSet = new StimulusTypeDataSet();
             this.selectStimulusesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stimDataSet = new ETS.StimDataSet();
-            this.selectStimulusesTableAdapter = new ETS.StimDataSetTableAdapters.SelectStimulusesTableAdapter();
-            this.stimulusTypeTableAdapter = new ETS.StimulusTypeDataSetTableAdapters.StimulusTypeTableAdapter();
+            this.stimDataSet = new StimDataSet();
+            this.selectStimulusesTableAdapter = new ETS.datasets.StimDataSetTableAdapters.SelectStimulusesTableAdapter();
+            this.stimulusTypeTableAdapter = new ETS.datasets.StimulusTypeDataSetTableAdapters.StimulusTypeTableAdapter();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -174,10 +175,10 @@
         private System.Windows.Forms.DataGridView grdStimuluses;
         private StimDataSet stimDataSet;
         private System.Windows.Forms.BindingSource selectStimulusesBindingSource;
-        private StimDataSetTableAdapters.SelectStimulusesTableAdapter selectStimulusesTableAdapter;
+        private ETS.datasets.StimDataSetTableAdapters.SelectStimulusesTableAdapter selectStimulusesTableAdapter;
         private StimulusTypeDataSet stimulusTypeDataSet;
         private System.Windows.Forms.BindingSource stimulusTypeBindingSource;
-        private StimulusTypeDataSetTableAdapters.StimulusTypeTableAdapter stimulusTypeTableAdapter;
+        private ETS.datasets.StimulusTypeDataSetTableAdapters.StimulusTypeTableAdapter stimulusTypeTableAdapter;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
