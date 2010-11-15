@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace ETS {
+namespace ETS.datasets {
     
     
     /// <summary>
@@ -20,17 +20,17 @@ namespace ETS {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("StimDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("StimulusTypeDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class StimDataSet : global::System.Data.DataSet {
+    public partial class StimulusTypeDataSet : global::System.Data.DataSet {
         
-        private SelectStimulusesDataTable tableSelectStimuluses;
+        private StimulusTypeDataTable tableStimulusType;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public StimDataSet() {
+        public StimulusTypeDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace ETS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        protected StimDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected StimulusTypeDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace ETS {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["SelectStimuluses"] != null)) {
-                    base.Tables.Add(new SelectStimulusesDataTable(ds.Tables["SelectStimuluses"]));
+                if ((ds.Tables["StimulusType"] != null)) {
+                    base.Tables.Add(new StimulusTypeDataTable(ds.Tables["StimulusType"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ETS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SelectStimulusesDataTable SelectStimuluses {
+        public StimulusTypeDataTable StimulusType {
             get {
-                return this.tableSelectStimuluses;
+                return this.tableStimulusType;
             }
         }
         
@@ -127,7 +127,7 @@ namespace ETS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            StimDataSet cln = ((StimDataSet)(base.Clone()));
+            StimulusTypeDataSet cln = ((StimulusTypeDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace ETS {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["SelectStimuluses"] != null)) {
-                    base.Tables.Add(new SelectStimulusesDataTable(ds.Tables["SelectStimuluses"]));
+                if ((ds.Tables["StimulusType"] != null)) {
+                    base.Tables.Add(new StimulusTypeDataTable(ds.Tables["StimulusType"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ETS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableSelectStimuluses = ((SelectStimulusesDataTable)(base.Tables["SelectStimuluses"]));
+            this.tableStimulusType = ((StimulusTypeDataTable)(base.Tables["StimulusType"]));
             if ((initTable == true)) {
-                if ((this.tableSelectStimuluses != null)) {
-                    this.tableSelectStimuluses.InitVars();
+                if ((this.tableStimulusType != null)) {
+                    this.tableStimulusType.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace ETS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "StimDataSet";
+            this.DataSetName = "StimulusTypeDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/StimDataSet.xsd";
+            this.Namespace = "http://tempuri.org/StimulusTypeDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableSelectStimuluses = new SelectStimulusesDataTable();
-            base.Tables.Add(this.tableSelectStimuluses);
+            this.tableStimulusType = new StimulusTypeDataTable();
+            base.Tables.Add(this.tableStimulusType);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private bool ShouldSerializeSelectStimuluses() {
+        private bool ShouldSerializeStimulusType() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace ETS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            StimDataSet ds = new StimDataSet();
+            StimulusTypeDataSet ds = new StimulusTypeDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,25 +270,21 @@ namespace ETS {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public delegate void SelectStimulusesRowChangeEventHandler(object sender, SelectStimulusesRowChangeEvent e);
+        public delegate void StimulusTypeRowChangeEventHandler(object sender, StimulusTypeRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SelectStimulusesDataTable : global::System.Data.TypedTableBase<SelectStimulusesRow> {
+        public partial class StimulusTypeDataTable : global::System.Data.TypedTableBase<StimulusTypeRow> {
             
             private global::System.Data.DataColumn columnname;
             
-            private global::System.Data.DataColumn columnfilename;
-            
-            private global::System.Data.DataColumn columntype;
-            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SelectStimulusesDataTable() {
-                this.TableName = "SelectStimuluses";
+            public StimulusTypeDataTable() {
+                this.TableName = "StimulusType";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -296,7 +292,7 @@ namespace ETS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal SelectStimulusesDataTable(global::System.Data.DataTable table) {
+            internal StimulusTypeDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -313,7 +309,7 @@ namespace ETS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            protected SelectStimulusesDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected StimulusTypeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -328,22 +324,6 @@ namespace ETS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn filenameColumn {
-                get {
-                    return this.columnfilename;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public global::System.Data.DataColumn typeColumn {
-                get {
-                    return this.columntype;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -353,47 +333,45 @@ namespace ETS {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SelectStimulusesRow this[int index] {
+            public StimulusTypeRow this[int index] {
                 get {
-                    return ((SelectStimulusesRow)(this.Rows[index]));
+                    return ((StimulusTypeRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SelectStimulusesRowChangeEventHandler SelectStimulusesRowChanging;
+            public event StimulusTypeRowChangeEventHandler StimulusTypeRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SelectStimulusesRowChangeEventHandler SelectStimulusesRowChanged;
+            public event StimulusTypeRowChangeEventHandler StimulusTypeRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SelectStimulusesRowChangeEventHandler SelectStimulusesRowDeleting;
+            public event StimulusTypeRowChangeEventHandler StimulusTypeRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public event SelectStimulusesRowChangeEventHandler SelectStimulusesRowDeleted;
+            public event StimulusTypeRowChangeEventHandler StimulusTypeRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void AddSelectStimulusesRow(SelectStimulusesRow row) {
+            public void AddStimulusTypeRow(StimulusTypeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SelectStimulusesRow AddSelectStimulusesRow(string name, string filename, string type) {
-                SelectStimulusesRow rowSelectStimulusesRow = ((SelectStimulusesRow)(this.NewRow()));
+            public StimulusTypeRow AddStimulusTypeRow(string name) {
+                StimulusTypeRow rowStimulusTypeRow = ((StimulusTypeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        name,
-                        filename,
-                        type};
-                rowSelectStimulusesRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSelectStimulusesRow);
-                return rowSelectStimulusesRow;
+                        name};
+                rowStimulusTypeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowStimulusTypeRow);
+                return rowStimulusTypeRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                SelectStimulusesDataTable cln = ((SelectStimulusesDataTable)(base.Clone()));
+                StimulusTypeDataTable cln = ((StimulusTypeDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -401,15 +379,13 @@ namespace ETS {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SelectStimulusesDataTable();
+                return new StimulusTypeDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnname = base.Columns["name"];
-                this.columnfilename = base.Columns["filename"];
-                this.columntype = base.Columns["type"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -417,42 +393,34 @@ namespace ETS {
             private void InitClass() {
                 this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnname);
-                this.columnfilename = new global::System.Data.DataColumn("filename", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnfilename);
-                this.columntype = new global::System.Data.DataColumn("type", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntype);
                 this.columnname.AllowDBNull = false;
                 this.columnname.MaxLength = 100;
-                this.columnfilename.AllowDBNull = false;
-                this.columnfilename.MaxLength = 500;
-                this.columntype.AllowDBNull = false;
-                this.columntype.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SelectStimulusesRow NewSelectStimulusesRow() {
-                return ((SelectStimulusesRow)(this.NewRow()));
+            public StimulusTypeRow NewStimulusTypeRow() {
+                return ((StimulusTypeRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SelectStimulusesRow(builder);
+                return new StimulusTypeRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(SelectStimulusesRow);
+                return typeof(StimulusTypeRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SelectStimulusesRowChanged != null)) {
-                    this.SelectStimulusesRowChanged(this, new SelectStimulusesRowChangeEvent(((SelectStimulusesRow)(e.Row)), e.Action));
+                if ((this.StimulusTypeRowChanged != null)) {
+                    this.StimulusTypeRowChanged(this, new StimulusTypeRowChangeEvent(((StimulusTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -460,8 +428,8 @@ namespace ETS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SelectStimulusesRowChanging != null)) {
-                    this.SelectStimulusesRowChanging(this, new SelectStimulusesRowChangeEvent(((SelectStimulusesRow)(e.Row)), e.Action));
+                if ((this.StimulusTypeRowChanging != null)) {
+                    this.StimulusTypeRowChanging(this, new StimulusTypeRowChangeEvent(((StimulusTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -469,8 +437,8 @@ namespace ETS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SelectStimulusesRowDeleted != null)) {
-                    this.SelectStimulusesRowDeleted(this, new SelectStimulusesRowChangeEvent(((SelectStimulusesRow)(e.Row)), e.Action));
+                if ((this.StimulusTypeRowDeleted != null)) {
+                    this.StimulusTypeRowDeleted(this, new StimulusTypeRowChangeEvent(((StimulusTypeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -478,14 +446,14 @@ namespace ETS {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SelectStimulusesRowDeleting != null)) {
-                    this.SelectStimulusesRowDeleting(this, new SelectStimulusesRowChangeEvent(((SelectStimulusesRow)(e.Row)), e.Action));
+                if ((this.StimulusTypeRowDeleting != null)) {
+                    this.StimulusTypeRowDeleting(this, new StimulusTypeRowChangeEvent(((StimulusTypeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public void RemoveSelectStimulusesRow(SelectStimulusesRow row) {
+            public void RemoveStimulusTypeRow(StimulusTypeRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -494,7 +462,7 @@ namespace ETS {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                StimDataSet ds = new StimDataSet();
+                StimulusTypeDataSet ds = new StimulusTypeDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -512,7 +480,7 @@ namespace ETS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SelectStimulusesDataTable";
+                attribute2.FixedValue = "StimulusTypeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -556,47 +524,25 @@ namespace ETS {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class SelectStimulusesRow : global::System.Data.DataRow {
+        public partial class StimulusTypeRow : global::System.Data.DataRow {
             
-            private SelectStimulusesDataTable tableSelectStimuluses;
+            private StimulusTypeDataTable tableStimulusType;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            internal SelectStimulusesRow(global::System.Data.DataRowBuilder rb) : 
+            internal StimulusTypeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSelectStimuluses = ((SelectStimulusesDataTable)(this.Table));
+                this.tableStimulusType = ((StimulusTypeDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string name {
                 get {
-                    return ((string)(this[this.tableSelectStimuluses.nameColumn]));
+                    return ((string)(this[this.tableStimulusType.nameColumn]));
                 }
                 set {
-                    this[this.tableSelectStimuluses.nameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string filename {
-                get {
-                    return ((string)(this[this.tableSelectStimuluses.filenameColumn]));
-                }
-                set {
-                    this[this.tableSelectStimuluses.filenameColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public string type {
-                get {
-                    return ((string)(this[this.tableSelectStimuluses.typeColumn]));
-                }
-                set {
-                    this[this.tableSelectStimuluses.typeColumn] = value;
+                    this[this.tableStimulusType.nameColumn] = value;
                 }
             }
         }
@@ -605,22 +551,22 @@ namespace ETS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public class SelectStimulusesRowChangeEvent : global::System.EventArgs {
+        public class StimulusTypeRowChangeEvent : global::System.EventArgs {
             
-            private SelectStimulusesRow eventRow;
+            private StimulusTypeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SelectStimulusesRowChangeEvent(SelectStimulusesRow row, global::System.Data.DataRowAction action) {
+            public StimulusTypeRowChangeEvent(StimulusTypeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SelectStimulusesRow Row {
+            public StimulusTypeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -636,7 +582,7 @@ namespace ETS {
         }
     }
 }
-namespace ETS.StimDataSetTableAdapters {
+namespace ETS.datasets.StimulusTypeDataSetTableAdapters {
     
     
     /// <summary>
@@ -648,7 +594,7 @@ namespace ETS.StimDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SelectStimulusesTableAdapter : global::System.ComponentModel.Component {
+    public partial class StimulusTypeTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -662,7 +608,7 @@ namespace ETS.StimDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public SelectStimulusesTableAdapter() {
+        public StimulusTypeTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -759,45 +705,21 @@ namespace ETS.StimDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SelectStimuluses";
+            tableMapping.DataSetTable = "StimulusType";
             tableMapping.ColumnMappings.Add("name", "name");
-            tableMapping.ColumnMappings.Add("filename", "filename");
-            tableMapping.ColumnMappings.Add("type", "type");
             this._adapter.TableMappings.Add(tableMapping);
-            this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "dbo.DeleteStimulus";
-            this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@filename", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "filename", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "dbo.InsertStimuluses";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@filename", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "filename", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
-            this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = "dbo.UpdateStimuluses";
-            this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.NChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@filename", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "filename", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_filename", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "filename", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@type", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_type", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "type", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[StimulusType] ([name]) VALUES (@name)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ETS.Properties.Settings.Default.DBConnectionString1;
+            this._connection.ConnectionString = global::ETS.Properties.Settings.Default.DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -806,16 +728,15 @@ namespace ETS.StimDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.SelectStimuluses";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].CommandText = "SELECT name FROM dbo.StimulusType";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(StimDataSet.SelectStimulusesDataTable dataTable) {
+        public virtual int Fill(StimulusTypeDataSet.StimulusTypeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -828,9 +749,9 @@ namespace ETS.StimDataSetTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual StimDataSet.SelectStimulusesDataTable GetData() {
+        public virtual StimulusTypeDataSet.StimulusTypeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            StimDataSet.SelectStimulusesDataTable dataTable = new StimDataSet.SelectStimulusesDataTable();
+            StimulusTypeDataSet.StimulusTypeDataTable dataTable = new StimulusTypeDataSet.StimulusTypeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -838,15 +759,15 @@ namespace ETS.StimDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(StimDataSet.SelectStimulusesDataTable dataTable) {
+        public virtual int Update(StimulusTypeDataSet.StimulusTypeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(StimDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "SelectStimuluses");
+        public virtual int Update(StimulusTypeDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "StimulusType");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -867,64 +788,13 @@ namespace ETS.StimDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(string name, string filename, string type) {
-            if ((name == null)) {
-                this.Adapter.DeleteCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[1].Value = ((string)(name));
-            }
-            if ((filename == null)) {
-                this.Adapter.DeleteCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(filename));
-            }
-            if ((type == null)) {
-                this.Adapter.DeleteCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[3].Value = ((string)(type));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
-            if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.DeleteCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.DeleteCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.DeleteCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string name, string filename, string type) {
+        public virtual int Insert(string name) {
             if ((name == null)) {
-                this.Adapter.InsertCommand.Parameters[1].Value = global::System.DBNull.Value;
+                throw new global::System.ArgumentNullException("name");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(name));
-            }
-            if ((filename == null)) {
-                this.Adapter.InsertCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(filename));
-            }
-            if ((type == null)) {
-                this.Adapter.InsertCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(type));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(name));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -938,63 +808,6 @@ namespace ETS.StimDataSetTableAdapters {
             finally {
                 if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
                     this.Adapter.InsertCommand.Connection.Close();
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string name, string Original_name, string filename, string Original_filename, string type, string Original_type) {
-            if ((name == null)) {
-                this.Adapter.UpdateCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(name));
-            }
-            if ((Original_name == null)) {
-                this.Adapter.UpdateCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Original_name));
-            }
-            if ((filename == null)) {
-                this.Adapter.UpdateCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(filename));
-            }
-            if ((Original_filename == null)) {
-                this.Adapter.UpdateCommand.Parameters[4].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(Original_filename));
-            }
-            if ((type == null)) {
-                this.Adapter.UpdateCommand.Parameters[5].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(type));
-            }
-            if ((Original_type == null)) {
-                this.Adapter.UpdateCommand.Parameters[6].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_type));
-            }
-            global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
-            if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                this.Adapter.UpdateCommand.Connection.Open();
-            }
-            try {
-                int returnValue = this.Adapter.UpdateCommand.ExecuteNonQuery();
-                return returnValue;
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    this.Adapter.UpdateCommand.Connection.Close();
                 }
             }
         }
@@ -1012,7 +825,7 @@ namespace ETS.StimDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private SelectStimulusesTableAdapter _selectStimulusesTableAdapter;
+        private StimulusTypeTableAdapter _stimulusTypeTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1034,12 +847,12 @@ namespace ETS.StimDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public SelectStimulusesTableAdapter SelectStimulusesTableAdapter {
+        public StimulusTypeTableAdapter StimulusTypeTableAdapter {
             get {
-                return this._selectStimulusesTableAdapter;
+                return this._stimulusTypeTableAdapter;
             }
             set {
-                this._selectStimulusesTableAdapter = value;
+                this._stimulusTypeTableAdapter = value;
             }
         }
         
@@ -1062,9 +875,9 @@ namespace ETS.StimDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._selectStimulusesTableAdapter != null) 
-                            && (this._selectStimulusesTableAdapter.Connection != null))) {
-                    return this._selectStimulusesTableAdapter.Connection;
+                if (((this._stimulusTypeTableAdapter != null) 
+                            && (this._stimulusTypeTableAdapter.Connection != null))) {
+                    return this._stimulusTypeTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1079,7 +892,7 @@ namespace ETS.StimDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._selectStimulusesTableAdapter != null)) {
+                if ((this._stimulusTypeTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1091,14 +904,14 @@ namespace ETS.StimDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateUpdatedRows(StimDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(StimulusTypeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._selectStimulusesTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.SelectStimuluses.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._stimulusTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.StimulusType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._selectStimulusesTableAdapter.Update(updatedRows));
+                    result = (result + this._stimulusTypeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1110,13 +923,13 @@ namespace ETS.StimDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateInsertedRows(StimDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(StimulusTypeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._selectStimulusesTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.SelectStimuluses.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._stimulusTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.StimulusType.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._selectStimulusesTableAdapter.Update(addedRows));
+                    result = (result + this._stimulusTypeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1128,13 +941,13 @@ namespace ETS.StimDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        private int UpdateDeletedRows(StimDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(StimulusTypeDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._selectStimulusesTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.SelectStimuluses.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._stimulusTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.StimulusType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._selectStimulusesTableAdapter.Update(deletedRows));
+                    result = (result + this._stimulusTypeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1170,15 +983,15 @@ namespace ETS.StimDataSetTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        public virtual int UpdateAll(StimDataSet dataSet) {
+        public virtual int UpdateAll(StimulusTypeDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._selectStimulusesTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._selectStimulusesTableAdapter.Connection) == false))) {
+            if (((this._stimulusTypeTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._stimulusTypeTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1214,13 +1027,13 @@ namespace ETS.StimDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._selectStimulusesTableAdapter != null)) {
-                    revertConnections.Add(this._selectStimulusesTableAdapter, this._selectStimulusesTableAdapter.Connection);
-                    this._selectStimulusesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._selectStimulusesTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._selectStimulusesTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._selectStimulusesTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._selectStimulusesTableAdapter.Adapter);
+                if ((this._stimulusTypeTableAdapter != null)) {
+                    revertConnections.Add(this._stimulusTypeTableAdapter, this._stimulusTypeTableAdapter.Connection);
+                    this._stimulusTypeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._stimulusTypeTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._stimulusTypeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._stimulusTypeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._stimulusTypeTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1281,9 +1094,9 @@ namespace ETS.StimDataSetTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._selectStimulusesTableAdapter != null)) {
-                    this._selectStimulusesTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._selectStimulusesTableAdapter]));
-                    this._selectStimulusesTableAdapter.Transaction = null;
+                if ((this._stimulusTypeTableAdapter != null)) {
+                    this._stimulusTypeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._stimulusTypeTableAdapter]));
+                    this._stimulusTypeTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
