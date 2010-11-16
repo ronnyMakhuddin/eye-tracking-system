@@ -32,9 +32,9 @@ namespace ETS.ui
             this.components = new System.ComponentModel.Container();
             this.grdStimuluses = new System.Windows.Forms.DataGridView();
             this.stimulusTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stimulusTypeDataSet = new StimulusTypeDataSet();
+            this.stimulusTypeDataSet = new ETS.datasets.StimulusTypeDataSet();
             this.selectStimulusesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.stimDataSet = new StimDataSet();
+            this.stimDataSet = new ETS.datasets.StimDataSet();
             this.selectStimulusesTableAdapter = new ETS.datasets.StimDataSetTableAdapters.SelectStimulusesTableAdapter();
             this.stimulusTypeTableAdapter = new ETS.datasets.StimulusTypeDataSetTableAdapters.StimulusTypeTableAdapter();
             this.btnSave = new System.Windows.Forms.Button();
@@ -66,6 +66,7 @@ namespace ETS.ui
             this.grdStimuluses.Name = "grdStimuluses";
             this.grdStimuluses.Size = new System.Drawing.Size(544, 213);
             this.grdStimuluses.TabIndex = 0;
+            this.grdStimuluses.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStimuluses_CellClick);
             this.grdStimuluses.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdStimuluses_DataError);
             // 
             // stimulusTypeBindingSource
@@ -134,6 +135,7 @@ namespace ETS.ui
             this.filenameDataGridViewTextBoxColumn.HeaderText = "Filename";
             this.filenameDataGridViewTextBoxColumn.MinimumWidth = 200;
             this.filenameDataGridViewTextBoxColumn.Name = "filenameDataGridViewTextBoxColumn";
+            this.filenameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.filenameDataGridViewTextBoxColumn.Width = 200;
             // 
             // typeDataGridViewTextBoxColumn
@@ -151,7 +153,7 @@ namespace ETS.ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(568, 273);
+            this.ClientSize = new System.Drawing.Size(569, 273);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grdStimuluses);

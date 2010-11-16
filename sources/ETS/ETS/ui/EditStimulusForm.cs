@@ -39,5 +39,20 @@ namespace ETS.ui
         {
             Close();
         }
+
+        private void grdStimuluses_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex < 0 || e.RowIndex < 0) return;
+            DataGridViewCell c = grdStimuluses[e.ColumnIndex, e.RowIndex];
+            if (c.ColumnIndex == 1)
+            {
+                OpenFileDialog ofd = new OpenFileDialog();
+                if (ofd.ShowDialog() == DialogResult.OK)
+                {
+                    string filename = ofd.FileName;
+                    c.Value = filename;
+                }
+            }
+        }
     }
 }
