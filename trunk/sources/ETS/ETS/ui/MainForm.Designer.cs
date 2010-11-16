@@ -38,6 +38,7 @@
             this.newSelectCommandBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.stimulusTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.newSelectCommandBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.miEditSeriesConfigs = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newSelectCommandBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusTypeBindingSource)).BeginInit();
@@ -60,13 +61,13 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miClose});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(32, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // miClose
             // 
             this.miClose.Name = "miClose";
-            this.miClose.Size = new System.Drawing.Size(93, 22);
+            this.miClose.Size = new System.Drawing.Size(103, 22);
             this.miClose.Text = "Close";
             this.miClose.Click += new System.EventHandler(this.miClose_Click);
             // 
@@ -74,22 +75,23 @@
             // 
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miViewPatients,
-            this.miEditStimuluses});
+            this.miEditStimuluses,
+            this.miEditSeriesConfigs});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(33, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // miViewPatients
             // 
             this.miViewPatients.Name = "miViewPatients";
-            this.miViewPatients.Size = new System.Drawing.Size(152, 22);
+            this.miViewPatients.Size = new System.Drawing.Size(171, 22);
             this.miViewPatients.Text = "Edit Patients";
             this.miViewPatients.Click += new System.EventHandler(this.miViewPatients_Click);
             // 
             // miEditStimuluses
             // 
             this.miEditStimuluses.Name = "miEditStimuluses";
-            this.miEditStimuluses.Size = new System.Drawing.Size(152, 22);
+            this.miEditStimuluses.Size = new System.Drawing.Size(171, 22);
             this.miEditStimuluses.Text = "Edit Stimuluses";
             this.miEditStimuluses.Click += new System.EventHandler(this.miEditStimuluses_Click);
             // 
@@ -100,6 +102,13 @@
             // newSelectCommandBindingSource
             // 
             this.newSelectCommandBindingSource.DataMember = "NewSelectCommand";
+            // 
+            // miEditSeriesConfigs
+            // 
+            this.miEditSeriesConfigs.Name = "miEditSeriesConfigs";
+            this.miEditSeriesConfigs.Size = new System.Drawing.Size(171, 22);
+            this.miEditSeriesConfigs.Text = "Edit Series Configs";
+            this.miEditSeriesConfigs.Click += new System.EventHandler(this.miEditSeriesConfigs_Click);
             // 
             // MainForm
             // 
@@ -135,5 +144,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn filenameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn stTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripMenuItem miEditSeriesConfigs;
     }
 }

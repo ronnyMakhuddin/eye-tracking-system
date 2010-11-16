@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.21022</ProductVersion>
+    <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{18B8ED32-9907-4A39-8741-9507A478EC62}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -106,6 +106,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StimulusTypeDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SeriesConfigDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SeriesConfigDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="tracker\CaptureManager.cs" />
     <Compile Include="tracker\Session.cs" />
     <Compile Include="tracker\Template.cs" />
@@ -121,6 +126,12 @@
     </Compile>
     <Compile Include="ui\EditPatientsForm.Designer.cs">
       <DependentUpon>EditPatientsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditSeriesConfigs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\EditSeriesConfigs.Designer.cs">
+      <DependentUpon>EditSeriesConfigs.cs</DependentUpon>
     </Compile>
     <Compile Include="ui\EditStimulusForm.cs">
       <SubType>Form</SubType>
@@ -153,6 +164,9 @@
     <EmbeddedResource Include="ui\EditPatientsForm.resx">
       <DependentUpon>EditPatientsForm.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\EditSeriesConfigs.resx">
+      <DependentUpon>EditSeriesConfigs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ui\EditStimulusForm.resx">
       <DependentUpon>EditStimulusForm.cs</DependentUpon>
@@ -236,6 +250,17 @@
     <Content Include="lib\Emgu.CV.UI.dll" />
     <Content Include="lib\Emgu.Util.dll" />
     <None Include="Resources\Icon.ico" />
+    <None Include="SeriesConfigDataSet.xsc">
+      <DependentUpon>SeriesConfigDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SeriesConfigDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SeriesConfigDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="SeriesConfigDataSet.xss">
+      <DependentUpon>SeriesConfigDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
