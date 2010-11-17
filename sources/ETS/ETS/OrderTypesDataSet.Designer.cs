@@ -21,16 +21,16 @@ namespace ETS {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("SeriesConfigDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("OrderTypesDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class SeriesConfigDataSet : global::System.Data.DataSet {
+    public partial class OrderTypesDataSet : global::System.Data.DataSet {
         
-        private SelectSeriesConfigsDataTable tableSelectSeriesConfigs;
+        private OrderTypeDataTable tableOrderType;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public SeriesConfigDataSet() {
+        public OrderTypesDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -40,7 +40,7 @@ namespace ETS {
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        protected SeriesConfigDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected OrderTypesDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -53,8 +53,8 @@ namespace ETS {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["SelectSeriesConfigs"] != null)) {
-                    base.Tables.Add(new SelectSeriesConfigsDataTable(ds.Tables["SelectSeriesConfigs"]));
+                if ((ds.Tables["OrderType"] != null)) {
+                    base.Tables.Add(new OrderTypeDataTable(ds.Tables["OrderType"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -77,9 +77,9 @@ namespace ETS {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SelectSeriesConfigsDataTable SelectSeriesConfigs {
+        public OrderTypeDataTable OrderType {
             get {
-                return this.tableSelectSeriesConfigs;
+                return this.tableOrderType;
             }
         }
         
@@ -120,7 +120,7 @@ namespace ETS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public override global::System.Data.DataSet Clone() {
-            SeriesConfigDataSet cln = ((SeriesConfigDataSet)(base.Clone()));
+            OrderTypesDataSet cln = ((OrderTypesDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -142,8 +142,8 @@ namespace ETS {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["SelectSeriesConfigs"] != null)) {
-                    base.Tables.Add(new SelectSeriesConfigsDataTable(ds.Tables["SelectSeriesConfigs"]));
+                if ((ds.Tables["OrderType"] != null)) {
+                    base.Tables.Add(new OrderTypeDataTable(ds.Tables["OrderType"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -175,27 +175,27 @@ namespace ETS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         internal void InitVars(bool initTable) {
-            this.tableSelectSeriesConfigs = ((SelectSeriesConfigsDataTable)(base.Tables["SelectSeriesConfigs"]));
+            this.tableOrderType = ((OrderTypeDataTable)(base.Tables["OrderType"]));
             if ((initTable == true)) {
-                if ((this.tableSelectSeriesConfigs != null)) {
-                    this.tableSelectSeriesConfigs.InitVars();
+                if ((this.tableOrderType != null)) {
+                    this.tableOrderType.InitVars();
                 }
             }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitClass() {
-            this.DataSetName = "SeriesConfigDataSet";
+            this.DataSetName = "OrderTypesDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/SeriesConfigDataSet.xsd";
+            this.Namespace = "http://tempuri.org/OrderTypesDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableSelectSeriesConfigs = new SelectSeriesConfigsDataTable();
-            base.Tables.Add(this.tableSelectSeriesConfigs);
+            this.tableOrderType = new OrderTypeDataTable();
+            base.Tables.Add(this.tableOrderType);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private bool ShouldSerializeSelectSeriesConfigs() {
+        private bool ShouldSerializeOrderType() {
             return false;
         }
         
@@ -208,7 +208,7 @@ namespace ETS {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            SeriesConfigDataSet ds = new SeriesConfigDataSet();
+            OrderTypesDataSet ds = new OrderTypesDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -252,7 +252,7 @@ namespace ETS {
             return type;
         }
         
-        public delegate void SelectSeriesConfigsRowChangeEventHandler(object sender, SelectSeriesConfigsRowChangeEvent e);
+        public delegate void OrderTypeRowChangeEventHandler(object sender, OrderTypeRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -260,30 +260,20 @@ namespace ETS {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SelectSeriesConfigsDataTable : global::System.Data.TypedTableBase<SelectSeriesConfigsRow> {
+        public partial class OrderTypeDataTable : global::System.Data.TypedTableBase<OrderTypeRow> {
             
-            private global::System.Data.DataColumn columnmax_int;
-            
-            private global::System.Data.DataColumn columnmin_int;
-            
-            private global::System.Data.DataColumn columntext_before;
-            
-            private global::System.Data.DataColumn columntext_after;
-            
-            private global::System.Data.DataColumn columnorderType;
-            
-            private global::System.Data.DataColumn columnid;
+            private global::System.Data.DataColumn columnname;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public SelectSeriesConfigsDataTable() {
-                this.TableName = "SelectSeriesConfigs";
+            public OrderTypeDataTable() {
+                this.TableName = "OrderType";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal SelectSeriesConfigsDataTable(global::System.Data.DataTable table) {
+            internal OrderTypeDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -299,50 +289,15 @@ namespace ETS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            protected SelectSeriesConfigsDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected OrderTypeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn max_intColumn {
+            public global::System.Data.DataColumn nameColumn {
                 get {
-                    return this.columnmax_int;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn min_intColumn {
-                get {
-                    return this.columnmin_int;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn text_beforeColumn {
-                get {
-                    return this.columntext_before;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn text_afterColumn {
-                get {
-                    return this.columntext_after;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn orderTypeColumn {
-                get {
-                    return this.columnorderType;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn idColumn {
-                get {
-                    return this.columnid;
+                    return this.columnname;
                 }
             }
             
@@ -355,149 +310,109 @@ namespace ETS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public SelectSeriesConfigsRow this[int index] {
+            public OrderTypeRow this[int index] {
                 get {
-                    return ((SelectSeriesConfigsRow)(this.Rows[index]));
+                    return ((OrderTypeRow)(this.Rows[index]));
                 }
             }
             
-            public event SelectSeriesConfigsRowChangeEventHandler SelectSeriesConfigsRowChanging;
+            public event OrderTypeRowChangeEventHandler OrderTypeRowChanging;
             
-            public event SelectSeriesConfigsRowChangeEventHandler SelectSeriesConfigsRowChanged;
+            public event OrderTypeRowChangeEventHandler OrderTypeRowChanged;
             
-            public event SelectSeriesConfigsRowChangeEventHandler SelectSeriesConfigsRowDeleting;
+            public event OrderTypeRowChangeEventHandler OrderTypeRowDeleting;
             
-            public event SelectSeriesConfigsRowChangeEventHandler SelectSeriesConfigsRowDeleted;
+            public event OrderTypeRowChangeEventHandler OrderTypeRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void AddSelectSeriesConfigsRow(SelectSeriesConfigsRow row) {
+            public void AddOrderTypeRow(OrderTypeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public SelectSeriesConfigsRow AddSelectSeriesConfigsRow(long max_int, long min_int, string text_before, string text_after, string orderType) {
-                SelectSeriesConfigsRow rowSelectSeriesConfigsRow = ((SelectSeriesConfigsRow)(this.NewRow()));
+            public OrderTypeRow AddOrderTypeRow(string name) {
+                OrderTypeRow rowOrderTypeRow = ((OrderTypeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        max_int,
-                        min_int,
-                        text_before,
-                        text_after,
-                        orderType,
-                        null};
-                rowSelectSeriesConfigsRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSelectSeriesConfigsRow);
-                return rowSelectSeriesConfigsRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public SelectSeriesConfigsRow FindByid(long id) {
-                return ((SelectSeriesConfigsRow)(this.Rows.Find(new object[] {
-                            id})));
+                        name};
+                rowOrderTypeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowOrderTypeRow);
+                return rowOrderTypeRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public override global::System.Data.DataTable Clone() {
-                SelectSeriesConfigsDataTable cln = ((SelectSeriesConfigsDataTable)(base.Clone()));
+                OrderTypeDataTable cln = ((OrderTypeDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new SelectSeriesConfigsDataTable();
+                return new OrderTypeDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             internal void InitVars() {
-                this.columnmax_int = base.Columns["max_int"];
-                this.columnmin_int = base.Columns["min_int"];
-                this.columntext_before = base.Columns["text_before"];
-                this.columntext_after = base.Columns["text_after"];
-                this.columnorderType = base.Columns["orderType"];
-                this.columnid = base.Columns["id"];
+                this.columnname = base.Columns["name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             private void InitClass() {
-                this.columnmax_int = new global::System.Data.DataColumn("max_int", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmax_int);
-                this.columnmin_int = new global::System.Data.DataColumn("min_int", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnmin_int);
-                this.columntext_before = new global::System.Data.DataColumn("text_before", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntext_before);
-                this.columntext_after = new global::System.Data.DataColumn("text_after", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columntext_after);
-                this.columnorderType = new global::System.Data.DataColumn("orderType", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnorderType);
-                this.columnid = new global::System.Data.DataColumn("id", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnid}, true));
-                this.columnmax_int.AllowDBNull = false;
-                this.columnmin_int.AllowDBNull = false;
-                this.columntext_before.AllowDBNull = false;
-                this.columntext_before.MaxLength = 5000;
-                this.columntext_after.AllowDBNull = false;
-                this.columntext_after.MaxLength = 5000;
-                this.columnorderType.AllowDBNull = false;
-                this.columnorderType.MaxLength = 100;
-                this.columnid.AutoIncrement = true;
-                this.columnid.AutoIncrementSeed = -1;
-                this.columnid.AutoIncrementStep = -1;
-                this.columnid.AllowDBNull = false;
-                this.columnid.ReadOnly = true;
-                this.columnid.Unique = true;
+                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname);
+                this.columnname.AllowDBNull = false;
+                this.columnname.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public SelectSeriesConfigsRow NewSelectSeriesConfigsRow() {
-                return ((SelectSeriesConfigsRow)(this.NewRow()));
+            public OrderTypeRow NewOrderTypeRow() {
+                return ((OrderTypeRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SelectSeriesConfigsRow(builder);
+                return new OrderTypeRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override global::System.Type GetRowType() {
-                return typeof(SelectSeriesConfigsRow);
+                return typeof(OrderTypeRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.SelectSeriesConfigsRowChanged != null)) {
-                    this.SelectSeriesConfigsRowChanged(this, new SelectSeriesConfigsRowChangeEvent(((SelectSeriesConfigsRow)(e.Row)), e.Action));
+                if ((this.OrderTypeRowChanged != null)) {
+                    this.OrderTypeRowChanged(this, new OrderTypeRowChangeEvent(((OrderTypeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.SelectSeriesConfigsRowChanging != null)) {
-                    this.SelectSeriesConfigsRowChanging(this, new SelectSeriesConfigsRowChangeEvent(((SelectSeriesConfigsRow)(e.Row)), e.Action));
+                if ((this.OrderTypeRowChanging != null)) {
+                    this.OrderTypeRowChanging(this, new OrderTypeRowChangeEvent(((OrderTypeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.SelectSeriesConfigsRowDeleted != null)) {
-                    this.SelectSeriesConfigsRowDeleted(this, new SelectSeriesConfigsRowChangeEvent(((SelectSeriesConfigsRow)(e.Row)), e.Action));
+                if ((this.OrderTypeRowDeleted != null)) {
+                    this.OrderTypeRowDeleted(this, new OrderTypeRowChangeEvent(((OrderTypeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.SelectSeriesConfigsRowDeleting != null)) {
-                    this.SelectSeriesConfigsRowDeleting(this, new SelectSeriesConfigsRowChangeEvent(((SelectSeriesConfigsRow)(e.Row)), e.Action));
+                if ((this.OrderTypeRowDeleting != null)) {
+                    this.OrderTypeRowDeleting(this, new OrderTypeRowChangeEvent(((OrderTypeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void RemoveSelectSeriesConfigsRow(SelectSeriesConfigsRow row) {
+            public void RemoveOrderTypeRow(OrderTypeRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -505,7 +420,7 @@ namespace ETS {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                SeriesConfigDataSet ds = new SeriesConfigDataSet();
+                OrderTypesDataSet ds = new OrderTypesDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -523,7 +438,7 @@ namespace ETS {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SelectSeriesConfigsDataTable";
+                attribute2.FixedValue = "OrderTypeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -568,73 +483,23 @@ namespace ETS {
         ///Represents strongly named DataRow class.
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        public partial class SelectSeriesConfigsRow : global::System.Data.DataRow {
+        public partial class OrderTypeRow : global::System.Data.DataRow {
             
-            private SelectSeriesConfigsDataTable tableSelectSeriesConfigs;
+            private OrderTypeDataTable tableOrderType;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            internal SelectSeriesConfigsRow(global::System.Data.DataRowBuilder rb) : 
+            internal OrderTypeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableSelectSeriesConfigs = ((SelectSeriesConfigsDataTable)(this.Table));
+                this.tableOrderType = ((OrderTypeDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public long max_int {
+            public string name {
                 get {
-                    return ((long)(this[this.tableSelectSeriesConfigs.max_intColumn]));
+                    return ((string)(this[this.tableOrderType.nameColumn]));
                 }
                 set {
-                    this[this.tableSelectSeriesConfigs.max_intColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public long min_int {
-                get {
-                    return ((long)(this[this.tableSelectSeriesConfigs.min_intColumn]));
-                }
-                set {
-                    this[this.tableSelectSeriesConfigs.min_intColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string text_before {
-                get {
-                    return ((string)(this[this.tableSelectSeriesConfigs.text_beforeColumn]));
-                }
-                set {
-                    this[this.tableSelectSeriesConfigs.text_beforeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string text_after {
-                get {
-                    return ((string)(this[this.tableSelectSeriesConfigs.text_afterColumn]));
-                }
-                set {
-                    this[this.tableSelectSeriesConfigs.text_afterColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public string orderType {
-                get {
-                    return ((string)(this[this.tableSelectSeriesConfigs.orderTypeColumn]));
-                }
-                set {
-                    this[this.tableSelectSeriesConfigs.orderTypeColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public long id {
-                get {
-                    return ((long)(this[this.tableSelectSeriesConfigs.idColumn]));
-                }
-                set {
-                    this[this.tableSelectSeriesConfigs.idColumn] = value;
+                    this[this.tableOrderType.nameColumn] = value;
                 }
             }
         }
@@ -643,20 +508,20 @@ namespace ETS {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
-        public class SelectSeriesConfigsRowChangeEvent : global::System.EventArgs {
+        public class OrderTypeRowChangeEvent : global::System.EventArgs {
             
-            private SelectSeriesConfigsRow eventRow;
+            private OrderTypeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public SelectSeriesConfigsRowChangeEvent(SelectSeriesConfigsRow row, global::System.Data.DataRowAction action) {
+            public OrderTypeRowChangeEvent(OrderTypeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public SelectSeriesConfigsRow Row {
+            public OrderTypeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -671,7 +536,7 @@ namespace ETS {
         }
     }
 }
-namespace ETS.SeriesConfigDataSetTableAdapters {
+namespace ETS.OrderTypesDataSetTableAdapters {
     
     
     /// <summary>
@@ -684,7 +549,7 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SelectSeriesConfigsTableAdapter : global::System.ComponentModel.Component {
+    public partial class OrderTypeTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -697,7 +562,7 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
         private bool _clearBeforeFill;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public SelectSeriesConfigsTableAdapter() {
+        public OrderTypeTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -788,30 +653,20 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SelectSeriesConfigs";
-            tableMapping.ColumnMappings.Add("max_int", "max_int");
-            tableMapping.ColumnMappings.Add("min_int", "min_int");
-            tableMapping.ColumnMappings.Add("text_before", "text_before");
-            tableMapping.ColumnMappings.Add("text_after", "text_after");
-            tableMapping.ColumnMappings.Add("orderType", "orderType");
-            tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.DataSetTable = "OrderType";
+            tableMapping.ColumnMappings.Add("name", "name");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "dbo.InsertSeriesConfig";
-            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@max_int", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 19, 0, "max_int", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@min_int", global::System.Data.SqlDbType.BigInt, 8, global::System.Data.ParameterDirection.Input, 19, 0, "min_int", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@text_before", global::System.Data.SqlDbType.VarChar, 5000, global::System.Data.ParameterDirection.Input, 0, 0, "text_before", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@text_after", global::System.Data.SqlDbType.VarChar, 5000, global::System.Data.ParameterDirection.Input, 0, 0, "text_after", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_type", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "orderType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[OrderType] ([name]) VALUES (@name)";
+            this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.NChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::ETS.Properties.Settings.Default.DBConnectionString1;
+            this._connection.ConnectionString = global::ETS.Properties.Settings.Default.DBConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -819,15 +674,14 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "dbo.SelectSeriesConfigs";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            this._commandCollection[0].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[0].CommandText = "SELECT name FROM dbo.OrderType";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(SeriesConfigDataSet.SelectSeriesConfigsDataTable dataTable) {
+        public virtual int Fill(OrderTypesDataSet.OrderTypeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -839,23 +693,23 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual SeriesConfigDataSet.SelectSeriesConfigsDataTable GetData() {
+        public virtual OrderTypesDataSet.OrderTypeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            SeriesConfigDataSet.SelectSeriesConfigsDataTable dataTable = new SeriesConfigDataSet.SelectSeriesConfigsDataTable();
+            OrderTypesDataSet.OrderTypeDataTable dataTable = new OrderTypesDataSet.OrderTypeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SeriesConfigDataSet.SelectSeriesConfigsDataTable dataTable) {
+        public virtual int Update(OrderTypesDataSet.OrderTypeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(SeriesConfigDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "SelectSeriesConfigs");
+        public virtual int Update(OrderTypesDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "OrderType");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -869,6 +723,32 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(global::System.Data.DataRow[] dataRows) {
             return this.Adapter.Update(dataRows);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
+        public virtual int Insert(string name) {
+            if ((name == null)) {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(name));
+            }
+            global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
+            if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                this.Adapter.InsertCommand.Connection.Open();
+            }
+            try {
+                int returnValue = this.Adapter.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    this.Adapter.InsertCommand.Connection.Close();
+                }
+            }
         }
     }
     
@@ -885,7 +765,7 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
         
         private UpdateOrderOption _updateOrder;
         
-        private SelectSeriesConfigsTableAdapter _selectSeriesConfigsTableAdapter;
+        private OrderTypeTableAdapter _orderTypeTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -905,12 +785,12 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=8.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" +
             "", "System.Drawing.Design.UITypeEditor")]
-        public SelectSeriesConfigsTableAdapter SelectSeriesConfigsTableAdapter {
+        public OrderTypeTableAdapter OrderTypeTableAdapter {
             get {
-                return this._selectSeriesConfigsTableAdapter;
+                return this._orderTypeTableAdapter;
             }
             set {
-                this._selectSeriesConfigsTableAdapter = value;
+                this._orderTypeTableAdapter = value;
             }
         }
         
@@ -931,9 +811,9 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._selectSeriesConfigsTableAdapter != null) 
-                            && (this._selectSeriesConfigsTableAdapter.Connection != null))) {
-                    return this._selectSeriesConfigsTableAdapter.Connection;
+                if (((this._orderTypeTableAdapter != null) 
+                            && (this._orderTypeTableAdapter.Connection != null))) {
+                    return this._orderTypeTableAdapter.Connection;
                 }
                 return null;
             }
@@ -947,7 +827,7 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._selectSeriesConfigsTableAdapter != null)) {
+                if ((this._orderTypeTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -958,14 +838,14 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
         ///Update rows in top-down order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateUpdatedRows(SeriesConfigDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(OrderTypesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._selectSeriesConfigsTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.SelectSeriesConfigs.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._orderTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.OrderType.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._selectSeriesConfigsTableAdapter.Update(updatedRows));
+                    result = (result + this._orderTypeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -976,13 +856,13 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
         ///Insert rows in top-down order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateInsertedRows(SeriesConfigDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(OrderTypesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._selectSeriesConfigsTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.SelectSeriesConfigs.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._orderTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.OrderType.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._selectSeriesConfigsTableAdapter.Update(addedRows));
+                    result = (result + this._orderTypeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -993,13 +873,13 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
         ///Delete rows in bottom-up order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        private int UpdateDeletedRows(SeriesConfigDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(OrderTypesDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._selectSeriesConfigsTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.SelectSeriesConfigs.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._orderTypeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.OrderType.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._selectSeriesConfigsTableAdapter.Update(deletedRows));
+                    result = (result + this._orderTypeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1033,15 +913,15 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
         ///Update all changes to the dataset.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        public virtual int UpdateAll(SeriesConfigDataSet dataSet) {
+        public virtual int UpdateAll(OrderTypesDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._selectSeriesConfigsTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._selectSeriesConfigsTableAdapter.Connection) == false))) {
+            if (((this._orderTypeTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._orderTypeTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1077,13 +957,13 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._selectSeriesConfigsTableAdapter != null)) {
-                    revertConnections.Add(this._selectSeriesConfigsTableAdapter, this._selectSeriesConfigsTableAdapter.Connection);
-                    this._selectSeriesConfigsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._selectSeriesConfigsTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._selectSeriesConfigsTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._selectSeriesConfigsTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._selectSeriesConfigsTableAdapter.Adapter);
+                if ((this._orderTypeTableAdapter != null)) {
+                    revertConnections.Add(this._orderTypeTableAdapter, this._orderTypeTableAdapter.Connection);
+                    this._orderTypeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._orderTypeTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._orderTypeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._orderTypeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._orderTypeTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1144,9 +1024,9 @@ namespace ETS.SeriesConfigDataSetTableAdapters {
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._selectSeriesConfigsTableAdapter != null)) {
-                    this._selectSeriesConfigsTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._selectSeriesConfigsTableAdapter]));
-                    this._selectSeriesConfigsTableAdapter.Transaction = null;
+                if ((this._orderTypeTableAdapter != null)) {
+                    this._orderTypeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._orderTypeTableAdapter]));
+                    this._orderTypeTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];
