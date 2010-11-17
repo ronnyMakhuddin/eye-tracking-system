@@ -10,7 +10,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SelectSeriesConfigsTableAdapter" GeneratorDataComponentClassName="SelectSeriesConfigsTableAdapter" Name="SelectSeriesConfigs" UserDataComponentName="SelectSeriesConfigsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DBConnectionString (Settings)" DbObjectName="[C:\USERS\YESWOLF\DESKTOP\ETS\SOURCES\ETS\ETS\RESOURCES\DB.MDF].dbo.SelectSeriesConfigs" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DBConnectionString1 (Settings)" DbObjectName="[C:\USERS\YESWOLF\DESKTOP\ETS\SOURCES\ETS\ETS\RESOURCES\DB.MDF].dbo.SelectSeriesConfigs" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InsertSeriesConfig</CommandText>
@@ -35,12 +35,12 @@
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="id" DataSetColumn="id" />
               <Mapping SourceColumn="max_int" DataSetColumn="max_int" />
               <Mapping SourceColumn="min_int" DataSetColumn="min_int" />
               <Mapping SourceColumn="text_before" DataSetColumn="text_before" />
               <Mapping SourceColumn="text_after" DataSetColumn="text_after" />
               <Mapping SourceColumn="orderType" DataSetColumn="orderType" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -55,30 +55,30 @@
         <xs:element name="SelectSeriesConfigs" msprop:Generator_UserTableName="SelectSeriesConfigs" msprop:Generator_RowDeletedName="SelectSeriesConfigsRowDeleted" msprop:Generator_RowChangedName="SelectSeriesConfigsRowChanged" msprop:Generator_RowClassName="SelectSeriesConfigsRow" msprop:Generator_RowChangingName="SelectSeriesConfigsRowChanging" msprop:Generator_RowEvArgName="SelectSeriesConfigsRowChangeEvent" msprop:Generator_RowEvHandlerName="SelectSeriesConfigsRowChangeEventHandler" msprop:Generator_TableClassName="SelectSeriesConfigsDataTable" msprop:Generator_TableVarName="tableSelectSeriesConfigs" msprop:Generator_RowDeletingName="SelectSeriesConfigsRowDeleting" msprop:Generator_TablePropName="SelectSeriesConfigs">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:long" />
-              <xs:element name="max_int" msprop:Generator_UserColumnName="max_int" msprop:Generator_ColumnVarNameInTable="columnmax_int" msprop:Generator_ColumnPropNameInRow="max_int" msprop:Generator_ColumnPropNameInTable="max_intColumn" type="xs:long" />
-              <xs:element name="min_int" msprop:Generator_UserColumnName="min_int" msprop:Generator_ColumnVarNameInTable="columnmin_int" msprop:Generator_ColumnPropNameInRow="min_int" msprop:Generator_ColumnPropNameInTable="min_intColumn" type="xs:long" />
-              <xs:element name="text_before" msprop:Generator_UserColumnName="text_before" msprop:Generator_ColumnVarNameInTable="columntext_before" msprop:Generator_ColumnPropNameInRow="text_before" msprop:Generator_ColumnPropNameInTable="text_beforeColumn">
+              <xs:element name="max_int" msprop:Generator_UserColumnName="max_int" msprop:Generator_ColumnPropNameInRow="max_int" msprop:Generator_ColumnVarNameInTable="columnmax_int" msprop:Generator_ColumnPropNameInTable="max_intColumn" type="xs:long" />
+              <xs:element name="min_int" msprop:Generator_UserColumnName="min_int" msprop:Generator_ColumnPropNameInRow="min_int" msprop:Generator_ColumnVarNameInTable="columnmin_int" msprop:Generator_ColumnPropNameInTable="min_intColumn" type="xs:long" />
+              <xs:element name="text_before" msprop:Generator_UserColumnName="text_before" msprop:Generator_ColumnPropNameInRow="text_before" msprop:Generator_ColumnVarNameInTable="columntext_before" msprop:Generator_ColumnPropNameInTable="text_beforeColumn">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="5000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="text_after" msprop:Generator_UserColumnName="text_after" msprop:Generator_ColumnVarNameInTable="columntext_after" msprop:Generator_ColumnPropNameInRow="text_after" msprop:Generator_ColumnPropNameInTable="text_afterColumn">
+              <xs:element name="text_after" msprop:Generator_UserColumnName="text_after" msprop:Generator_ColumnPropNameInRow="text_after" msprop:Generator_ColumnVarNameInTable="columntext_after" msprop:Generator_ColumnPropNameInTable="text_afterColumn">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="5000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="orderType" msprop:Generator_UserColumnName="orderType" msprop:Generator_ColumnVarNameInTable="columnorderType" msprop:Generator_ColumnPropNameInRow="orderType" msprop:Generator_ColumnPropNameInTable="orderTypeColumn">
+              <xs:element name="orderType" msprop:Generator_UserColumnName="orderType" msprop:Generator_ColumnPropNameInRow="orderType" msprop:Generator_ColumnVarNameInTable="columnorderType" msprop:Generator_ColumnPropNameInTable="orderTypeColumn">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:long" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>

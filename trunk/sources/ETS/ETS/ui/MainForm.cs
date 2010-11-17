@@ -42,7 +42,7 @@ namespace ETS.ui
 
         private void miEditSeriesConfigs_Click(object sender, EventArgs e)
         {
-            EditSeriesConfigs esc = new EditSeriesConfigs();
+            EditSeriesConfigForm esc = new EditSeriesConfigForm();
             esc.Show();
         }
     }
