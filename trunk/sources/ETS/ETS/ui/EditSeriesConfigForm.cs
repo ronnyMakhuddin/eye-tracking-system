@@ -47,7 +47,8 @@ namespace ETS.ui
             DataGridViewCell c = grdConfigs[e.ColumnIndex, e.RowIndex];
             if (c is DataGridViewButtonCell)
             {
-                EditStimulusSetForm essf = new EditStimulusSetForm();
+                Int64 id = (Int64)grdConfigs[1,e.RowIndex].Value;
+                EditStimulusSetForm essf = new EditStimulusSetForm(id);
                 essf.Show();
             }
         }
