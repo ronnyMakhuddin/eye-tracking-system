@@ -291,6 +291,8 @@ namespace ETS.datasets {
             
             private global::System.Data.DataColumn columnid;
             
+            private global::System.Data.DataColumn columnname;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public SelectSeriesConfigsDataTable() {
@@ -374,6 +376,14 @@ namespace ETS.datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn nameColumn {
+                get {
+                    return this.columnname;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -409,7 +419,7 @@ namespace ETS.datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public SelectSeriesConfigsRow AddSelectSeriesConfigsRow(long max_int, long min_int, string text_before, string text_after, string orderType) {
+            public SelectSeriesConfigsRow AddSelectSeriesConfigsRow(long max_int, long min_int, string text_before, string text_after, string orderType, string name) {
                 SelectSeriesConfigsRow rowSelectSeriesConfigsRow = ((SelectSeriesConfigsRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         max_int,
@@ -417,7 +427,8 @@ namespace ETS.datasets {
                         text_before,
                         text_after,
                         orderType,
-                        null};
+                        null,
+                        name};
                 rowSelectSeriesConfigsRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSelectSeriesConfigsRow);
                 return rowSelectSeriesConfigsRow;
@@ -453,6 +464,7 @@ namespace ETS.datasets {
                 this.columntext_after = base.Columns["text_after"];
                 this.columnorderType = base.Columns["orderType"];
                 this.columnid = base.Columns["id"];
+                this.columnname = base.Columns["name"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -470,6 +482,8 @@ namespace ETS.datasets {
                 base.Columns.Add(this.columnorderType);
                 this.columnid = new global::System.Data.DataColumn("id", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnid);
+                this.columnname = new global::System.Data.DataColumn("name", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnname);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnmax_int.AllowDBNull = false;
@@ -486,6 +500,8 @@ namespace ETS.datasets {
                 this.columnid.AllowDBNull = false;
                 this.columnid.ReadOnly = true;
                 this.columnid.Unique = true;
+                this.columnname.AllowDBNull = false;
+                this.columnname.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -691,6 +707,17 @@ namespace ETS.datasets {
                     this[this.tableSelectSeriesConfigs.idColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string name {
+                get {
+                    return ((string)(this[this.tableSelectSeriesConfigs.nameColumn]));
+                }
+                set {
+                    this[this.tableSelectSeriesConfigs.nameColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -858,6 +885,7 @@ namespace ETS.datasets.SeriesConfigDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("text_after", "text_after");
             tableMapping.ColumnMappings.Add("orderType", "orderType");
             tableMapping.ColumnMappings.Add("id", "id");
+            tableMapping.ColumnMappings.Add("name", "name");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -875,6 +903,7 @@ namespace ETS.datasets.SeriesConfigDataSetTableAdapters {
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@text_before", global::System.Data.SqlDbType.VarChar, 5000, global::System.Data.ParameterDirection.Input, 0, 0, "text_before", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@text_after", global::System.Data.SqlDbType.VarChar, 5000, global::System.Data.ParameterDirection.Input, 0, 0, "text_after", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_type", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "orderType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "dbo.UpdateSeriesConfig";
@@ -890,6 +919,8 @@ namespace ETS.datasets.SeriesConfigDataSetTableAdapters {
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_text_after", global::System.Data.SqlDbType.VarChar, 5000, global::System.Data.ParameterDirection.Input, 0, 0, "text_after", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@order_type_name", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "orderType", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_order_type_name", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "orderType", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@name", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_name", global::System.Data.SqlDbType.VarChar, 100, global::System.Data.ParameterDirection.Input, 0, 0, "name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

@@ -31,14 +31,15 @@ namespace ETS.ui
         {
             this.components = new System.ComponentModel.Container();
             this.grdConfigs = new System.Windows.Forms.DataGridView();
+            this.orderTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderTypesDataSet = new ETS.datasets.OrderTypesDataSet();
+            this.selectSeriesConfigsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.seriesConfigDataSet = new ETS.datasets.SeriesConfigDataSet();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.orderTypesDataSet = new OrderTypesDataSet();
-            this.orderTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.orderTypeTableAdapter = new ETS.datasets.OrderTypesDataSetTableAdapters.OrderTypeTableAdapter();
-            this.selectSeriesConfigsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.seriesConfigDataSet = new SeriesConfigDataSet();
             this.selectSeriesConfigsTableAdapter = new ETS.datasets.SeriesConfigDataSetTableAdapters.SelectSeriesConfigsTableAdapter();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maxintDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.minintDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,8 +48,8 @@ namespace ETS.ui
             this.orderTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.edit_stim_set = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdConfigs)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderTypesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderTypeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderTypesDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectSeriesConfigsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seriesConfigDataSet)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +59,7 @@ namespace ETS.ui
             this.grdConfigs.AutoGenerateColumns = false;
             this.grdConfigs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdConfigs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
             this.maxintDataGridViewTextBoxColumn,
             this.id,
             this.minintDataGridViewTextBoxColumn,
@@ -68,10 +70,30 @@ namespace ETS.ui
             this.grdConfigs.DataSource = this.selectSeriesConfigsBindingSource;
             this.grdConfigs.Location = new System.Drawing.Point(12, 12);
             this.grdConfigs.Name = "grdConfigs";
-            this.grdConfigs.Size = new System.Drawing.Size(713, 272);
+            this.grdConfigs.Size = new System.Drawing.Size(753, 272);
             this.grdConfigs.TabIndex = 0;
             this.grdConfigs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdConfigs_CellClick);
             this.grdConfigs.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdConfigs_DataError);
+            // 
+            // orderTypeBindingSource
+            // 
+            this.orderTypeBindingSource.DataMember = "OrderType";
+            this.orderTypeBindingSource.DataSource = this.orderTypesDataSet;
+            // 
+            // orderTypesDataSet
+            // 
+            this.orderTypesDataSet.DataSetName = "OrderTypesDataSet";
+            this.orderTypesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // selectSeriesConfigsBindingSource
+            // 
+            this.selectSeriesConfigsBindingSource.DataMember = "SelectSeriesConfigs";
+            this.selectSeriesConfigsBindingSource.DataSource = this.seriesConfigDataSet;
+            // 
+            // seriesConfigDataSet
+            // 
+            this.seriesConfigDataSet.DataSetName = "SeriesConfigDataSet";
+            this.seriesConfigDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnSave
             // 
@@ -93,33 +115,19 @@ namespace ETS.ui
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // orderTypesDataSet
-            // 
-            this.orderTypesDataSet.DataSetName = "OrderTypesDataSet";
-            this.orderTypesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // orderTypeBindingSource
-            // 
-            this.orderTypeBindingSource.DataMember = "OrderType";
-            this.orderTypeBindingSource.DataSource = this.orderTypesDataSet;
-            // 
             // orderTypeTableAdapter
             // 
             this.orderTypeTableAdapter.ClearBeforeFill = true;
             // 
-            // selectSeriesConfigsBindingSource
-            // 
-            this.selectSeriesConfigsBindingSource.DataMember = "SelectSeriesConfigs";
-            this.selectSeriesConfigsBindingSource.DataSource = this.seriesConfigDataSet;
-            // 
-            // seriesConfigDataSet
-            // 
-            this.seriesConfigDataSet.DataSetName = "SeriesConfigDataSet";
-            this.seriesConfigDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // selectSeriesConfigsTableAdapter
             // 
             this.selectSeriesConfigsTableAdapter.ClearBeforeFill = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "name";
+            this.name.Name = "name";
             // 
             // maxintDataGridViewTextBoxColumn
             // 
@@ -175,7 +183,7 @@ namespace ETS.ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(737, 343);
+            this.ClientSize = new System.Drawing.Size(821, 343);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grdConfigs);
@@ -183,8 +191,8 @@ namespace ETS.ui
             this.Text = "EditSeriesConfigForm";
             this.Load += new System.EventHandler(this.EditSeriesConfigForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdConfigs)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.orderTypesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderTypeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.orderTypesDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectSeriesConfigsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seriesConfigDataSet)).EndInit();
             this.ResumeLayout(false);
@@ -202,6 +210,7 @@ namespace ETS.ui
         private OrderTypesDataSet orderTypesDataSet;
         private System.Windows.Forms.BindingSource orderTypeBindingSource;
         private ETS.datasets.OrderTypesDataSetTableAdapters.OrderTypeTableAdapter orderTypeTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn maxintDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn minintDataGridViewTextBoxColumn;

@@ -42,6 +42,7 @@ namespace ETS.ui
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.prob = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdStimuluses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusTypeDataSet)).BeginInit();
@@ -60,11 +61,12 @@ namespace ETS.ui
             this.grdStimuluses.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
             this.filenameDataGridViewTextBoxColumn,
-            this.typeDataGridViewTextBoxColumn});
+            this.typeDataGridViewTextBoxColumn,
+            this.prob});
             this.grdStimuluses.DataSource = this.selectStimulusesBindingSource;
             this.grdStimuluses.Location = new System.Drawing.Point(12, 12);
             this.grdStimuluses.Name = "grdStimuluses";
-            this.grdStimuluses.Size = new System.Drawing.Size(544, 213);
+            this.grdStimuluses.Size = new System.Drawing.Size(647, 213);
             this.grdStimuluses.TabIndex = 0;
             this.grdStimuluses.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStimuluses_CellClick);
             this.grdStimuluses.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdStimuluses_DataError);
@@ -149,11 +151,17 @@ namespace ETS.ui
             this.typeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.typeDataGridViewTextBoxColumn.ValueMember = "name";
             // 
+            // prob
+            // 
+            this.prob.DataPropertyName = "prob";
+            this.prob.HeaderText = "prob";
+            this.prob.Name = "prob";
+            // 
             // EditStimulusForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(569, 273);
+            this.ClientSize = new System.Drawing.Size(686, 273);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grdStimuluses);
@@ -186,5 +194,6 @@ namespace ETS.ui
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn filenameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn typeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn prob;
     }
 }
