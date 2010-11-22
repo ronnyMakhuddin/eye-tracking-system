@@ -1,4 +1,5 @@
-﻿namespace ETS.ui
+﻿using ETS.datasets;
+namespace ETS.ui
 {
     partial class EditSeriesConfigForm
     {
@@ -32,12 +33,12 @@
             this.grdConfigs = new System.Windows.Forms.DataGridView();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.orderTypesDataSet = new ETS.OrderTypesDataSet();
+            this.orderTypesDataSet = new OrderTypesDataSet();
             this.orderTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderTypeTableAdapter = new ETS.OrderTypesDataSetTableAdapters.OrderTypeTableAdapter();
+            this.orderTypeTableAdapter = new ETS.datasets.OrderTypesDataSetTableAdapters.OrderTypeTableAdapter();
             this.selectSeriesConfigsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.seriesConfigDataSet = new ETS.SeriesConfigDataSet();
-            this.selectSeriesConfigsTableAdapter = new ETS.SeriesConfigDataSetTableAdapters.SelectSeriesConfigsTableAdapter();
+            this.seriesConfigDataSet = new SeriesConfigDataSet();
+            this.selectSeriesConfigsTableAdapter = new ETS.datasets.SeriesConfigDataSetTableAdapters.SelectSeriesConfigsTableAdapter();
             this.maxintDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.minintDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -195,12 +196,12 @@
         private System.Windows.Forms.DataGridView grdConfigs;
         private SeriesConfigDataSet seriesConfigDataSet;
         private System.Windows.Forms.BindingSource selectSeriesConfigsBindingSource;
-        private ETS.SeriesConfigDataSetTableAdapters.SelectSeriesConfigsTableAdapter selectSeriesConfigsTableAdapter;
+        private ETS.datasets.SeriesConfigDataSetTableAdapters.SelectSeriesConfigsTableAdapter selectSeriesConfigsTableAdapter;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private OrderTypesDataSet orderTypesDataSet;
         private System.Windows.Forms.BindingSource orderTypeBindingSource;
-        private ETS.OrderTypesDataSetTableAdapters.OrderTypeTableAdapter orderTypeTableAdapter;
+        private ETS.datasets.OrderTypesDataSetTableAdapters.OrderTypeTableAdapter orderTypeTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn maxintDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn minintDataGridViewTextBoxColumn;

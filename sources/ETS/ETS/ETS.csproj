@@ -105,15 +105,20 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>StimulusTypeDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="OrderTypesDataSet.Designer.cs">
+    <Compile Include="datasets\OrderTypesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderTypesDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="SeriesConfigDataSet.Designer.cs">
+    <Compile Include="datasets\SeriesConfigDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>SeriesConfigDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="StimulusSetDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StimulusSetDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="tracker\CaptureManager.cs" />
     <Compile Include="tracker\Session.cs" />
@@ -249,6 +254,17 @@
     <None Include="datasets\StimulusTypeDataSet.xss">
       <DependentUpon>StimulusTypeDataSet.xsd</DependentUpon>
     </None>
+    <None Include="StimulusSetDataSet.xsc">
+      <DependentUpon>StimulusSetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="StimulusSetDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>StimulusSetDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="StimulusSetDataSet.xss">
+      <DependentUpon>StimulusSetDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resources\DB.mdf">
@@ -262,27 +278,27 @@
     <Content Include="lib\Emgu.CV.ML.dll" />
     <Content Include="lib\Emgu.CV.UI.dll" />
     <Content Include="lib\Emgu.Util.dll" />
-    <None Include="OrderTypesDataSet.xsc">
+    <None Include="datasets\OrderTypesDataSet.xsc">
       <DependentUpon>OrderTypesDataSet.xsd</DependentUpon>
     </None>
-    <None Include="OrderTypesDataSet.xsd">
+    <None Include="datasets\OrderTypesDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>OrderTypesDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="OrderTypesDataSet.xss">
+    <None Include="datasets\OrderTypesDataSet.xss">
       <DependentUpon>OrderTypesDataSet.xsd</DependentUpon>
     </None>
     <None Include="Resources\Icon.ico" />
-    <None Include="SeriesConfigDataSet.xsc">
+    <None Include="datasets\SeriesConfigDataSet.xsc">
       <DependentUpon>SeriesConfigDataSet.xsd</DependentUpon>
     </None>
-    <None Include="SeriesConfigDataSet.xsd">
+    <None Include="datasets\SeriesConfigDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>SeriesConfigDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="SeriesConfigDataSet.xss">
+    <None Include="datasets\SeriesConfigDataSet.xss">
       <DependentUpon>SeriesConfigDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
