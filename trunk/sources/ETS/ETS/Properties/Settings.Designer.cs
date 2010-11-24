@@ -76,17 +76,6 @@ namespace ETS.Properties {
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\Resources\\DB.mdf;Integr" +
             "ated Security=True;User Instance=True")]
-        public string DBConnectionString1 {
-            get {
-                return ((string)(this["DBConnectionString1"]));
-            }
-        }
-        
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\DB.mdf;Integrated Secur" +
-            "ity=True;User Instance=True")]
         public string DBConnectionString {
             get {
                 return ((string)(this["DBConnectionString"]));

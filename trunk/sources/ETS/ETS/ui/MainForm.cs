@@ -45,5 +45,11 @@ namespace ETS.ui
             EditSeriesConfigForm esc = new EditSeriesConfigForm();
             esc.Show();
         }
+
+        private void editSeriesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EditTrialsForm etf = new EditTrialsForm();
+            etf.ShowDialog();
+        }
     }
 }

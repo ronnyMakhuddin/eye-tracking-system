@@ -35,10 +35,11 @@
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miViewPatients = new System.Windows.Forms.ToolStripMenuItem();
             this.miEditStimuluses = new System.Windows.Forms.ToolStripMenuItem();
+            this.miEditSeriesConfigs = new System.Windows.Forms.ToolStripMenuItem();
+            this.editSeriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.newSelectCommandBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.stimulusTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.newSelectCommandBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.miEditSeriesConfigs = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newSelectCommandBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusTypeBindingSource)).BeginInit();
@@ -76,7 +77,8 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miViewPatients,
             this.miEditStimuluses,
-            this.miEditSeriesConfigs});
+            this.miEditSeriesConfigs,
+            this.editSeriesToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
@@ -95,6 +97,20 @@
             this.miEditStimuluses.Text = "Edit Stimuluses";
             this.miEditStimuluses.Click += new System.EventHandler(this.miEditStimuluses_Click);
             // 
+            // miEditSeriesConfigs
+            // 
+            this.miEditSeriesConfigs.Name = "miEditSeriesConfigs";
+            this.miEditSeriesConfigs.Size = new System.Drawing.Size(171, 22);
+            this.miEditSeriesConfigs.Text = "Edit Series Configs";
+            this.miEditSeriesConfigs.Click += new System.EventHandler(this.miEditSeriesConfigs_Click);
+            // 
+            // editSeriesToolStripMenuItem
+            // 
+            this.editSeriesToolStripMenuItem.Name = "editSeriesToolStripMenuItem";
+            this.editSeriesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
+            this.editSeriesToolStripMenuItem.Text = "Edit Trials";
+            this.editSeriesToolStripMenuItem.Click += new System.EventHandler(this.editSeriesToolStripMenuItem_Click);
+            // 
             // stimulusTypeBindingSource
             // 
             this.stimulusTypeBindingSource.DataMember = "StimulusType";
@@ -102,13 +118,6 @@
             // newSelectCommandBindingSource
             // 
             this.newSelectCommandBindingSource.DataMember = "NewSelectCommand";
-            // 
-            // miEditSeriesConfigs
-            // 
-            this.miEditSeriesConfigs.Name = "miEditSeriesConfigs";
-            this.miEditSeriesConfigs.Size = new System.Drawing.Size(171, 22);
-            this.miEditSeriesConfigs.Text = "Edit Series Configs";
-            this.miEditSeriesConfigs.Click += new System.EventHandler(this.miEditSeriesConfigs_Click);
             // 
             // MainForm
             // 
@@ -145,5 +154,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn filenameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn stTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem miEditSeriesConfigs;
+        private System.Windows.Forms.ToolStripMenuItem editSeriesToolStripMenuItem;
     }
 }
