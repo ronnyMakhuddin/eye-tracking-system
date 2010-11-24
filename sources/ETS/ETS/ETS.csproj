@@ -124,6 +124,11 @@
     <Compile Include="tracker\Session.cs" />
     <Compile Include="tracker\Template.cs" />
     <Compile Include="tracker\Trial.cs" />
+    <Compile Include="TrialsDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TrialsDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ui\AddTemplateForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +158,12 @@
     </Compile>
     <Compile Include="ui\EditStimulusSetForm.Designer.cs">
       <DependentUpon>EditStimulusSetForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\EditTrialsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\EditTrialsForm.Designer.cs">
+      <DependentUpon>EditTrialsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ui\MainForm.cs">
       <SubType>Form</SubType>
@@ -188,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ui\EditStimulusSetForm.resx">
       <DependentUpon>EditStimulusSetForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\EditTrialsForm.resx">
+      <DependentUpon>EditTrialsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ui\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -264,6 +278,17 @@
     </None>
     <None Include="StimulusSetDataSet.xss">
       <DependentUpon>StimulusSetDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TrialsDataSet.xsc">
+      <DependentUpon>TrialsDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TrialsDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TrialsDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TrialsDataSet.xss">
+      <DependentUpon>TrialsDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

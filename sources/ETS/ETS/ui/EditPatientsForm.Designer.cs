@@ -33,14 +33,14 @@ namespace ETS.ui
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.grdPatients = new System.Windows.Forms.DataGridView();
+            this.patientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patientsDataSet = new ETS.datasets.PatientsDataSet();
+            this.patientsTableAdapter = new ETS.datasets.PatientsDataSetTableAdapters.PatientsTableAdapter();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.middlenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dobDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mhnDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patientsDataSet = new ETS.datasets.PatientsDataSet();
-            this.patientsTableAdapter = new ETS.datasets.PatientsDataSetTableAdapters.PatientsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.grdPatients)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataSet)).BeginInit();
@@ -88,6 +88,20 @@ namespace ETS.ui
             this.grdPatients.TabIndex = 3;
             this.grdPatients.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdPatients_DataError);
             // 
+            // patientsBindingSource
+            // 
+            this.patientsBindingSource.DataMember = "Patients";
+            this.patientsBindingSource.DataSource = this.patientsDataSet;
+            // 
+            // patientsDataSet
+            // 
+            this.patientsDataSet.DataSetName = "PatientsDataSet";
+            this.patientsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // patientsTableAdapter
+            // 
+            this.patientsTableAdapter.ClearBeforeFill = true;
+            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -125,20 +139,6 @@ namespace ETS.ui
             this.mhnDataGridViewTextBoxColumn.HeaderText = "Medical History Number";
             this.mhnDataGridViewTextBoxColumn.MinimumWidth = 10;
             this.mhnDataGridViewTextBoxColumn.Name = "mhnDataGridViewTextBoxColumn";
-            // 
-            // patientsBindingSource
-            // 
-            this.patientsBindingSource.DataMember = "Patients";
-            this.patientsBindingSource.DataSource = this.patientsDataSet;
-            // 
-            // patientsDataSet
-            // 
-            this.patientsDataSet.DataSetName = "PatientsDataSet";
-            this.patientsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // patientsTableAdapter
-            // 
-            this.patientsTableAdapter.ClearBeforeFill = true;
             // 
             // EditPatientsForm
             // 
