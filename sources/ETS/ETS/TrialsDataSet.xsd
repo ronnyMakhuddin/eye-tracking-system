@@ -9,7 +9,7 @@
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SelectTrialsTableAdapter" GeneratorDataComponentClassName="SelectTrialsTableAdapter" Name="SelectTrials" UserDataComponentName="SelectTrialsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DBConnectionString (Settings)" DbObjectName="[C:\USERS\CAPTAIN\DESKTOP\ETS\SOURCES\ETS\ETS\RESOURCES\DB.MDF].dbo.SelectTrials" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DBConnectionString (Settings)" DbObjectName="[C:\USERS\YESWOLF\DESKTOP\ETS\SOURCES\ETS\ETS\RESOURCES\DB.MDF].dbo.SelectTrials" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.InsertTrial</CommandText>
@@ -38,6 +38,7 @@
               <Mapping SourceColumn="video_filename" DataSetColumn="video_filename" />
               <Mapping SourceColumn="name" DataSetColumn="name" />
               <Mapping SourceColumn="patient_name" DataSetColumn="patient_name" />
+              <Mapping SourceColumn="patient_id" DataSetColumn="patient_id" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -75,6 +76,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="patient_id" msprop:Generator_ColumnVarNameInTable="columnpatient_id" msprop:Generator_ColumnPropNameInRow="patient_id" msprop:Generator_ColumnPropNameInTable="patient_idColumn" msprop:Generator_UserColumnName="patient_id" type="xs:long" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
