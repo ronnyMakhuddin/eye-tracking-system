@@ -32,6 +32,7 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.miNewTrial = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miViewPatients = new System.Windows.Forms.ToolStripMenuItem();
             this.miEditStimuluses = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,7 +61,8 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miClose});
+            this.miClose,
+            this.miNewTrial});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -68,9 +70,16 @@
             // miClose
             // 
             this.miClose.Name = "miClose";
-            this.miClose.Size = new System.Drawing.Size(103, 22);
+            this.miClose.Size = new System.Drawing.Size(152, 22);
             this.miClose.Text = "Close";
             this.miClose.Click += new System.EventHandler(this.miClose_Click);
+            // 
+            // miNewTrial
+            // 
+            this.miNewTrial.Name = "miNewTrial";
+            this.miNewTrial.Size = new System.Drawing.Size(152, 22);
+            this.miNewTrial.Text = "Load Trial";
+            this.miNewTrial.Click += new System.EventHandler(this.miNewTrial_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -155,5 +164,6 @@
         private System.Windows.Forms.DataGridViewComboBoxColumn stTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripMenuItem miEditSeriesConfigs;
         private System.Windows.Forms.ToolStripMenuItem editSeriesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miNewTrial;
     }
 }

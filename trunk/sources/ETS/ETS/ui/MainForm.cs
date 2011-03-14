@@ -51,5 +51,11 @@ namespace ETS.ui
             EditTrialsForm etf = new EditTrialsForm();
             etf.ShowDialog();
         }
+
+        private void miNewTrial_Click(object sender, EventArgs e)
+        {
+            SelectTrialform stf = new SelectTrialform();
+            stf.Show();
+        }
     }
 }
