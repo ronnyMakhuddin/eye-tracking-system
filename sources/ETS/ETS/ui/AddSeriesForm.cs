@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using ETS.Properties;
 using ETS_Data;
+using ETS.tracker;
 
 namespace ETS.ui
 {
@@ -28,7 +29,7 @@ namespace ETS.ui
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            SqlUtils.InsertSeries(txtSeriesName.Text, ((DataRowView)cmbSeriesConfig.SelectedItem).Row["id"], Settings.Default.DBConnectionString);
+            SqlUtils.InsertSeries(txtSeriesName.Text, ((DataRowView)cmbSeriesConfig.SelectedItem).Row["id"],Session.Instance.CurrentTrial.Id, Settings.Default.DBConnectionString);
             Close();
         }
 

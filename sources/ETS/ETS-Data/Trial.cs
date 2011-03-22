@@ -91,5 +91,9 @@ namespace ETS_Data
         {
             Saved = true;
         }
+        public void Refresh()
+        {
+            Series = SqlUtils.SelectSeries(Id, Settings.Default.DBConnectionString);
+        }
     }
 }

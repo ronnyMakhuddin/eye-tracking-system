@@ -76,6 +76,8 @@ namespace ETS.ui
         {
             AddSeriesForm asf = new AddSeriesForm();
             asf.ShowDialog();
+            Session.Instance.CurrentTrial.Refresh();
+            LoadTrialsTreeView();
         }
     }
 }
