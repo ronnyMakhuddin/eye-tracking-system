@@ -10,7 +10,7 @@ namespace ETS_Data
 {
    public class SqlUtils
     {
-        public static void InsertSeries(string name, object id, string dbConnectionString)
+        public static void InsertSeries(string name, object seriesConfigId, int trialId, string dbConnectionString)
         {
             using (SqlConnection connection = new SqlConnection(dbConnectionString))
             {
@@ -23,7 +23,9 @@ namespace ETS_Data
                     SqlParameter param = insert.Parameters.Add("@name", SqlDbType.VarChar, 100);
                     param.Value = name;
                     SqlParameter param1 = insert.Parameters.Add("@seriesConfigId", SqlDbType.BigInt, 1);
-                    param1.Value = id;
+                    param1.Value = seriesConfigId;
+                    SqlParameter param2 = insert.Parameters.Add("@trialId", SqlDbType.BigInt, 1);
+                    param2.Value = trialId;
                     int rows = insert.ExecuteNonQuery();
                 }
             }
