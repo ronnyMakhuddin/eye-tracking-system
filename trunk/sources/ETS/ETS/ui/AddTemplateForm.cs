@@ -22,7 +22,7 @@ namespace ETS.ui
             this.width = width;
             this.height = height;
 
-            Session.Instance.CurrentTrial.AddTemplate(Template.Empty);
+         //   Session.Instance.CurrentTrial.AddTemplate(Template.Empty);
 
             sldRightX.Maximum = height;
             sldRightY.Maximum = height;
@@ -45,7 +45,7 @@ namespace ETS.ui
             Rectangle rect = new Rectangle(sldLeftX.Value, sldLeftY.Value, sldRightX.Value - sldLeftX.Value, sldRightY.Value - sldLeftY.Value);
             if (rect != Rectangle.Empty && rect.Width != 0 && rect.Height != 0)
             {
-                Session.Instance.CurrentTrial.SetLastTemplate(new Template(rect, CaptureManager.Instance.CurrentGrayFrame.Copy(rect)));
+           //     Session.Instance.CurrentTrial.SetLastTemplate(new Template(rect, CaptureManager.Instance.CurrentGrayFrame.Copy(rect)));
             }
             sldLeftX.Maximum = sldRightX.Value;
             sldLeftY.Maximum = sldRightY.Value;
@@ -76,14 +76,14 @@ namespace ETS.ui
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            Session.Instance.CurrentTrial.GetLastTemplate().Added = true;
-            Session.Instance.CurrentTrial.GetLastTemplate().Name = txtName.Text;
+        //    Session.Instance.CurrentTrial.GetLastTemplate().Added = true;
+         //   Session.Instance.CurrentTrial.GetLastTemplate().Name = txtName.Text;
             Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            Session.Instance.CurrentTrial.RemoveLastTemplate();
+         //   Session.Instance.CurrentTrial.RemoveLastTemplate();
         }
     }
 }

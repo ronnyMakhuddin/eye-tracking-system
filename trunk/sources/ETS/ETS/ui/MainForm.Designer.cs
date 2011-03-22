@@ -41,6 +41,7 @@
             this.newSelectCommandBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.stimulusTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.newSelectCommandBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.trwTrials = new System.Windows.Forms.TreeView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newSelectCommandBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusTypeBindingSource)).BeginInit();
@@ -128,11 +129,19 @@
             // 
             this.newSelectCommandBindingSource.DataMember = "NewSelectCommand";
             // 
+            // trwTrials
+            // 
+            this.trwTrials.Location = new System.Drawing.Point(13, 28);
+            this.trwTrials.Name = "trwTrials";
+            this.trwTrials.Size = new System.Drawing.Size(161, 233);
+            this.trwTrials.TabIndex = 1;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(749, 273);
+            this.Controls.Add(this.trwTrials);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
@@ -165,5 +174,6 @@
         private System.Windows.Forms.ToolStripMenuItem miEditSeriesConfigs;
         private System.Windows.Forms.ToolStripMenuItem editSeriesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miNewTrial;
+        private System.Windows.Forms.TreeView trwTrials;
     }
 }

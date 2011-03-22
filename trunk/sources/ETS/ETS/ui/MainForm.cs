@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using ETS.tracker;
+using ETS.controls;
 
 namespace ETS.ui
 {
@@ -55,7 +57,18 @@ namespace ETS.ui
         private void miNewTrial_Click(object sender, EventArgs e)
         {
             SelectTrialform stf = new SelectTrialform();
-            stf.Show();
+            stf.ShowDialog();
+            Session.Instance.CurrentTrial = stf.Result;
+            if (Session.Instance.CurrentTrial != null)
+            {
+                LoadTrialsTreeView();
+            }
+        }
+        public void LoadTrialsTreeView()
+        {
+            trwTrials.Nodes.Clear();
+            TrialTreeNode rootNode = new TrialTreeNode(Session.Instance.CurrentTrial);
+            trwTrials.Nodes.Add(rootNode);
         }
     }
 }
