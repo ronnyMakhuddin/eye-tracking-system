@@ -78,7 +78,7 @@
             this.cmbSeriesConfig.Name = "cmbSeriesConfig";
             this.cmbSeriesConfig.Size = new System.Drawing.Size(213, 21);
             this.cmbSeriesConfig.TabIndex = 3;
-            this.cmbSeriesConfig.ValueMember = "name";
+            this.cmbSeriesConfig.ValueMember = "id";
             // 
             // btnCancel
             // 

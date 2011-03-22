@@ -19,6 +19,10 @@ namespace ETS.controls
         public TrialTreeNode(Trial trial) : base(trial.Name)
         {
             this.Trial = trial;
+            foreach (Series s in Trial.Series)
+            {
+                Nodes.Add(new SeriesTreeNode(s));
+            }
         }
     }
 }

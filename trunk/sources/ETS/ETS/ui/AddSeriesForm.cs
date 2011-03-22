@@ -6,6 +6,9 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using ETS.Properties;
+using ETS_Data;
 
 namespace ETS.ui
 {
@@ -25,12 +28,13 @@ namespace ETS.ui
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-
+            SqlUtils.InsertSeries(txtSeriesName.Text, ((DataRowView)cmbSeriesConfig.SelectedItem).Row["id"], Settings.Default.DBConnectionString);
+            Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-
+            Close();
         }
     }
 }

@@ -5,6 +5,7 @@ using System.Text;
 using System.Data;
 using System.Windows.Forms;
 using System.Collections;
+using ETS_Data.Properties;
 
 namespace ETS_Data
 {
@@ -83,7 +84,7 @@ namespace ETS_Data
             result.Date = Convert.ToDateTime(dr.Cells["clmDate"].Value);
             result.Saved = true;
             //TODO : add series population
-            result.series = new ArrayList();
+            result.series = SqlUtils.SelectSeries(result.Id, Settings.Default.DBConnectionString);
             return result;
         }
         public void Save()
