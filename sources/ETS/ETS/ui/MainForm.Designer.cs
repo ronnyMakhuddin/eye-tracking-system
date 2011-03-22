@@ -33,6 +33,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miClose = new System.Windows.Forms.ToolStripMenuItem();
             this.miNewTrial = new System.Windows.Forms.ToolStripMenuItem();
+            this.miAddSeries = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miViewPatients = new System.Windows.Forms.ToolStripMenuItem();
             this.miEditStimuluses = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,8 +63,9 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.miClose,
-            this.miNewTrial});
+            this.miNewTrial,
+            this.miAddSeries,
+            this.miClose});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
@@ -81,6 +83,14 @@
             this.miNewTrial.Size = new System.Drawing.Size(152, 22);
             this.miNewTrial.Text = "Load Trial";
             this.miNewTrial.Click += new System.EventHandler(this.miNewTrial_Click);
+            // 
+            // miAddSeries
+            // 
+            this.miAddSeries.Name = "miAddSeries";
+            this.miAddSeries.Size = new System.Drawing.Size(152, 22);
+            this.miAddSeries.Text = "Add Series";
+            this.miAddSeries.Visible = false;
+            this.miAddSeries.Click += new System.EventHandler(this.miAddSeries_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -175,5 +185,6 @@
         private System.Windows.Forms.ToolStripMenuItem editSeriesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem miNewTrial;
         private System.Windows.Forms.TreeView trwTrials;
+        private System.Windows.Forms.ToolStripMenuItem miAddSeries;
     }
 }
