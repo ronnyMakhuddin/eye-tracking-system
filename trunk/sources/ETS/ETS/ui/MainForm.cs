@@ -69,6 +69,13 @@ namespace ETS.ui
             trwTrials.Nodes.Clear();
             TrialTreeNode rootNode = new TrialTreeNode(Session.Instance.CurrentTrial);
             trwTrials.Nodes.Add(rootNode);
+            miAddSeries.Visible = true;
+        }
+
+        private void miAddSeries_Click(object sender, EventArgs e)
+        {
+            AddSeriesForm asf = new AddSeriesForm();
+            asf.ShowDialog();
         }
     }
 }
