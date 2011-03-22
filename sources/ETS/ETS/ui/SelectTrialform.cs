@@ -13,6 +13,12 @@ namespace ETS.ui
     public partial class SelectTrialform : Form
     {
         private Trial result;
+
+        public Trial Result
+        {
+            get { return result; }
+            set { result = value; }
+        }
         public SelectTrialform()
         {
             InitializeComponent();

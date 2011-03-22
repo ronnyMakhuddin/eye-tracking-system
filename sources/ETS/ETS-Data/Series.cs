@@ -10,102 +10,29 @@ namespace ETS_Data
 {
     public class Series
     {
-        private ArrayList stimulusArray;
+        private string name;
+        private int seriesConfigId;
 
-        public ArrayList StimulusArray
+        public int SeriesConfigId
         {
-            get { return stimulusArray; }
-            set { stimulusArray = value; }
+            get { return seriesConfigId; }
+            set { seriesConfigId = value; }
         }
-        private long minIntervalBetweenStimulus;
+        private int id;
 
-        public long MinIntervalBetweenStimulus
+        public int Id
         {
-            get { return minIntervalBetweenStimulus; }
-            set { minIntervalBetweenStimulus = value; }
-        }
-        private long maxIntervalBetweenStmulus;
-
-        public long MaxIntervalBetweenStmulus
-        {
-            get { return maxIntervalBetweenStmulus; }
-            set { maxIntervalBetweenStmulus = value; }
-        }
-        private Order orderType;
-
-        public Order OrderType
-        {
-            get { return orderType; }
-            set { orderType = value; }
-        }
-        private string textBefore;
-
-        public string TextBefore
-        {
-            get { return textBefore; }
-            set { textBefore = value; }
-        }
-        private string textAfter;
-
-        public string TextAfter
-        {
-            get { return textAfter; }
-            set { textAfter = value; }
-        }
-        private ArrayList recordsArray;
-        [XmlArrayItem]
-        public ArrayList RecordsArray
-        {
-            get { return recordsArray; }
-            set { recordsArray = value; }
-        }
-        [XmlIgnore]
-        public ArrayList FramesArray
-        {
-            get { return null; }
-            
+            get { return id; }
+            set { id = value; }
         }
 
-        private int frameBeforeLength;
-
-        public int FrameBeforeLength
+        public string Name
         {
-            get { return frameBeforeLength; }
-            set { frameBeforeLength = value; }
-        }
-        private int frameAfterLength;
-
-        public int FrameAfterLength
-        {
-            get { return frameAfterLength; }
-            set { frameAfterLength = value; }
+            get { return name; }
+            set { name = value; }
         }
 
-        private string videoFileName;
-
-        public string VideoFileName
-        {
-            get { return videoFileName; }
-            set { videoFileName = value; }
-        }
-        public Series()
-        {
-            StimulusArray = new ArrayList();
-            MinIntervalBetweenStimulus = 0L;
-            MaxIntervalBetweenStmulus = 0L;
-            OrderType = Order.Fixed;
-            TextAfter = string.Empty;
-            TextBefore = string.Empty;
-            RecordsArray = new ArrayList();
-        }
-        public void Save(string filename)
-        {
-            using (Stream stream = File.Open(filename, FileMode.OpenOrCreate))
-            {
-                XmlSerializer formatter = new XmlSerializer(typeof(Series));
-                formatter.Serialize(stream, this);
-            }
-        }
+        
 
     }
 }

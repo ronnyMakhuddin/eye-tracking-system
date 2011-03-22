@@ -21,10 +21,10 @@
       <FileName>Protocol.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ETS_Data.Series" Collapsed="true">
+  <Class Name="ETS_Data.Series">
     <Position X="2.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>oAAAwAAAAAAIAgAAAgAAgAIgACAgIAAAIAgABKACAEQ=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAEAEAAAABAAAAAAgA=</HashCode>
       <FileName>Series.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -40,6 +40,13 @@
     <TypeIdentifier>
       <HashCode>AAACAQAAAAAAAAAAAAAAAAAAACAAIIIgAACAAAAAAAE=</HashCode>
       <FileName>SeriesFrame.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ETS_Data.SeriesConfig">
+    <Position X="1" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAgCAAAAEAAAAAAAAAAAAAQAAAAkAAAAICAQAIAoAgA=</HashCode>
+      <FileName>SeriesConfig.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Enum Name="ETS_Data.Order" Collapsed="true">

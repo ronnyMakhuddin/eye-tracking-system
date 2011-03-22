@@ -149,10 +149,10 @@ namespace ETS.tracker
         public void DrawTemplates()
         {
             if (Session.Instance.CurrentTrial == null) return;
-            foreach (Template r in Session.Instance.CurrentTrial.Templates)
+           /* foreach (Template r in Session.Instance.CurrentTrial.Templates)
             {
                 CurrentFrame.Draw(r.Rect, new Bgr(0.0, 0.0, 255.0), 1);
-            }
+            }*/
         }
 
         public void ProcessFrame()
@@ -183,7 +183,7 @@ namespace ETS.tracker
         {
             if (Session.Instance.CurrentTrial == null) return null;
             ArrayList result = new ArrayList();
-            foreach (Template r in Session.Instance.CurrentTrial.Templates)
+          /*  foreach (Template r in Session.Instance.CurrentTrial.Templates)
             {
                 Rectangle current = r.QueryCoordinate(image);
                 result.Add(current);
@@ -192,7 +192,7 @@ namespace ETS.tracker
                     r.Coords.Add(current);
                     Session.Instance.CurrentTrial.Modified = true;
                 }
-            }
+            }*/
             return result;
         }
 
