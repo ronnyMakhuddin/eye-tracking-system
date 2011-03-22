@@ -102,6 +102,7 @@
     <Compile Include="controls\AdvancedSlider.Designer.cs">
       <DependentUpon>AdvancedSlider.cs</DependentUpon>
     </Compile>
+    <Compile Include="controls\SeriesTreeNode.cs" />
     <Compile Include="controls\TrialTreeNode.cs" />
     <Compile Include="datasets\PatientsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
