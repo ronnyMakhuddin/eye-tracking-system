@@ -58,7 +58,9 @@ namespace ETS.ui
                 else if (e.ColumnIndex == EDIT_STIMULUS_ORDER)
                 { 
                     string str = (string)grdConfigs["stimulusOrder", e.RowIndex].Value;
-                    EditStimulusOrderForm esof = new EditStimulusOrderForm(str);
+                    long interval = (long)grdConfigs["maxInt", e.RowIndex].Value;
+                 
+                    EditStimulusOrderForm esof = new EditStimulusOrderForm(str, interval);
                     if (esof.ShowDialog() == DialogResult.OK)
                     {
                         grdConfigs["stimulusOrder", e.RowIndex].Value = esof.Result;

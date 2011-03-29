@@ -42,7 +42,7 @@ namespace ETS.ui
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.length = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stimulusOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maxintDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.maxInt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.minintDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textbeforeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +65,7 @@ namespace ETS.ui
             this.name,
             this.length,
             this.stimulusOrder,
-            this.maxintDataGridViewTextBoxColumn,
+            this.maxInt,
             this.id,
             this.minintDataGridViewTextBoxColumn,
             this.textbeforeDataGridViewTextBoxColumn,
@@ -76,7 +76,7 @@ namespace ETS.ui
             this.grdConfigs.DataSource = this.selectSeriesConfigsBindingSource;
             this.grdConfigs.Location = new System.Drawing.Point(12, 12);
             this.grdConfigs.Name = "grdConfigs";
-            this.grdConfigs.Size = new System.Drawing.Size(1053, 272);
+            this.grdConfigs.Size = new System.Drawing.Size(846, 272);
             this.grdConfigs.TabIndex = 0;
             this.grdConfigs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdConfigs_CellClick);
             this.grdConfigs.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdConfigs_DataError);
@@ -140,18 +140,20 @@ namespace ETS.ui
             this.length.DataPropertyName = "length";
             this.length.HeaderText = "length";
             this.length.Name = "length";
+            this.length.Visible = false;
             // 
             // stimulusOrder
             // 
             this.stimulusOrder.DataPropertyName = "stimulusOrder";
             this.stimulusOrder.HeaderText = "stimulusOrder";
             this.stimulusOrder.Name = "stimulusOrder";
+            this.stimulusOrder.Visible = false;
             // 
-            // maxintDataGridViewTextBoxColumn
+            // maxInt
             // 
-            this.maxintDataGridViewTextBoxColumn.DataPropertyName = "max_int";
-            this.maxintDataGridViewTextBoxColumn.HeaderText = "Max Interval";
-            this.maxintDataGridViewTextBoxColumn.Name = "maxintDataGridViewTextBoxColumn";
+            this.maxInt.DataPropertyName = "max_int";
+            this.maxInt.HeaderText = "Max Interval";
+            this.maxInt.Name = "maxInt";
             // 
             // id
             // 
@@ -192,7 +194,7 @@ namespace ETS.ui
             // 
             // edit_stim_set
             // 
-            this.edit_stim_set.HeaderText = "Edit Stimulus Set";
+            this.edit_stim_set.HeaderText = "Stimulus Set";
             this.edit_stim_set.Name = "edit_stim_set";
             this.edit_stim_set.Text = "Edit";
             this.edit_stim_set.UseColumnTextForButtonValue = true;
@@ -201,12 +203,14 @@ namespace ETS.ui
             // 
             this.clmStimulusOrder.HeaderText = "Stimulus Order";
             this.clmStimulusOrder.Name = "clmStimulusOrder";
+            this.clmStimulusOrder.Text = "Edit";
+            this.clmStimulusOrder.UseColumnTextForButtonValue = true;
             // 
             // EditSeriesConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1077, 343);
+            this.ClientSize = new System.Drawing.Size(866, 343);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grdConfigs);
@@ -236,7 +240,7 @@ namespace ETS.ui
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn length;
         private System.Windows.Forms.DataGridViewTextBoxColumn stimulusOrder;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maxintDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maxInt;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn minintDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn textbeforeDataGridViewTextBoxColumn;
