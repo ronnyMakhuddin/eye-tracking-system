@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Collections;
 
 namespace ETS_Data
 {
@@ -56,5 +57,24 @@ namespace ETS_Data
             get { return name; }
             set { name = value; }
         }
+
+        private ArrayList stimulusSet;
+
+        public ArrayList StimulusSet
+        {
+            get { return stimulusSet; }
+            set { stimulusSet = value; }
+        }
+
+        private ArrayList stimulusOrder;
+
+        public ArrayList StimulusOrder
+        {
+            get { return stimulusOrder; }
+            set { stimulusOrder = value; }
+        }
+
+       
+        
     }
 }

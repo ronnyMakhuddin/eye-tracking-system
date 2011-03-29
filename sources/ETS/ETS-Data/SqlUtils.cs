@@ -51,7 +51,8 @@ namespace ETS_Data
                         {
                             Series s = new Series();
                             s.Id = reader.GetInt64(0);
-                            s.SeriesConfigId = reader.GetInt64(1);
+                            long seriesConfigId = reader.GetInt64(1);
+                            s.Config = SelectSeriesConfig(seriesConfigId, dbConnectionString);
                             s.Name = reader.GetString(2);
                             result.Add(s);
                         }
@@ -61,6 +62,34 @@ namespace ETS_Data
             }
             return result;
         }
-     
+        public static SeriesConfig SelectSeriesConfig(long id, string dbConnectionString)
+        {
+            SeriesConfig c = new SeriesConfig();
+            using (SqlConnection connection = new SqlConnection(dbConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand select = new SqlCommand())
+                {
+                    select.CommandType = CommandType.StoredProcedure;
+                    select.CommandText = "SelectSeriesConfigForId";
+                    select.Connection = connection;
+
+                    SqlParameter param = select.Parameters.Add("@id", SqlDbType.BigInt, 1);
+                    param.Value = id;
+
+                    using (SqlDataReader reader = select.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                           long i =  reader.GetInt64(0);
+                            //TODO : add series config population
+                        }
+                    }
+
+                }
+            }
+            
+            return c;
+        }
     }
 }

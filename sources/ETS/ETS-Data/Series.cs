@@ -11,14 +11,15 @@ namespace ETS_Data
     public class Series
     {
         private string name;
-        private long seriesConfigId;
-
-        public long SeriesConfigId
-        {
-            get { return seriesConfigId; }
-            set { seriesConfigId = value; }
-        }
         private long id;
+
+        private SeriesConfig config;
+
+        public SeriesConfig Config
+        {
+            get { return config; }
+            set { config = value; }
+        }
 
         public long Id
         {
