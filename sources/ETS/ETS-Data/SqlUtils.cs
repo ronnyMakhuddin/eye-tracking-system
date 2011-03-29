@@ -81,8 +81,33 @@ namespace ETS_Data
                     {
                         while (reader.Read())
                         {
-                           long i =  reader.GetInt64(0);
+                           //long i =  reader.GetInt64(0);
                             //TODO : add series config population
+                            /*
+                              SeriesConfig.id, 
+	SeriesConfig.max_int, 
+	SeriesConfig.min_int, 
+	SeriesConfig.text_before, 
+	SeriesConfig.text_after,  
+	SeriesConfig.order_type_id, 
+	SeriesConfig.name, 
+	SeriesConfig.length, 
+	SeriesConfig.stimulusOrder
+                             */
+                            c.Id = reader.GetInt64(0);
+                            c.MaxInt = reader.GetInt64(1);
+                            c.MinInt = reader.GetInt64(2);
+                            c.TextBefore = reader.GetString(3);
+                            c.TextAfter = reader.GetString(4);
+                            c.OrderTypeId = reader.GetInt64(5);
+                            c.Name = reader.GetString(6);
+                            string order = reader.GetString(8);
+                            string[] strIds = order.Split(',');
+                            c.StimulusOrder = new ArrayList();
+                            for (int i = 0; i < strIds.Length; i++)
+                            {
+                                c.StimulusOrder.Add(long.Parse(strIds[i]));
+                            }
                         }
                     }
 
