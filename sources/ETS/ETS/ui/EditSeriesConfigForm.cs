@@ -11,6 +11,8 @@ namespace ETS.ui
 {
     public partial class EditSeriesConfigForm : Form
     {
+        private const int EDIT_STIMULUS_SET = 9;
+        private const int EDIT_STIMULUS_ORDER = 10;
         public EditSeriesConfigForm()
         {
             InitializeComponent();
@@ -47,9 +49,22 @@ namespace ETS.ui
             DataGridViewCell c = grdConfigs[e.ColumnIndex, e.RowIndex];
             if (c is DataGridViewButtonCell)
             {
-                Int64 id = (Int64)grdConfigs[1,e.RowIndex].Value;
-                EditStimulusSetForm essf = new EditStimulusSetForm(id);
-                essf.Show();
+                if (e.ColumnIndex == EDIT_STIMULUS_SET)
+                {
+                    Int64 id = (Int64)grdConfigs[1, e.RowIndex].Value;
+                    EditStimulusSetForm essf = new EditStimulusSetForm(id);
+                    essf.Show();
+                }
+                else if (e.ColumnIndex == EDIT_STIMULUS_ORDER)
+                { 
+                    string str = (string)grdConfigs["stimulusOrder", e.RowIndex].Value;
+                    EditStimulusOrderForm esof = new EditStimulusOrderForm(str);
+                    if (esof.ShowDialog() == DialogResult.OK)
+                    {
+                        grdConfigs["stimulusOrder", e.RowIndex].Value = esof.Result;
+                    }
+                    
+                }
             }
         }
     }

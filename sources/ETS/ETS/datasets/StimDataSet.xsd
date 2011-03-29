@@ -65,6 +65,7 @@
               <Mapping SourceColumn="filename" DataSetColumn="filename" />
               <Mapping SourceColumn="type" DataSetColumn="type" />
               <Mapping SourceColumn="prob" DataSetColumn="prob" />
+              <Mapping SourceColumn="id" DataSetColumn="id" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -79,7 +80,7 @@
         <xs:element name="SelectStimuluses" msprop:Generator_TableClassName="SelectStimulusesDataTable" msprop:Generator_TableVarName="tableSelectStimuluses" msprop:Generator_TablePropName="SelectStimuluses" msprop:Generator_RowDeletingName="SelectStimulusesRowDeleting" msprop:Generator_UserTableName="SelectStimuluses" msprop:Generator_RowChangingName="SelectStimulusesRowChanging" msprop:Generator_RowEvHandlerName="SelectStimulusesRowChangeEventHandler" msprop:Generator_RowDeletedName="SelectStimulusesRowDeleted" msprop:Generator_RowEvArgName="SelectStimulusesRowChangeEvent" msprop:Generator_RowChangedName="SelectStimulusesRowChanged" msprop:Generator_RowClassName="SelectStimulusesRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name">
+              <xs:element name="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnPropNameInTable="nameColumn" msprop:Generator_UserColumnName="name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="100" />
@@ -101,10 +102,15 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="prob" msprop:Generator_ColumnVarNameInTable="columnprob" msprop:Generator_ColumnPropNameInRow="prob" msprop:Generator_ColumnPropNameInTable="probColumn" msprop:Generator_UserColumnName="prob" type="xs:double" />
+              <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:long" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>
     </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:SelectStimuluses" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
   </xs:element>
 </xs:schema>

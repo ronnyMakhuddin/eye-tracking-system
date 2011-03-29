@@ -76,7 +76,7 @@ namespace ETS.ui
             this.grdConfigs.DataSource = this.selectSeriesConfigsBindingSource;
             this.grdConfigs.Location = new System.Drawing.Point(12, 12);
             this.grdConfigs.Name = "grdConfigs";
-            this.grdConfigs.Size = new System.Drawing.Size(843, 272);
+            this.grdConfigs.Size = new System.Drawing.Size(1053, 272);
             this.grdConfigs.TabIndex = 0;
             this.grdConfigs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdConfigs_CellClick);
             this.grdConfigs.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdConfigs_DataError);
@@ -206,7 +206,7 @@ namespace ETS.ui
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(937, 343);
+            this.ClientSize = new System.Drawing.Size(1077, 343);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grdConfigs);
