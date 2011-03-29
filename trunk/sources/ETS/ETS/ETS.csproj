@@ -176,6 +176,12 @@
     <Compile Include="ui\EditStimulusForm.Designer.cs">
       <DependentUpon>EditStimulusForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ui\EditStimulusOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\EditStimulusOrderForm.Designer.cs">
+      <DependentUpon>EditStimulusOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ui\EditStimulusSetForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ui\EditStimulusForm.resx">
       <DependentUpon>EditStimulusForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\EditStimulusOrderForm.resx">
+      <DependentUpon>EditStimulusOrderForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ui\EditStimulusSetForm.resx">
       <DependentUpon>EditStimulusSetForm.cs</DependentUpon>

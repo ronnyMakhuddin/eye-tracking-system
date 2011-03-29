@@ -287,6 +287,8 @@ namespace ETS.datasets {
             
             private global::System.Data.DataColumn columnprob;
             
+            private global::System.Data.DataColumn columnid;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public SelectStimulusesDataTable() {
@@ -354,6 +356,14 @@ namespace ETS.datasets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn idColumn {
+                get {
+                    return this.columnid;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -395,10 +405,18 @@ namespace ETS.datasets {
                         name,
                         filename,
                         type,
-                        prob};
+                        prob,
+                        null};
                 rowSelectStimulusesRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSelectStimulusesRow);
                 return rowSelectStimulusesRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public SelectStimulusesRow FindByid(long id) {
+                return ((SelectStimulusesRow)(this.Rows.Find(new object[] {
+                            id})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -422,6 +440,7 @@ namespace ETS.datasets {
                 this.columnfilename = base.Columns["filename"];
                 this.columntype = base.Columns["type"];
                 this.columnprob = base.Columns["prob"];
+                this.columnid = base.Columns["id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -435,13 +454,22 @@ namespace ETS.datasets {
                 base.Columns.Add(this.columntype);
                 this.columnprob = new global::System.Data.DataColumn("prob", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnprob);
-                this.columnname.AllowDBNull = false;
+                this.columnid = new global::System.Data.DataColumn("id", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnid}, true));
                 this.columnname.MaxLength = 100;
                 this.columnfilename.AllowDBNull = false;
                 this.columnfilename.MaxLength = 500;
                 this.columntype.AllowDBNull = false;
                 this.columntype.MaxLength = 100;
                 this.columnprob.AllowDBNull = false;
+                this.columnid.AutoIncrement = true;
+                this.columnid.AutoIncrementSeed = -1;
+                this.columnid.AutoIncrementStep = -1;
+                this.columnid.AllowDBNull = false;
+                this.columnid.ReadOnly = true;
+                this.columnid.Unique = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -586,7 +614,12 @@ namespace ETS.datasets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string name {
                 get {
-                    return ((string)(this[this.tableSelectStimuluses.nameColumn]));
+                    try {
+                        return ((string)(this[this.tableSelectStimuluses.nameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'name\' in table \'SelectStimuluses\' is DBNull.", e);
+                    }
                 }
                 set {
                     this[this.tableSelectStimuluses.nameColumn] = value;
@@ -624,6 +657,29 @@ namespace ETS.datasets {
                 set {
                     this[this.tableSelectStimuluses.probColumn] = value;
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public long id {
+                get {
+                    return ((long)(this[this.tableSelectStimuluses.idColumn]));
+                }
+                set {
+                    this[this.tableSelectStimuluses.idColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsnameNull() {
+                return this.IsNull(this.tableSelectStimuluses.nameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetnameNull() {
+                this[this.tableSelectStimuluses.nameColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -790,6 +846,7 @@ namespace ETS.datasets.StimDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("filename", "filename");
             tableMapping.ColumnMappings.Add("type", "type");
             tableMapping.ColumnMappings.Add("prob", "prob");
+            tableMapping.ColumnMappings.Add("id", "id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
