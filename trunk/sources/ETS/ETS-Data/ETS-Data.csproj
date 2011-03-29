@@ -48,6 +48,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="SeriesConfig.cs" />
     <Compile Include="SqlUtils.cs" />
     <Compile Include="Trial.cs" />
     <Compile Include="Direction.cs" />

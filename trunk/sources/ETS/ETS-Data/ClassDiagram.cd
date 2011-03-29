@@ -24,7 +24,7 @@
   <Class Name="ETS_Data.Series">
     <Position X="2.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAEAEAAAABAAAAAAgA=</HashCode>
+      <HashCode>AAACAAAAAgAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAgA=</HashCode>
       <FileName>Series.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -45,7 +45,7 @@
   <Class Name="ETS_Data.SeriesConfig">
     <Position X="1" Y="2.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>gAgCAAAAEAAAAAAAAAAAAAQAAAAkAAAAICAQAIAoAgA=</HashCode>
+      <HashCode>gAgCAAAAEAQAAAgEAAAIAAQAAAAkAAAAICAQAIAoAgA=</HashCode>
       <FileName>SeriesConfig.cs</FileName>
     </TypeIdentifier>
   </Class>

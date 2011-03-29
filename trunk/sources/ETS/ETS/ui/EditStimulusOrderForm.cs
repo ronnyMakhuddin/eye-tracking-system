@@ -89,8 +89,6 @@ namespace ETS.ui
                     Result += ",";
                 }
             }
-
-
             Close();
         }
 
