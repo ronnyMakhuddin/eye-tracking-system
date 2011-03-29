@@ -40,6 +40,8 @@ namespace ETS.ui
             this.orderTypeTableAdapter = new ETS.datasets.OrderTypesDataSetTableAdapters.OrderTypeTableAdapter();
             this.selectSeriesConfigsTableAdapter = new ETS.datasets.SeriesConfigDataSetTableAdapters.SelectSeriesConfigsTableAdapter();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.length = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stimulusOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.maxintDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.minintDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,6 +49,7 @@ namespace ETS.ui
             this.textafterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.edit_stim_set = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clmStimulusOrder = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdConfigs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderTypesDataSet)).BeginInit();
@@ -60,17 +63,20 @@ namespace ETS.ui
             this.grdConfigs.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdConfigs.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
+            this.length,
+            this.stimulusOrder,
             this.maxintDataGridViewTextBoxColumn,
             this.id,
             this.minintDataGridViewTextBoxColumn,
             this.textbeforeDataGridViewTextBoxColumn,
             this.textafterDataGridViewTextBoxColumn,
             this.orderTypeDataGridViewTextBoxColumn,
-            this.edit_stim_set});
+            this.edit_stim_set,
+            this.clmStimulusOrder});
             this.grdConfigs.DataSource = this.selectSeriesConfigsBindingSource;
             this.grdConfigs.Location = new System.Drawing.Point(12, 12);
             this.grdConfigs.Name = "grdConfigs";
-            this.grdConfigs.Size = new System.Drawing.Size(753, 272);
+            this.grdConfigs.Size = new System.Drawing.Size(843, 272);
             this.grdConfigs.TabIndex = 0;
             this.grdConfigs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdConfigs_CellClick);
             this.grdConfigs.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdConfigs_DataError);
@@ -126,13 +132,25 @@ namespace ETS.ui
             // name
             // 
             this.name.DataPropertyName = "name";
-            this.name.HeaderText = "name";
+            this.name.HeaderText = "Name";
             this.name.Name = "name";
+            // 
+            // length
+            // 
+            this.length.DataPropertyName = "length";
+            this.length.HeaderText = "length";
+            this.length.Name = "length";
+            // 
+            // stimulusOrder
+            // 
+            this.stimulusOrder.DataPropertyName = "stimulusOrder";
+            this.stimulusOrder.HeaderText = "stimulusOrder";
+            this.stimulusOrder.Name = "stimulusOrder";
             // 
             // maxintDataGridViewTextBoxColumn
             // 
             this.maxintDataGridViewTextBoxColumn.DataPropertyName = "max_int";
-            this.maxintDataGridViewTextBoxColumn.HeaderText = "max_int";
+            this.maxintDataGridViewTextBoxColumn.HeaderText = "Max Interval";
             this.maxintDataGridViewTextBoxColumn.Name = "maxintDataGridViewTextBoxColumn";
             // 
             // id
@@ -146,19 +164,19 @@ namespace ETS.ui
             // minintDataGridViewTextBoxColumn
             // 
             this.minintDataGridViewTextBoxColumn.DataPropertyName = "min_int";
-            this.minintDataGridViewTextBoxColumn.HeaderText = "min_int";
+            this.minintDataGridViewTextBoxColumn.HeaderText = "Min Interval";
             this.minintDataGridViewTextBoxColumn.Name = "minintDataGridViewTextBoxColumn";
             // 
             // textbeforeDataGridViewTextBoxColumn
             // 
             this.textbeforeDataGridViewTextBoxColumn.DataPropertyName = "text_before";
-            this.textbeforeDataGridViewTextBoxColumn.HeaderText = "text_before";
+            this.textbeforeDataGridViewTextBoxColumn.HeaderText = "Text Before Series";
             this.textbeforeDataGridViewTextBoxColumn.Name = "textbeforeDataGridViewTextBoxColumn";
             // 
             // textafterDataGridViewTextBoxColumn
             // 
             this.textafterDataGridViewTextBoxColumn.DataPropertyName = "text_after";
-            this.textafterDataGridViewTextBoxColumn.HeaderText = "text_after";
+            this.textafterDataGridViewTextBoxColumn.HeaderText = "Text After Serries";
             this.textafterDataGridViewTextBoxColumn.Name = "textafterDataGridViewTextBoxColumn";
             // 
             // orderTypeDataGridViewTextBoxColumn
@@ -166,7 +184,7 @@ namespace ETS.ui
             this.orderTypeDataGridViewTextBoxColumn.DataPropertyName = "orderType";
             this.orderTypeDataGridViewTextBoxColumn.DataSource = this.orderTypeBindingSource;
             this.orderTypeDataGridViewTextBoxColumn.DisplayMember = "name";
-            this.orderTypeDataGridViewTextBoxColumn.HeaderText = "orderType";
+            this.orderTypeDataGridViewTextBoxColumn.HeaderText = "Order Type";
             this.orderTypeDataGridViewTextBoxColumn.Name = "orderTypeDataGridViewTextBoxColumn";
             this.orderTypeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.orderTypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -179,11 +197,16 @@ namespace ETS.ui
             this.edit_stim_set.Text = "Edit";
             this.edit_stim_set.UseColumnTextForButtonValue = true;
             // 
+            // clmStimulusOrder
+            // 
+            this.clmStimulusOrder.HeaderText = "Stimulus Order";
+            this.clmStimulusOrder.Name = "clmStimulusOrder";
+            // 
             // EditSeriesConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(821, 343);
+            this.ClientSize = new System.Drawing.Size(937, 343);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grdConfigs);
@@ -211,6 +234,8 @@ namespace ETS.ui
         private System.Windows.Forms.BindingSource orderTypeBindingSource;
         private ETS.datasets.OrderTypesDataSetTableAdapters.OrderTypeTableAdapter orderTypeTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn length;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stimulusOrder;
         private System.Windows.Forms.DataGridViewTextBoxColumn maxintDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn minintDataGridViewTextBoxColumn;
@@ -218,5 +243,6 @@ namespace ETS.ui
         private System.Windows.Forms.DataGridViewTextBoxColumn textafterDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn orderTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn edit_stim_set;
+        private System.Windows.Forms.DataGridViewButtonColumn clmStimulusOrder;
     }
 }

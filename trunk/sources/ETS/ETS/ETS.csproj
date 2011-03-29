@@ -109,6 +109,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PatientsDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="datasets\SeriesConfigDataSet.cs">
+      <DependentUpon>SeriesConfigDataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="datasets\SeriesConfigDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SeriesConfigDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="datasets\StimDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -123,11 +132,6 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderTypesDataSet.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="datasets\SeriesConfigDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SeriesConfigDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="StimulusSetDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -341,8 +345,8 @@
     </None>
     <None Include="datasets\SeriesConfigDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>SeriesConfigDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>SeriesConfigDataSet.Designer.cs</LastGenOutput>
     </None>
     <None Include="datasets\SeriesConfigDataSet.xss">
       <DependentUpon>SeriesConfigDataSet.xsd</DependentUpon>
