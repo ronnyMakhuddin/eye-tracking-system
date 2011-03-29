@@ -8,30 +8,30 @@ namespace ETS_Data
 {
     public class SeriesConfig
     {
-        private int id;
+        private long id;
 
-        public int Id
+        public long Id
         {
             get { return id; }
             set { id = value; }
         }
-        private int maxInt;
+        private long maxInt;
 
-        public int MaxInt
+        public long MaxInt
         {
             get { return maxInt; }
             set { maxInt = value; }
         }
-        private int minInt;
+        private long minInt;
 
-        public int MinInt
+        public long MinInt
         {
             get { return minInt; }
             set { minInt = value; }
         }
-        private int orderTypeId;
+        private long orderTypeId;
 
-        public int OrderTypeId
+        public long OrderTypeId
         {
             get { return orderTypeId; }
             set { orderTypeId = value; }
