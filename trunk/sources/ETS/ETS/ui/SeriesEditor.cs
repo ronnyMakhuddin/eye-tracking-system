@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ETS.tracker;
 
 namespace ETS.ui
 {
@@ -16,11 +17,44 @@ namespace ETS.ui
         public SeriesEditor()
         {
             InitializeComponent();
+            CaptureManager capture = CaptureManager.Instance;
+            if (!capture.Inited)
+            {
+                capture.OnErrorInit +=new CaptureManager.InitErrorEventHandler(capture_OnErrorInit);
+                capture.OnFinishInit+=new CaptureManager.FinishInitEventHandler(capture_OnFinishInit);
+                capture.OnImageQuery+=new CaptureManager.ImageEventHandler(capture_OnImageQuery);
+                capture.OnStartInit+=new CaptureManager.StartInitEventHandler(capture_OnStartInit);
+            }
+            capture.CameraWidth = 320;
+            capture.CameraHeight = 240;
+            capture.Init();
+            capture.StartCapture();
         }
 
-        public SeriesEditor(ETS_Data.Series series):base()
+      
+       
+
+        void capture_OnImageQuery(Emgu.CV.Image<Emgu.CV.Structure.Bgr, Byte> image)
         {
-            this.series = series;
+            if (image != null)
+            {
+                pbxCapture.Image = image;
+            }
+        }
+
+        void capture_OnErrorInit(Exception e)
+        {
+              
+        }
+
+        void capture_OnFinishInit()
+        {
+         
+        }
+
+        void capture_OnStartInit()
+        {
+          
         }
     }
 }

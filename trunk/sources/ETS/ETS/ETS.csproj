@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ETS</RootNamespace>
     <AssemblyName>ETS</AssemblyName>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -38,7 +38,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>..\bin\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -47,7 +47,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\bin\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -73,27 +73,7 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="Emgu.CV.DebuggerVisualizers, Version=2.1.0.793, Culture=neutral, PublicKeyToken=7281126722ab4438">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\Emgu.CV.DebuggerVisualizers.dll</HintPath>
-    </Reference>
     <Reference Include="System.Configuration" />
-    <Reference Include="Emgu.CV.ML, Version=2.1.0.793, Culture=neutral, PublicKeyToken=7281126722ab4438">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\Emgu.CV.ML.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.CV, Version=2.1.0.793, Culture=neutral, PublicKeyToken=7281126722ab4438">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\Emgu.CV.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.Util, Version=2.1.0.793, Culture=neutral, PublicKeyToken=7281126722ab4438">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\Emgu.Util.dll</HintPath>
-    </Reference>
-    <Reference Include="Emgu.CV.UI, Version=2.1.0.793, Culture=neutral, PublicKeyToken=7281126722ab4438">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>lib\Emgu.CV.UI.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="controls\AdvancedSlider.cs">
@@ -335,6 +315,45 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="lib\opencv_calib3d220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\opencv_contrib220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\opencv_core220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\opencv_features2d220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\opencv_ffmpeg220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\opencv_flann220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\opencv_gpu220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\opencv_highgui220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\opencv_imgproc220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\opencv_legacy220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\opencv_ml220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\opencv_objdetect220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="lib\opencv_video220.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resources\DB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
@@ -342,10 +361,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>DB.mdf</DependentUpon>
     </Content>
-    <Content Include="lib\Emgu.CV.dll" />
-    <Content Include="lib\Emgu.CV.ML.dll" />
-    <Content Include="lib\Emgu.CV.UI.dll" />
-    <Content Include="lib\Emgu.Util.dll" />
     <None Include="datasets\OrderTypesDataSet.xsc">
       <DependentUpon>OrderTypesDataSet.xsd</DependentUpon>
     </None>
@@ -393,6 +408,18 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Emgu.CV.UI\Emgu.CV.UI.csproj">
+      <Project>{90E78BBF-C7FE-4D8E-ADE1-75448E866FDB}</Project>
+      <Name>Emgu.CV.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emgu.CV\Emgu.CV.csproj">
+      <Project>{9A1A77FE-F01B-495E-87B7-4B16E4F8C908}</Project>
+      <Name>Emgu.CV</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Emgu.Util\Emgu.Util.csproj">
+      <Project>{7C2C5325-8235-4A24-9C67-6BD79A4679E2}</Project>
+      <Name>Emgu.Util</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ETS-Data\ETS-Data.csproj">
       <Project>{D99F6FC5-BC8B-4118-A3CE-2FA5D5FE0C37}</Project>
       <Name>ETS-Data</Name>
