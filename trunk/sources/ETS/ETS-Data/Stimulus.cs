@@ -13,56 +13,42 @@ namespace ETS_Data
 
     public class Stimulus
     {
-        private Point place;
+        private long id;
 
-        public Point Place
+        public long Id
         {
-            get { return place; }
-            set { place = value; }
+            get { return id; }
+            set { id = value; }
         }
-      
-        private Bitmap picture;
-        [XmlIgnore]
-        public Bitmap Picture
-        {
-            get { return picture; }
-            set { picture = value; }
-        }
-        public string PictureArray
-        {
-            get {
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    Picture.Save(ms, ImageFormat.Png);
-                    byte[] tmp = ms.ToArray();
-                    return Convert.ToBase64String(tmp, 0, tmp.Length);
-                }
-            
-            }
-            set {
-                byte[] tmp = Convert.FromBase64String(value);
-                using(MemoryStream ms = new MemoryStream(tmp))
-                {
-                    Picture = new Bitmap(ms);
-                }
-            }
-        }
-
-
-        private double probability;
-
-        public double Probability
-        {
-            get { return probability; }
-            set { probability = value; }
-        }
-
         private string name;
 
         public string Name
         {
             get { return name; }
             set { name = value; }
+        }
+        private string filename;
+
+        public string Filename
+        {
+            get { return filename; }
+            set { filename = value; }
+        }
+        private StimulusType type;
+
+        public StimulusType Type
+        {
+            get { return type; }
+            set { 
+                type = value; 
+            }
+        }
+        private double prob;
+
+        public double Prob
+        {
+            get { return prob; }
+            set { prob = value; }
         }
     }
 }

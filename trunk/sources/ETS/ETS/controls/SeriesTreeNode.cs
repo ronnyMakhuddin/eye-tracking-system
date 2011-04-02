@@ -20,6 +20,7 @@ namespace ETS.controls
         public SeriesTreeNode(Series s) : base(s.Name)
         {
             this.seria = s;
+           
         }
     }
 }

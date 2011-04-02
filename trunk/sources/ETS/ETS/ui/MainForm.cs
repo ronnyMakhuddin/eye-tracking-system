@@ -79,5 +79,14 @@ namespace ETS.ui
             Session.Instance.CurrentTrial.Refresh();
             LoadTrialsTreeView();
         }
+
+        private void trwTrials_DoubleClick(object sender, EventArgs e)
+        {
+            if (sender is SeriesTreeNode)
+            {
+                SeriesTreeNode stn = (SeriesTreeNode)sender;
+                SeriesEditor se = new SeriesEditor(stn.Seria);
+            }
+        }
     }
 }

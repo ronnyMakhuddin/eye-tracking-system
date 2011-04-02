@@ -48,7 +48,7 @@ namespace ETS.ui
             this.textbeforeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textafterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orderTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.edit_stim_set = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.editStimSet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clmStimulusOrder = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdConfigs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderTypeBindingSource)).BeginInit();
@@ -71,7 +71,7 @@ namespace ETS.ui
             this.textbeforeDataGridViewTextBoxColumn,
             this.textafterDataGridViewTextBoxColumn,
             this.orderTypeDataGridViewTextBoxColumn,
-            this.edit_stim_set,
+            this.editStimSet,
             this.clmStimulusOrder});
             this.grdConfigs.DataSource = this.selectSeriesConfigsBindingSource;
             this.grdConfigs.Location = new System.Drawing.Point(12, 12);
@@ -192,12 +192,12 @@ namespace ETS.ui
             this.orderTypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.orderTypeDataGridViewTextBoxColumn.ValueMember = "name";
             // 
-            // edit_stim_set
+            // editStimSet
             // 
-            this.edit_stim_set.HeaderText = "Stimulus Set";
-            this.edit_stim_set.Name = "edit_stim_set";
-            this.edit_stim_set.Text = "Edit";
-            this.edit_stim_set.UseColumnTextForButtonValue = true;
+            this.editStimSet.HeaderText = "Stimulus Set";
+            this.editStimSet.Name = "editStimSet";
+            this.editStimSet.Text = "Edit";
+            this.editStimSet.UseColumnTextForButtonValue = true;
             // 
             // clmStimulusOrder
             // 
@@ -246,7 +246,7 @@ namespace ETS.ui
         private System.Windows.Forms.DataGridViewTextBoxColumn textbeforeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn textafterDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn orderTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewButtonColumn edit_stim_set;
+        private System.Windows.Forms.DataGridViewButtonColumn editStimSet;
         private System.Windows.Forms.DataGridViewButtonColumn clmStimulusOrder;
     }
 }

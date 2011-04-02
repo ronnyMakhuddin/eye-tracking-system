@@ -62,6 +62,44 @@ namespace ETS_Data
             }
             return result;
         }
+        public static ArrayList SelectStimulusSet(long seriesConfigId, string dbConnectionString)
+        {
+            ArrayList result = new ArrayList();
+            using (SqlConnection connection = new SqlConnection(dbConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand select = new SqlCommand())
+                {
+                    select.CommandType = CommandType.StoredProcedure;
+                    select.CommandText = "SelectFullStimulusSetForSeriesConfig";
+                    select.Connection = connection;
+
+                    SqlParameter param = select.Parameters.Add("@series_config_id", SqlDbType.BigInt, 1);
+                    param.Value = seriesConfigId;
+
+                    using (SqlDataReader reader = select.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Stimulus s = new Stimulus();
+                            int i = 0;
+                            s.Id = reader.GetInt64(0);
+                            s.Name = reader.GetString(1);
+                            s.Filename = reader.GetString(2);
+                            s.Type = (StimulusType)reader.GetInt64(3);
+                            s.Prob = reader.GetDouble(4);
+                            reader.GetInt64(5);
+                            /*
+                             Stimulus.id, Stimulus.name, Stimulus.filename, Stimulus.type, Stimulus.prob,  SeriesStimulus.series_config_id
+                             */
+                            result.Add(s);
+                        }
+                    }
+
+                }
+            }
+            return result;
+        }
         public static SeriesConfig SelectSeriesConfig(long id, string dbConnectionString)
         {
             SeriesConfig c = new SeriesConfig();
@@ -81,19 +119,7 @@ namespace ETS_Data
                     {
                         while (reader.Read())
                         {
-                           //long i =  reader.GetInt64(0);
-                            //TODO : add series config population
-                            /*
-                              SeriesConfig.id, 
-	SeriesConfig.max_int, 
-	SeriesConfig.min_int, 
-	SeriesConfig.text_before, 
-	SeriesConfig.text_after,  
-	SeriesConfig.order_type_id, 
-	SeriesConfig.name, 
-	SeriesConfig.length, 
-	SeriesConfig.stimulusOrder
-                             */
+                          
                             c.Id = reader.GetInt64(0);
                             c.MaxInt = reader.GetInt64(1);
                             c.MinInt = reader.GetInt64(2);
@@ -108,6 +134,7 @@ namespace ETS_Data
                             {
                                 c.StimulusOrder.Add(long.Parse(strIds[i]));
                             }
+                            c.StimulusSet = SelectStimulusSet(c.Id, dbConnectionString);
                         }
                     }
 

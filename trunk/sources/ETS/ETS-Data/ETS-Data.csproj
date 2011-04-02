@@ -50,6 +50,7 @@
     </Compile>
     <Compile Include="SeriesConfig.cs" />
     <Compile Include="SqlUtils.cs" />
+    <Compile Include="StimulusType.cs" />
     <Compile Include="Trial.cs" />
     <Compile Include="Direction.cs" />
     <Compile Include="Order.cs" />

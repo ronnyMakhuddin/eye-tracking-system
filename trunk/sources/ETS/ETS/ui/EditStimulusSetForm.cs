@@ -48,7 +48,7 @@ namespace ETS.ui
             for (int i = e.RowIndex-1; i < e.RowIndex + e.RowCount-1;i++ ){
                 if (i >= 0)
                 {
-                    grdSet[1, i].Value = seriesConfigId;
+                    grdSet["series_config_id", i].Value = seriesConfigId;
                 }
             }
         }

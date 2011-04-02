@@ -81,18 +81,5 @@ namespace ETS.Properties {
                 return ((string)(this["DBConnectionString"]));
             }
         }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=.\\SQLEXPRESS;AttachDbFilename=|DataDirectory|\\Resources\\DB.mdf;Integr" +
-            "ated Security=True;User Instance=True")]
-        public string DBConnectionString1 {
-            get {
-                return ((string)(this["DBConnectionString1"]));
-            }
-            set {
-                this["DBConnectionString1"] = value;
-            }
-        }
     }
 }
