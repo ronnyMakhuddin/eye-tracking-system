@@ -82,10 +82,13 @@ namespace ETS.ui
 
         private void trwTrials_DoubleClick(object sender, EventArgs e)
         {
-            if (sender is SeriesTreeNode)
+
+
+            if (trwTrials.SelectedNode is SeriesTreeNode)
             {
-                SeriesTreeNode stn = (SeriesTreeNode)sender;
-                SeriesEditor se = new SeriesEditor(stn.Seria);
+                SeriesTreeNode stn = (SeriesTreeNode)trwTrials.SelectedNode;
+                SeriesEditor se = new SeriesEditor();
+                se.Show();
             }
         }
     }

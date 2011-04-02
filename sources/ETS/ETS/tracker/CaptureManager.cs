@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Diagnostics;
 using ETS.Properties;
 using System.Collections;
+using System.Windows.Forms;
 
 namespace ETS.tracker
 {
@@ -28,6 +29,9 @@ namespace ETS.tracker
         public event FinishInitEventHandler OnFinishInit;
         public delegate void InitErrorEventHandler(Exception e);
         public event InitErrorEventHandler OnErrorInit;
+        public delegate void ImageEventHandler(Image<Bgr, Byte> image);
+        public event ImageEventHandler OnImageQuery;
+
         #endregion
         #region -- Properties --
         private Image<Bgr, Byte> currentFrame;
@@ -62,6 +66,15 @@ namespace ETS.tracker
             get { return state; }
             set { state = value; }
         }
+
+        private int queryInterval;
+
+        public int QueryInterval
+        {
+            get { return queryInterval; }
+            set { queryInterval = value; }
+        }
+
 
         private static CaptureManager instance;
 
@@ -125,14 +138,36 @@ namespace ETS.tracker
         }
         #endregion
 
-
         MemStorage stor;
+        private Timer timer;
 
         private CaptureManager()
         {
             State = States.IDLE;
-            stor = new MemStorage();
+            try
+            {
+                stor = new MemStorage();
+            }
+            catch (Exception e)
+            {
+            }
+            timer = new Timer();
+            timer.Interval = 100;
+            timer.Tick += new EventHandler(timer_Tick);
+        }
 
+        public void StartCapture()
+        {
+            timer.Start();
+        }
+        public void StopCapture()
+        {
+            timer.Stop();
+        }
+        void timer_Tick(object sender, EventArgs e)
+        {
+            Image<Bgr, Byte> image = QueryFrame();
+            OnImageQuery(image);
         }
 
         public Image<Bgr, Byte> QueryFrame()
@@ -149,10 +184,10 @@ namespace ETS.tracker
         public void DrawTemplates()
         {
             if (Session.Instance.CurrentTrial == null) return;
-           /* foreach (Template r in Session.Instance.CurrentTrial.Templates)
-            {
-                CurrentFrame.Draw(r.Rect, new Bgr(0.0, 0.0, 255.0), 1);
-            }*/
+            /* foreach (Template r in Session.Instance.CurrentTrial.Templates)
+             {
+                 CurrentFrame.Draw(r.Rect, new Bgr(0.0, 0.0, 255.0), 1);
+             }*/
         }
 
         public void ProcessFrame()
@@ -166,9 +201,6 @@ namespace ETS.tracker
             state = States.STATE_INIT;
         }
 
-
-
-
         public void DrawMatchingRegions()
         {
             ArrayList matches = GetMatchingRegions(currentGrayFrame);
@@ -176,23 +208,23 @@ namespace ETS.tracker
             foreach (Rectangle r in matches)
             {
                 CurrentFrame.Draw(r, new Bgr(255.0, 0.0, 0.0), 1);
-                
+
             }
         }
         public ArrayList GetMatchingRegions(Image<Gray, Byte> image)
         {
             if (Session.Instance.CurrentTrial == null) return null;
             ArrayList result = new ArrayList();
-          /*  foreach (Template r in Session.Instance.CurrentTrial.Templates)
-            {
-                Rectangle current = r.QueryCoordinate(image);
-                result.Add(current);
-                if (r.Added && IsRecording)
-                {
-                    r.Coords.Add(current);
-                    Session.Instance.CurrentTrial.Modified = true;
-                }
-            }*/
+            /*  foreach (Template r in Session.Instance.CurrentTrial.Templates)
+              {
+                  Rectangle current = r.QueryCoordinate(image);
+                  result.Add(current);
+                  if (r.Added && IsRecording)
+                  {
+                      r.Coords.Add(current);
+                      Session.Instance.CurrentTrial.Modified = true;
+                  }
+              }*/
             return result;
         }
 
