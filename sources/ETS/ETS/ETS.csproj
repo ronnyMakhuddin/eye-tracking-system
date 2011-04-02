@@ -249,6 +249,9 @@
     <EmbeddedResource Include="ui\SelectTrialform.resx">
       <DependentUpon>SelectTrialform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ui\SeriesEditor.resx">
+      <DependentUpon>SeriesEditor.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -278,6 +281,12 @@
     </Compile>
     <Compile Include="ui\SelectTrialform.Designer.cs">
       <DependentUpon>SelectTrialform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\SeriesEditor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\SeriesEditor.Designer.cs">
+      <DependentUpon>SeriesEditor.cs</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
     <None Include="datasets\StimDataSet.xsc">

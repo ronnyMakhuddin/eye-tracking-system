@@ -51,7 +51,7 @@ namespace ETS.ui
             {
                 if (e.ColumnIndex == EDIT_STIMULUS_SET)
                 {
-                    Int64 id = (Int64)grdConfigs[1, e.RowIndex].Value;
+                    Int64 id = (Int64)grdConfigs["id", e.RowIndex].Value;
                     EditStimulusSetForm essf = new EditStimulusSetForm(id);
                     essf.Show();
                 }

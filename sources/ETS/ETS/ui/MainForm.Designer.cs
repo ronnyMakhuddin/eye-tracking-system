@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.miClose = new System.Windows.Forms.ToolStripMenuItem();
             this.miNewTrial = new System.Windows.Forms.ToolStripMenuItem();
             this.miAddSeries = new System.Windows.Forms.ToolStripMenuItem();
+            this.miClose = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miViewPatients = new System.Windows.Forms.ToolStripMenuItem();
             this.miEditStimuluses = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,27 +70,27 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // miClose
-            // 
-            this.miClose.Name = "miClose";
-            this.miClose.Size = new System.Drawing.Size(152, 22);
-            this.miClose.Text = "Close";
-            this.miClose.Click += new System.EventHandler(this.miClose_Click);
-            // 
             // miNewTrial
             // 
             this.miNewTrial.Name = "miNewTrial";
-            this.miNewTrial.Size = new System.Drawing.Size(152, 22);
+            this.miNewTrial.Size = new System.Drawing.Size(129, 22);
             this.miNewTrial.Text = "Load Trial";
             this.miNewTrial.Click += new System.EventHandler(this.miNewTrial_Click);
             // 
             // miAddSeries
             // 
             this.miAddSeries.Name = "miAddSeries";
-            this.miAddSeries.Size = new System.Drawing.Size(152, 22);
+            this.miAddSeries.Size = new System.Drawing.Size(129, 22);
             this.miAddSeries.Text = "Add Series";
             this.miAddSeries.Visible = false;
             this.miAddSeries.Click += new System.EventHandler(this.miAddSeries_Click);
+            // 
+            // miClose
+            // 
+            this.miClose.Name = "miClose";
+            this.miClose.Size = new System.Drawing.Size(129, 22);
+            this.miClose.Text = "Close";
+            this.miClose.Click += new System.EventHandler(this.miClose_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -145,6 +145,7 @@
             this.trwTrials.Name = "trwTrials";
             this.trwTrials.Size = new System.Drawing.Size(161, 233);
             this.trwTrials.TabIndex = 1;
+            this.trwTrials.DoubleClick += new System.EventHandler(this.trwTrials_DoubleClick);
             // 
             // MainForm
             // 
