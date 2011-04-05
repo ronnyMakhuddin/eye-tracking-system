@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using ETS.tracker;
 using ETS.Properties;
+using ETS_Data;
 
 namespace ETS.ui
 {
@@ -15,14 +16,14 @@ namespace ETS.ui
     {
         private int width;
         private int height;
-
-        public AddTemplateForm(int width, int height)
+        private Series seria;
+        public AddTemplateForm(Series s)
         {
             InitializeComponent();
-            this.width = width;
-            this.height = height;
-
-         //   Session.Instance.CurrentTrial.AddTemplate(Template.Empty);
+            this.width = CaptureManager.Instance.CameraWidth;
+            this.height = CaptureManager.Instance.CameraHeight;
+            this.seria = s;
+            s.AddTemplate(Template.Empty);
 
             sldRightX.Maximum = height;
             sldRightY.Maximum = height;
@@ -36,16 +37,13 @@ namespace ETS.ui
 
             txtName.Text = Resources.UNTITLED;
         }
-        public AddTemplateForm()
-        {
-            InitializeComponent();
-        }
+        
         public void RefreshUI()
         {
             Rectangle rect = new Rectangle(sldLeftX.Value, sldLeftY.Value, sldRightX.Value - sldLeftX.Value, sldRightY.Value - sldLeftY.Value);
             if (rect != Rectangle.Empty && rect.Width != 0 && rect.Height != 0)
             {
-           //     Session.Instance.CurrentTrial.SetLastTemplate(new Template(rect, CaptureManager.Instance.CurrentGrayFrame.Copy(rect)));
+              seria.SetLastTemplate(new Template(rect, CaptureManager.Instance.CurrentGrayFrame.Copy(rect)));
             }
             sldLeftX.Maximum = sldRightX.Value;
             sldLeftY.Maximum = sldRightY.Value;
@@ -76,14 +74,14 @@ namespace ETS.ui
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-        //    Session.Instance.CurrentTrial.GetLastTemplate().Added = true;
-         //   Session.Instance.CurrentTrial.GetLastTemplate().Name = txtName.Text;
+            seria.GetLastTemplate().Added = true;
+            seria.GetLastTemplate().Name = txtName.Text;
             Close();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-         //   Session.Instance.CurrentTrial.RemoveLastTemplate();
+            seria.RemoveLastTemplate();
         }
     }
 }

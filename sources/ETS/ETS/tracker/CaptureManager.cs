@@ -178,6 +178,7 @@ namespace ETS.tracker
         {
             Image<Bgr, Byte> image = QueryFrame();
             OnImageQuery(image);
+            ProcessFrame();
         }
 
         public Image<Bgr, Byte> QueryFrame()
@@ -197,10 +198,10 @@ namespace ETS.tracker
         public void DrawTemplates()
         {
             if (Session.Instance.CurrentTrial == null) return;
-            /* foreach (Template r in Session.Instance.CurrentTrial.Templates)
+            foreach (Template r in Session.Instance.CurrentSeria.Templates)
              {
                  CurrentFrame.Draw(r.Rect, new Bgr(0.0, 0.0, 255.0), 1);
-             }*/
+             }
         }
 
         public void ProcessFrame()
@@ -228,16 +229,16 @@ namespace ETS.tracker
         {
             if (Session.Instance.CurrentTrial == null) return null;
             ArrayList result = new ArrayList();
-            /*  foreach (Template r in Session.Instance.CurrentTrial.Templates)
+            foreach (Template r in Session.Instance.CurrentSeria.Templates)
               {
                   Rectangle current = r.QueryCoordinate(image);
                   result.Add(current);
                   if (r.Added && IsRecording)
                   {
                       r.Coords.Add(current);
-                      Session.Instance.CurrentTrial.Modified = true;
+                    
                   }
-              }*/
+              }
             return result;
         }
 
@@ -274,6 +275,19 @@ namespace ETS.tracker
         public void StopRecording()
         {
             isRecording = false;
+        }
+
+        internal void CloseCapture()
+        {
+            try
+            {
+                cameraCapture.Dispose();
+
+            }
+            catch (Exception e)
+            {
+            }
+            cameraCapture = null;
         }
     }
 

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ETS.tracker;
+using ETS_Data;
 
 namespace ETS.ui
 {
@@ -14,9 +15,10 @@ namespace ETS.ui
     {
         private ETS_Data.Series series;
 
-        public SeriesEditor()
+        public SeriesEditor(Series s)
         {
             InitializeComponent();
+            this.series = s;
             CaptureManager capture = CaptureManager.Instance;
             capture.OnErrorInit += new CaptureManager.InitErrorEventHandler(capture_OnErrorInit);
             capture.OnFinishInit += new CaptureManager.FinishInitEventHandler(capture_OnFinishInit);
@@ -65,6 +67,12 @@ namespace ETS.ui
             {
                 CaptureManager.Instance.StopCapture();
             }
+        }
+
+        private void btnAddTemplate_Click(object sender, EventArgs e)
+        {
+            AddTemplateForm atf = new AddTemplateForm(series);
+            atf.ShowDialog();
         }
     }
 }

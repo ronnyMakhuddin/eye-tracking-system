@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.pbxCapture = new Emgu.CV.UI.ImageBox();
+            this.btnAddTemplate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCapture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -40,11 +41,22 @@
             this.pbxCapture.TabIndex = 2;
             this.pbxCapture.TabStop = false;
             // 
+            // btnAddTemplate
+            // 
+            this.btnAddTemplate.Location = new System.Drawing.Point(389, 13);
+            this.btnAddTemplate.Name = "btnAddTemplate";
+            this.btnAddTemplate.Size = new System.Drawing.Size(114, 36);
+            this.btnAddTemplate.TabIndex = 3;
+            this.btnAddTemplate.Text = "Add Template";
+            this.btnAddTemplate.UseVisualStyleBackColor = true;
+            this.btnAddTemplate.Click += new System.EventHandler(this.btnAddTemplate_Click);
+            // 
             // SeriesEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 354);
+            this.Controls.Add(this.btnAddTemplate);
             this.Controls.Add(this.pbxCapture);
             this.Name = "SeriesEditor";
             this.Text = "SeriesEditor";
@@ -57,5 +69,6 @@
         #endregion
 
         private Emgu.CV.UI.ImageBox pbxCapture;
+        private System.Windows.Forms.Button btnAddTemplate;
     }
 }

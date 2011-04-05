@@ -87,9 +87,15 @@ namespace ETS.ui
             if (trwTrials.SelectedNode is SeriesTreeNode)
             {
                 SeriesTreeNode stn = (SeriesTreeNode)trwTrials.SelectedNode;
-                SeriesEditor se = new SeriesEditor();
+                SeriesEditor se = new SeriesEditor(stn.Seria);
+                Session.Instance.CurrentSeriaId = stn.Seria.Id;
                 se.Show();
             }
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            CaptureManager.Instance.CloseCapture();
         }
     }
 }

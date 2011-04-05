@@ -5,6 +5,7 @@ using System.Text;
 using System.Collections;
 using System.Xml.Serialization;
 using System.IO;
+using ETS.tracker;
 
 namespace ETS_Data
 {
@@ -12,7 +13,10 @@ namespace ETS_Data
     {
         private string name;
         private long id;
-
+        public Series()
+        {
+            templates = new ArrayList();
+        }
         private SeriesConfig config;
 
         public SeriesConfig Config
@@ -33,7 +37,39 @@ namespace ETS_Data
             set { name = value; }
         }
 
-        
+        private ArrayList templates;
 
+        public ArrayList Templates
+        {
+            get { return templates; }
+            set { templates = value; }
+        }
+
+
+
+        public void AddTemplate(Template template)
+        {
+            templates.Add(template);
+        }
+
+        public Template GetLastTemplate()
+        {
+            if (templates.Count > 0)
+            {
+                return (Template)templates[templates.Count - 1];
+            }
+            return null;
+        }
+
+        public void RemoveLastTemplate()
+        {
+            templates.RemoveAt(templates.Count - 1);
+        }
+
+        public void SetLastTemplate(Template template)
+        {
+            RemoveLastTemplate();
+            AddTemplate(template);
+        }
     }
 }
