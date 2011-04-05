@@ -48,7 +48,8 @@
             this.Controls.Add(this.pbxCapture);
             this.Name = "SeriesEditor";
             this.Text = "SeriesEditor";
-             ((System.ComponentModel.ISupportInitialize)(this.pbxCapture)).EndInit();
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SeriesEditor_FormClosing);
+            ((System.ComponentModel.ISupportInitialize)(this.pbxCapture)).EndInit();
             this.ResumeLayout(false);
 
         }

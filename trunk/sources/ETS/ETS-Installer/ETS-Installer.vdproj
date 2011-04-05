@@ -332,18 +332,13 @@
             "PromptEnabled" = "11:TRUE"
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
-            "ComponentsUrl" = "8:"
+            "ComponentsUrl" = "8:http://care.dlservice.microsoft.com/dd/download/5/5/8/558522E0-2150-47E2-8F52-FF4D9C3645DF/SQLEXPRWT_x86_ENU.exe?lcid=1033&cprod=SQLEXP"
                 "Items"
                 {
                     "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5.SP1"
                     {
                     "Name" = "8:.NET Framework 3.5 SP1"
                     "ProductCode" = "8:Microsoft.Net.Framework.3.5.SP1"
-                    }
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Sql.Server.Express.9.2"
-                    {
-                    "Name" = "8:SQL Server 2005 Express Edition SP2 (x86)"
-                    "ProductCode" = "8:Microsoft.Sql.Server.Express.9.2"
                     }
                     "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Windows.Installer.3.1"
                     {
@@ -904,7 +899,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:ETS"
         "ProductCode" = "8:{E8013889-A2E5-43D4-BF62-0DB075712683}"
-        "PackageCode" = "8:{475C8300-B781-4F1A-BD1F-5E588DF74BA8}"
+        "PackageCode" = "8:{AEE894C7-8D80-4D46-B8FA-1E69170AEEB3}"
         "UpgradeCode" = "8:{72F03DEA-6548-4ED0-97AF-007EEC696A30}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
