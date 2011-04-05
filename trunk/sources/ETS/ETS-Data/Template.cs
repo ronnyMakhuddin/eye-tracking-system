@@ -6,7 +6,7 @@ using System.Drawing;
 using Emgu.CV.Structure;
 using Emgu.CV;
 using System.Collections;
-using ETS.Properties;
+
 using System.IO;
 
 namespace ETS.tracker
@@ -45,14 +45,13 @@ namespace ETS.tracker
             set { coords = value; }
         }
         private bool added;
-
         public bool Added
         {
             get { return added; }
             set { added = value; }
         }
 
-        public Template(Rectangle rect, Image<Gray, Byte> tpl)
+        public Template(Rectangle rect, Image <Gray, Byte> tpl)
         {
             this.rect = rect;
             this.tpl = tpl;
@@ -68,6 +67,8 @@ namespace ETS.tracker
             Added = true;
             Name = string.Empty;
         }
+
+       
         public bool IsEmpty
         {
             get { return tpl == null || Rect == Rectangle.Empty || Rect.Width == 0 || Rect.Height == 0; }
@@ -113,35 +114,6 @@ namespace ETS.tracker
 
 
 
-        internal void Save(System.IO.StreamWriter sw, string fileName)
-        {
-            sw.WriteLine(Name);
-            sw.WriteLine(string.Format(Resources.RectSerializationFormat, new object[] { Rect.X, Rect.Y, Rect.Width, Rect.Height }));
-            sw.WriteLine(Coords.Count);
-            for (int i = 0; i < Coords.Count; i++)
-            {
-                Rectangle r = (Rectangle)Coords[i];
-                sw.WriteLine(string.Format(Resources.RectSerializationFormat, new object[]{r.X,r.Y,r.Width,r.Height}));
-            }
-           
-           Tpl.Save(Path.Combine(Path.GetDirectoryName(fileName),Name)+".png");
-        }
-        public void Load(System.IO.StreamReader sr, string fileName)
-        {
-            Name = sr.ReadLine();
-            string r = sr.ReadLine();
-            string[] tokens = r.Split(',');
-            Rect = new Rectangle(int.Parse(tokens[0]),int.Parse(tokens[1]),int.Parse(tokens[2]),int.Parse(tokens[3]));
-            int count = int.Parse(sr.ReadLine());
-            Coords = new ArrayList();
-            for (int i = 0; i < count; i++)
-            {
-                string str = sr.ReadLine();
-                string[] tok = str.Split(',');
-                Rectangle re = new Rectangle(int.Parse(tok[0]), int.Parse(tok[1]), int.Parse(tok[2]), int.Parse(tok[3]));
-                Coords.Add(re);
-            }
-               Tpl = new Image<Gray, byte>(Path.Combine(Path.GetDirectoryName(fileName),Name)+".png");
-        }
+      
     }
 }

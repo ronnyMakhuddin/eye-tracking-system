@@ -18,7 +18,29 @@ namespace ETS.tracker
             get { return currentTrial; }
             set { currentTrial = value; }
         }
+        private long currentSeriaId;
 
+        public long CurrentSeriaId
+        {
+            get { return currentSeriaId; }
+            set { currentSeriaId = value; }
+        }
+        public Series CurrentSeria
+        {
+            get {
+                Series seria = null;
+                foreach (Series s in CurrentTrial.Series)
+                {
+                    if (s.Id == CurrentSeriaId)
+                    {
+                        seria = s;
+                        break;
+                    }
+                }
+                return seria;
+            
+            }
+        }
         private static Session instance;
         public static Session Instance
         {

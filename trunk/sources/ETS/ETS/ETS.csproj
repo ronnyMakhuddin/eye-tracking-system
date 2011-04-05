@@ -120,7 +120,6 @@
     </Compile>
     <Compile Include="tracker\CaptureManager.cs" />
     <Compile Include="tracker\Session.cs" />
-    <Compile Include="tracker\Template.cs" />
     <Compile Include="TrialsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
