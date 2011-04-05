@@ -18,16 +18,18 @@ namespace ETS.ui
         {
             InitializeComponent();
             CaptureManager capture = CaptureManager.Instance;
+            capture.OnErrorInit += new CaptureManager.InitErrorEventHandler(capture_OnErrorInit);
+            capture.OnFinishInit += new CaptureManager.FinishInitEventHandler(capture_OnFinishInit);
+            capture.OnImageQuery += new CaptureManager.ImageEventHandler(capture_OnImageQuery);
+            capture.OnStartInit += new CaptureManager.StartInitEventHandler(capture_OnStartInit);
+             
             if (!capture.Inited)
             {
-                capture.OnErrorInit +=new CaptureManager.InitErrorEventHandler(capture_OnErrorInit);
-                capture.OnFinishInit+=new CaptureManager.FinishInitEventHandler(capture_OnFinishInit);
-                capture.OnImageQuery+=new CaptureManager.ImageEventHandler(capture_OnImageQuery);
-                capture.OnStartInit+=new CaptureManager.StartInitEventHandler(capture_OnStartInit);
+                capture.CameraWidth = 320;
+                capture.CameraHeight = 240;
+                capture.Init();
             }
-            capture.CameraWidth = 320;
-            capture.CameraHeight = 240;
-            capture.Init();
+
             capture.StartCapture();
         }
 
@@ -55,6 +57,14 @@ namespace ETS.ui
         void capture_OnStartInit()
         {
           
+        }
+
+        private void SeriesEditor_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (CaptureManager.Instance != null)
+            {
+                CaptureManager.Instance.StopCapture();
+            }
         }
     }
 }

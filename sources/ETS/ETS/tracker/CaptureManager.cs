@@ -153,6 +153,7 @@ namespace ETS.tracker
             }
             timer = new Timer();
             timer.Interval = 100;
+            timer.Enabled = true;
             timer.Tick += new EventHandler(timer_Tick);
         }
 
@@ -162,7 +163,16 @@ namespace ETS.tracker
         }
         public void StopCapture()
         {
+            timer.Enabled = false;
             timer.Stop();
+            try
+            {
+                timer.Dispose();
+            }
+            finally
+            {
+            }
+          
         }
         void timer_Tick(object sender, EventArgs e)
         {
@@ -175,8 +185,11 @@ namespace ETS.tracker
             if (Inited)
             {
                 Image<Bgr, Byte> tmp = cameraCapture.QueryFrame();
-                CurrentGrayFrame = tmp.Convert<Gray, Byte>();
-                CurrentFrame = tmp;
+                if (tmp != null)
+                {
+                    CurrentGrayFrame = tmp.Convert<Gray, Byte>();
+                    CurrentFrame = tmp;
+                }
                 return tmp;
             }
             return null;
