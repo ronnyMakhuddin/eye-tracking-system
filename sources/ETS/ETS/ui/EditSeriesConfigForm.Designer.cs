@@ -50,6 +50,7 @@ namespace ETS.ui
             this.orderTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.editStimSet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clmStimulusOrder = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.clmTest = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdConfigs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderTypesDataSet)).BeginInit();
@@ -72,11 +73,12 @@ namespace ETS.ui
             this.textafterDataGridViewTextBoxColumn,
             this.orderTypeDataGridViewTextBoxColumn,
             this.editStimSet,
-            this.clmStimulusOrder});
+            this.clmStimulusOrder,
+            this.clmTest});
             this.grdConfigs.DataSource = this.selectSeriesConfigsBindingSource;
             this.grdConfigs.Location = new System.Drawing.Point(12, 12);
             this.grdConfigs.Name = "grdConfigs";
-            this.grdConfigs.Size = new System.Drawing.Size(846, 272);
+            this.grdConfigs.Size = new System.Drawing.Size(943, 272);
             this.grdConfigs.TabIndex = 0;
             this.grdConfigs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdConfigs_CellClick);
             this.grdConfigs.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdConfigs_DataError);
@@ -206,11 +208,16 @@ namespace ETS.ui
             this.clmStimulusOrder.Text = "Edit";
             this.clmStimulusOrder.UseColumnTextForButtonValue = true;
             // 
+            // clmTest
+            // 
+            this.clmTest.HeaderText = "Test";
+            this.clmTest.Name = "clmTest";
+            // 
             // EditSeriesConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(866, 343);
+            this.ClientSize = new System.Drawing.Size(967, 343);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grdConfigs);
@@ -248,5 +255,6 @@ namespace ETS.ui
         private System.Windows.Forms.DataGridViewComboBoxColumn orderTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn editStimSet;
         private System.Windows.Forms.DataGridViewButtonColumn clmStimulusOrder;
+        private System.Windows.Forms.DataGridViewButtonColumn clmTest;
     }
 }

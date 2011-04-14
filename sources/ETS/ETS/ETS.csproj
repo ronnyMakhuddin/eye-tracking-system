@@ -10,7 +10,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>ETS</RootNamespace>
     <AssemblyName>ETS</AssemblyName>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -88,6 +88,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PatientsDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="datasets\PositionSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PositionSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="datasets\SeriesConfigDataSet.cs">
       <DependentUpon>SeriesConfigDataSet.xsd</DependentUpon>
@@ -228,6 +233,9 @@
     <EmbeddedResource Include="ui\SelectTrialform.resx">
       <DependentUpon>SelectTrialform.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ui\SeriesConfigProcessForm.resx">
+      <DependentUpon>SeriesConfigProcessForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ui\SeriesEditor.resx">
       <DependentUpon>SeriesEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -246,6 +254,17 @@
     <None Include="datasets\PatientsDataSet.xss">
       <DependentUpon>PatientsDataSet.xsd</DependentUpon>
     </None>
+    <None Include="datasets\PositionSet.xsc">
+      <DependentUpon>PositionSet.xsd</DependentUpon>
+    </None>
+    <None Include="datasets\PositionSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>PositionSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="datasets\PositionSet.xss">
+      <DependentUpon>PositionSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -260,6 +279,12 @@
     </Compile>
     <Compile Include="ui\SelectTrialform.Designer.cs">
       <DependentUpon>SelectTrialform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\SeriesConfigProcessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\SeriesConfigProcessForm.Designer.cs">
+      <DependentUpon>SeriesConfigProcessForm.cs</DependentUpon>
     </Compile>
     <Compile Include="ui\SeriesEditor.cs">
       <SubType>Form</SubType>

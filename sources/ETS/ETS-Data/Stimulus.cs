@@ -50,5 +50,12 @@ namespace ETS_Data
             get { return prob; }
             set { prob = value; }
         }
+        private Position pos;
+
+        public Position Pos
+        {
+            get { return pos; }
+            set { pos = value; }
+        }
     }
 }
