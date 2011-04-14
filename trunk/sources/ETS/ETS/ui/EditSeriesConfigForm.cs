@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ETS_Data;
+using ETS.Properties;
 
 namespace ETS.ui
 {
@@ -13,6 +15,7 @@ namespace ETS.ui
     {
         private const int EDIT_STIMULUS_SET = 9;
         private const int EDIT_STIMULUS_ORDER = 10;
+        private const int TEST_SERIES = 11;
         public EditSeriesConfigForm()
         {
             InitializeComponent();
@@ -65,7 +68,14 @@ namespace ETS.ui
                     {
                         grdConfigs["stimulusOrder", e.RowIndex].Value = esof.Result;
                     }
-                    
+
+                }
+                else if (e.ColumnIndex == TEST_SERIES)
+                {
+                    Int64 id = (Int64)grdConfigs["id", e.RowIndex].Value;
+                    SeriesConfig config = SqlUtils.SelectSeriesConfig(id, Settings.Default.DBConnectionString);
+                    SeriesConfigProcessForm scpf = new SeriesConfigProcessForm(config);
+                    scpf.Show();
                 }
             }
         }

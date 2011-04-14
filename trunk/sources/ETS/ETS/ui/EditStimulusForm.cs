@@ -18,6 +18,8 @@ namespace ETS.ui
 
         private void EditStimulusForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'positionSet.SelectPositions' table. You can move, or remove it, as needed.
+            this.selectPositionsTableAdapter.Fill(this.positionSet.SelectPositions);
             // TODO: This line of code loads data into the 'stimulusTypeDataSet.StimulusType' table. You can move, or remove it, as needed.
             this.stimulusTypeTableAdapter.Fill(this.stimulusTypeDataSet.StimulusType);
             // TODO: This line of code loads data into the 'stimDataSet.SelectStimuluses' table. You can move, or remove it, as needed.

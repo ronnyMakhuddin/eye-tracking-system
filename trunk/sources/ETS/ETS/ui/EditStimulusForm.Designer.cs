@@ -39,15 +39,23 @@ namespace ETS.ui
             this.stimulusTypeTableAdapter = new ETS.datasets.StimulusTypeDataSetTableAdapters.StimulusTypeTableAdapter();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.positionSet = new ETS.datasets.PositionSet();
+            this.positionSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.selectPositionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.selectPositionsTableAdapter = new ETS.datasets.PositionSetTableAdapters.SelectPositionsTableAdapter();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.filenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.prob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.position = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdStimuluses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusTypeDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectStimulusesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectPositionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grdStimuluses
@@ -62,11 +70,12 @@ namespace ETS.ui
             this.nameDataGridViewTextBoxColumn,
             this.filenameDataGridViewTextBoxColumn,
             this.typeDataGridViewTextBoxColumn,
-            this.prob});
+            this.prob,
+            this.position});
             this.grdStimuluses.DataSource = this.selectStimulusesBindingSource;
             this.grdStimuluses.Location = new System.Drawing.Point(12, 12);
             this.grdStimuluses.Name = "grdStimuluses";
-            this.grdStimuluses.Size = new System.Drawing.Size(647, 213);
+            this.grdStimuluses.Size = new System.Drawing.Size(776, 213);
             this.grdStimuluses.TabIndex = 0;
             this.grdStimuluses.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStimuluses_CellClick);
             this.grdStimuluses.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdStimuluses_DataError);
@@ -121,6 +130,25 @@ namespace ETS.ui
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
+            // positionSet
+            // 
+            this.positionSet.DataSetName = "PositionSet";
+            this.positionSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // positionSetBindingSource
+            // 
+            this.positionSetBindingSource.DataSource = this.positionSet;
+            this.positionSetBindingSource.Position = 0;
+            // 
+            // selectPositionsBindingSource
+            // 
+            this.selectPositionsBindingSource.DataMember = "SelectPositions";
+            this.selectPositionsBindingSource.DataSource = this.positionSetBindingSource;
+            // 
+            // selectPositionsTableAdapter
+            // 
+            this.selectPositionsTableAdapter.ClearBeforeFill = true;
+            // 
             // nameDataGridViewTextBoxColumn
             // 
             this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
@@ -157,11 +185,22 @@ namespace ETS.ui
             this.prob.HeaderText = "prob";
             this.prob.Name = "prob";
             // 
+            // position
+            // 
+            this.position.DataPropertyName = "position";
+            this.position.DataSource = this.selectPositionsBindingSource;
+            this.position.DisplayMember = "name";
+            this.position.HeaderText = "Position";
+            this.position.Name = "position";
+            this.position.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.position.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.position.ValueMember = "name";
+            // 
             // EditStimulusForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(686, 273);
+            this.ClientSize = new System.Drawing.Size(792, 273);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grdStimuluses);
@@ -176,6 +215,9 @@ namespace ETS.ui
             ((System.ComponentModel.ISupportInitialize)(this.stimulusTypeDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectStimulusesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectPositionsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -191,9 +233,14 @@ namespace ETS.ui
         private ETS.datasets.StimulusTypeDataSetTableAdapters.StimulusTypeTableAdapter stimulusTypeTableAdapter;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
+        private PositionSet positionSet;
+        private System.Windows.Forms.BindingSource positionSetBindingSource;
+        private System.Windows.Forms.BindingSource selectPositionsBindingSource;
+        private datasets.PositionSetTableAdapters.SelectPositionsTableAdapter selectPositionsTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn filenameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewComboBoxColumn typeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn prob;
+        private System.Windows.Forms.DataGridViewComboBoxColumn position;
     }
 }

@@ -9,11 +9,14 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using ETS.tracker;
 using ETS.controls;
+using System.Threading;
+using ETS_Data;
 
 namespace ETS.ui
 {
     public partial class MainForm : Form
     {
+        delegate void SetStatusCallback(string status);
         public MainForm()
         {
             InitializeComponent();
@@ -36,10 +39,27 @@ namespace ETS.ui
             esf.Show();
         }
 
+        public void ConnectToDatabase()
+        {
+            
+
+            for (int i = 0; i < 10; i++)
+            {
+                SetStatusLabel("Connecting to database: " + (i+1) + " attempt");
+                string status = SqlUtils.OpenFirstConnection();
+                SetStatusLabel(status);
+                if (!status.Contains("Error"))
+                {
+                    break;
+                }
+                Thread.Sleep(500);
+            }
+        }
+
         private void MainForm_Load(object sender, EventArgs e)
         {
-
-
+            Thread t = new Thread(new ThreadStart(ConnectToDatabase));
+            t.Start();
         }
 
         private void miEditSeriesConfigs_Click(object sender, EventArgs e)
@@ -96,6 +116,18 @@ namespace ETS.ui
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             CaptureManager.Instance.CloseCapture();
+        }
+        private void SetStatusLabel(string status)
+        {
+            if (strStatus.InvokeRequired)
+            {
+                SetStatusCallback clb = new SetStatusCallback(SetStatusLabel);
+                strStatus.Invoke(clb, new object[] { status });
+            }
+            else
+            {
+                lblDbStatus.Text = status;
+            }
         }
     }
 }

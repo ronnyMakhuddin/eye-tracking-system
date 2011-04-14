@@ -5,11 +5,27 @@ using System.Text;
 using System.Data.SqlClient;
 using System.Data;
 using System.Collections;
+using ETS_Data.Properties;
 
 namespace ETS_Data
 {
    public class SqlUtils
     {
+       public static string OpenFirstConnection()
+       {
+           using (SqlConnection connection = new SqlConnection(Settings.Default.DBConnectionString))
+           {
+               try
+               {
+                   connection.Open();
+                   return "Established";
+               }
+               catch (Exception e)
+               {
+                   return "Error: "+e.Message;
+               }
+           }
+       }
         public static void InsertSeries(string name, object seriesConfigId, int trialId, string dbConnectionString)
         {
             using (SqlConnection connection = new SqlConnection(dbConnectionString))
@@ -89,6 +105,7 @@ namespace ETS_Data
                             s.Type = (StimulusType)reader.GetInt64(3);
                             s.Prob = reader.GetDouble(4);
                             reader.GetInt64(5);
+                            s.Pos = (Position)reader.GetInt64(6);
                             /*
                              Stimulus.id, Stimulus.name, Stimulus.filename, Stimulus.type, Stimulus.prob,  SeriesStimulus.series_config_id
                              */
