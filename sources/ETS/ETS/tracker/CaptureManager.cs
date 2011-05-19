@@ -206,8 +206,11 @@ namespace ETS.tracker
 
         public void ProcessFrame()
         {
-            DrawTemplates();
-            DrawMatchingRegions();
+            if (CameraCapture != null)
+            {
+                DrawTemplates();
+                DrawMatchingRegions();
+            }
         }
 
         public void Reset()
@@ -260,6 +263,7 @@ namespace ETS.tracker
             catch (Exception e)
             {
                 OnErrorInit(e);
+                StopCapture();
                 cameraCapture = null;
             }
             finally

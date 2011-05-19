@@ -48,7 +48,7 @@ namespace ETS.ui
 
         void capture_OnErrorInit(Exception e)
         {
-              
+            MessageBox.Show("Exception while camera init: " + e.Message);
         }
 
         void capture_OnFinishInit()
