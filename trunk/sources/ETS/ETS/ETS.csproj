@@ -61,6 +61,7 @@
     <Reference Include="System.Core">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Xml.Linq">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
@@ -118,6 +119,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderTypesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerUtils.cs" />
     <Compile Include="StimulusSetDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -386,6 +388,10 @@
     </Content>
     <Content Include="Resources\DB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\DB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DB.mdf</DependentUpon>
     </Content>
     <Content Include="Tao.OpenGl.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

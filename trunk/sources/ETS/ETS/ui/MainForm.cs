@@ -11,6 +11,7 @@ using ETS.tracker;
 using ETS.controls;
 using System.Threading;
 using ETS_Data;
+using SQLServiceController;
 
 namespace ETS.ui
 {
@@ -41,8 +42,8 @@ namespace ETS.ui
 
         public void ConnectToDatabase()
         {
-            
 
+            ServiceSwitch.StartSQLExpressServiceIfStopped(true);
             for (int i = 0; i < 10; i++)
             {
                 SetStatusLabel("Connecting to database: " + (i+1) + " attempt");
