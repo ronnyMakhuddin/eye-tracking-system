@@ -17,11 +17,13 @@ namespace ETS.ui
         private int width;
         private int height;
         private Series seria;
-        public AddTemplateForm(Series s)
+        private CaptureManager capture;
+        public AddTemplateForm(Series s, CaptureManager capture)
         {
             InitializeComponent();
-            this.width = CaptureManager.Instance.CameraWidth;
-            this.height = CaptureManager.Instance.CameraHeight;
+            this.capture = capture;
+            this.width = capture.CameraWidth;
+            this.height = capture.CameraHeight;
             this.seria = s;
             s.AddTemplate(Template.Empty);
 
@@ -43,7 +45,7 @@ namespace ETS.ui
             Rectangle rect = new Rectangle(sldLeftX.Value, sldLeftY.Value, sldRightX.Value - sldLeftX.Value, sldRightY.Value - sldLeftY.Value);
             if (rect != Rectangle.Empty && rect.Width != 0 && rect.Height != 0)
             {
-              seria.SetLastTemplate(new Template(rect, CaptureManager.Instance.CurrentGrayFrame.Copy(rect)));
+              seria.SetLastTemplate(new Template(rect, capture.CurrentGrayFrame.Copy(rect)));
             }
             sldLeftX.Maximum = sldRightX.Value;
             sldLeftY.Maximum = sldRightY.Value;
