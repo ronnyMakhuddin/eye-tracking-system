@@ -30,6 +30,8 @@ namespace ETS.ui
 
         private void EditTrialsForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'patientsDataSet.Patients' table. You can move, or remove it, as needed.
+            this.patientsTableAdapter.Fill(this.patientsDataSet.Patients);
   
             // TODO: This line of code loads data into the 'trialsDataSet.SelectTrials' table. You can move, or remove it, as needed.
             this.selectTrialsTableAdapter.Fill(this.trialsDataSet.SelectTrials);
