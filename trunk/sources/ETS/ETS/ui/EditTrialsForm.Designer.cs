@@ -30,25 +30,19 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grdTrials = new System.Windows.Forms.DataGridView();
-            this.patientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patientsDataSet = new ETS.datasets.PatientsDataSet();
-            this.selectTrialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.trialsDataSet = new ETS.TrialsDataSet();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
+            this.trialsDataSet = new ETS.TrialsDataSet();
+            this.selectTrialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.selectTrialsTableAdapter = new ETS.TrialsDataSetTableAdapters.SelectTrialsTableAdapter();
-            this.patientsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patientsTableAdapter = new ETS.datasets.PatientsDataSetTableAdapters.PatientsTableAdapter();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.patient_name = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.videofilenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.patientnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdTrials)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.selectTrialsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trialsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectTrialsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grdTrials
@@ -56,35 +50,16 @@
             this.grdTrials.AutoGenerateColumns = false;
             this.grdTrials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdTrials.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nameDataGridViewTextBoxColumn,
-            this.patient_name,
+            this.idDataGridViewTextBoxColumn,
             this.dateDataGridViewTextBoxColumn,
-            this.videofilenameDataGridViewTextBoxColumn});
+            this.videofilenameDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.patientnameDataGridViewTextBoxColumn});
             this.grdTrials.DataSource = this.selectTrialsBindingSource;
             this.grdTrials.Location = new System.Drawing.Point(12, 12);
             this.grdTrials.Name = "grdTrials";
-            this.grdTrials.Size = new System.Drawing.Size(445, 206);
+            this.grdTrials.Size = new System.Drawing.Size(559, 209);
             this.grdTrials.TabIndex = 0;
-            // 
-            // patientsBindingSource
-            // 
-            this.patientsBindingSource.DataMember = "Patients";
-            this.patientsBindingSource.DataSource = this.patientsDataSet;
-            // 
-            // patientsDataSet
-            // 
-            this.patientsDataSet.DataSetName = "PatientsDataSet";
-            this.patientsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // selectTrialsBindingSource
-            // 
-            this.selectTrialsBindingSource.DataMember = "SelectTrials";
-            this.selectTrialsBindingSource.DataSource = this.trialsDataSet;
-            // 
-            // trialsDataSet
-            // 
-            this.trialsDataSet.DataSetName = "TrialsDataSet";
-            this.trialsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // btnCancel
             // 
@@ -106,47 +81,51 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // trialsDataSet
+            // 
+            this.trialsDataSet.DataSetName = "TrialsDataSet";
+            this.trialsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // selectTrialsBindingSource
+            // 
+            this.selectTrialsBindingSource.DataMember = "SelectTrials";
+            this.selectTrialsBindingSource.DataSource = this.trialsDataSet;
+            // 
             // selectTrialsTableAdapter
             // 
             this.selectTrialsTableAdapter.ClearBeforeFill = true;
             // 
-            // patientsDataSetBindingSource
+            // idDataGridViewTextBoxColumn
             // 
-            this.patientsDataSetBindingSource.DataSource = this.patientsDataSet;
-            this.patientsDataSetBindingSource.Position = 0;
-            // 
-            // patientsTableAdapter
-            // 
-            this.patientsTableAdapter.ClearBeforeFill = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Trial Name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // patient_name
-            // 
-            this.patient_name.DataPropertyName = "patient_name";
-            this.patient_name.DataSource = this.patientsBindingSource;
-            this.patient_name.DisplayMember = "shortname";
-            this.patient_name.HeaderText = "Patient Name";
-            this.patient_name.Name = "patient_name";
-            this.patient_name.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.patient_name.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.patient_name.ValueMember = "shortname";
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Visible = false;
             // 
             // dateDataGridViewTextBoxColumn
             // 
             this.dateDataGridViewTextBoxColumn.DataPropertyName = "date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "date";
             this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
             // 
             // videofilenameDataGridViewTextBoxColumn
             // 
             this.videofilenameDataGridViewTextBoxColumn.DataPropertyName = "video_filename";
-            this.videofilenameDataGridViewTextBoxColumn.HeaderText = "Video Filename";
+            this.videofilenameDataGridViewTextBoxColumn.HeaderText = "video_filename";
             this.videofilenameDataGridViewTextBoxColumn.Name = "videofilenameDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // patientnameDataGridViewTextBoxColumn
+            // 
+            this.patientnameDataGridViewTextBoxColumn.DataPropertyName = "patient_name";
+            this.patientnameDataGridViewTextBoxColumn.HeaderText = "patient_name";
+            this.patientnameDataGridViewTextBoxColumn.Name = "patientnameDataGridViewTextBoxColumn";
             // 
             // EditTrialsForm
             // 
@@ -160,11 +139,8 @@
             this.Text = "EditTrialsForm";
             this.Load += new System.EventHandler(this.EditTrialsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdTrials)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.selectTrialsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trialsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectTrialsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -174,16 +150,14 @@
         private System.Windows.Forms.DataGridView grdTrials;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientidDataGridViewTextBoxColumn;
         private TrialsDataSet trialsDataSet;
         private System.Windows.Forms.BindingSource selectTrialsBindingSource;
         private TrialsDataSetTableAdapters.SelectTrialsTableAdapter selectTrialsTableAdapter;
-        private datasets.PatientsDataSet patientsDataSet;
-        private System.Windows.Forms.BindingSource patientsDataSetBindingSource;
-        private System.Windows.Forms.BindingSource patientsBindingSource;
-        private datasets.PatientsDataSetTableAdapters.PatientsTableAdapter patientsTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn patient_name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn videofilenameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn patientnameDataGridViewTextBoxColumn;
     }
 }
