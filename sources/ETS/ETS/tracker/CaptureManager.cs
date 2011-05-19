@@ -9,12 +9,14 @@ using System.Diagnostics;
 using ETS.Properties;
 using System.Collections;
 using System.Windows.Forms;
+using ETS_Data;
 
 namespace ETS.tracker
 {
     public enum States
     {
-        STATE_INIT,
+        STATE_NOT_INITED,
+        STATE_INITED,
         STATE_TRACKING,
         STATE_NONE,
         IDLE,
@@ -41,7 +43,6 @@ namespace ETS.tracker
             set { currentFrame = value; }
         }
         private Image<Gray, Byte> currentGrayFrame;
-
         public Image<Gray, Byte> CurrentGrayFrame
         {
             get { return currentGrayFrame; }
@@ -74,76 +75,49 @@ namespace ETS.tracker
             get { return queryInterval; }
             set { queryInterval = value; }
         }
-
-
-        private static CaptureManager instance;
-
-        public static CaptureManager Instance
-        {
-            get
-            {
-                if (instance == null)
-                {
-                    instance = new CaptureManager();
-
-                }
-
-                return instance;
-
-            }
-        }
+        private int cameraWidth;
 
         public int CameraWidth
         {
-            set
-            {
-                if (Inited)
-                {
-                    cameraCapture.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, value);
-                }
-            }
-            get
-            {
-                if (Inited)
-                {
-                    return (int)cameraCapture.GetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH);
-                }
-                return 0;
-            }
+            get { return cameraWidth; }
+            set { cameraWidth = value; }
         }
+        private int cameraHeight;
 
         public int CameraHeight
         {
-            set
-            {
-                if (Inited)
-                {
-                    cameraCapture.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, value);
-                }
-            }
-            get
-            {
-                if (Inited)
-                {
-                    return (int)cameraCapture.GetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT);
-                }
-                return 0;
-            }
+            get { return cameraHeight; }
+            set { cameraHeight = value; }
         }
-        private bool isRecording;
+      
+       
+        private Series seria;
 
-        public bool IsRecording
+        public Series Seria
         {
-            get { return isRecording; }
+            get { return seria; }
+            set { seria = value; }
         }
+
+        private int length;
+
+        public int Length
+        {
+            get { return length; }
+            set { length = value; }
+        }
+
         #endregion
 
         MemStorage stor;
         private Timer timer;
 
-        private CaptureManager()
+        public CaptureManager(Series s)
         {
-            State = States.IDLE;
+            State = States.STATE_NOT_INITED;
+            Seria = s;
+            Length = 0;
+            QueryInterval = 40;
             try
             {
                 stor = new MemStorage();
@@ -152,11 +126,38 @@ namespace ETS.tracker
             {
             }
             timer = new Timer();
-            timer.Interval = 100;
+            timer.Interval = QueryInterval;
             timer.Enabled = true;
             timer.Tick += new EventHandler(timer_Tick);
         }
+        public void Init()
+        {
+            OnStartInit();
+            try
+            {
 
+                if (cameraCapture == null)
+                {
+                    cameraCapture = new Capture();
+                }
+               
+                State = States.STATE_INITED;
+                cameraCapture.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, CameraWidth);
+                cameraCapture.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, CameraHeight);
+                OnFinishInit();
+            }
+            catch (Exception e)
+            {
+                OnErrorInit(e);
+                StopCapture();
+                cameraCapture = null;
+            }
+            finally
+            {
+
+            }
+
+        }
         public void StartCapture()
         {
             timer.Start();
@@ -172,6 +173,7 @@ namespace ETS.tracker
             finally
             {
             }
+            CloseCapture();
           
         }
         void timer_Tick(object sender, EventArgs e)
@@ -210,12 +212,30 @@ namespace ETS.tracker
             {
                 DrawTemplates();
                 DrawMatchingRegions();
+                if (State == States.STATE_TRACKING)
+                {
+                    Length += QueryInterval;
+                }
+                DrawTime();
             }
         }
-
+        public void DrawTime()
+        {
+            if (State == States.STATE_TRACKING)
+            {
+                TimeSpan ts = TimeSpan.FromMilliseconds(Length);
+                string time = string.Format("{0:D2}:{1:D2}:{2:D2}:{3:D3} ", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+                MCvFont f = new MCvFont(Emgu.CV.CvEnum.FONT.CV_FONT_HERSHEY_COMPLEX, 0.5, 0.5);
+                Size textSize = f.GetTextSize(time, 0);
+                CurrentFrame.Draw(time, ref f, new Point(CurrentFrame.Width-textSize.Width-10,CurrentFrame.Height-textSize.Height-10), new Bgr(0, 0, 255));
+            }
+        }
         public void Reset()
         {
-            state = States.STATE_INIT;
+            state = States.STATE_NOT_INITED;
+            StopCapture();
+            Init();
+            StartCapture();
         }
 
         public void DrawMatchingRegions()
@@ -236,49 +256,13 @@ namespace ETS.tracker
               {
                   Rectangle current = r.QueryCoordinate(image);
                   result.Add(current);
-                  if (r.Added && IsRecording)
+                  if (r.Added)
                   {
                       r.Coords.Add(current);
                     
                   }
               }
             return result;
-        }
-
-        public void Init()
-        {
-            OnStartInit();
-            try
-            {
-
-                if (cameraCapture == null)
-                {
-                    cameraCapture = new Capture();
-                }
-                CameraWidth = 700;
-                State = States.STATE_INIT;
-
-                OnFinishInit();
-            }
-            catch (Exception e)
-            {
-                OnErrorInit(e);
-                StopCapture();
-                cameraCapture = null;
-            }
-            finally
-            {
-
-            }
-
-        }
-        public void StartRecording()
-        {
-            isRecording = true;
-        }
-        public void StopRecording()
-        {
-            isRecording = false;
         }
 
         internal void CloseCapture()

@@ -116,7 +116,7 @@ namespace ETS.ui
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            CaptureManager.Instance.CloseCapture();
+           
         }
         private void SetStatusLabel(string status)
         {

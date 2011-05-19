@@ -14,24 +14,21 @@ namespace ETS.ui
     public partial class SeriesEditor : Form
     {
         private ETS_Data.Series series;
-
+        private CaptureManager capture;
         public SeriesEditor(Series s)
         {
             InitializeComponent();
             this.series = s;
-            CaptureManager capture = CaptureManager.Instance;
+            capture = new CaptureManager(s);
             capture.OnErrorInit += new CaptureManager.InitErrorEventHandler(capture_OnErrorInit);
             capture.OnFinishInit += new CaptureManager.FinishInitEventHandler(capture_OnFinishInit);
             capture.OnImageQuery += new CaptureManager.ImageEventHandler(capture_OnImageQuery);
             capture.OnStartInit += new CaptureManager.StartInitEventHandler(capture_OnStartInit);
-             
-            if (!capture.Inited)
-            {
-                capture.CameraWidth = 320;
-                capture.CameraHeight = 240;
-                capture.Init();
-            }
-
+            capture.CameraWidth = 640;
+            capture.CameraHeight = 480; 
+            capture.Init();
+          
+       
             capture.StartCapture();
         }
 
@@ -63,16 +60,30 @@ namespace ETS.ui
 
         private void SeriesEditor_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (CaptureManager.Instance != null)
+            if (capture != null)
             {
-                CaptureManager.Instance.StopCapture();
+               capture.StopCapture();
             }
         }
 
         private void btnAddTemplate_Click(object sender, EventArgs e)
         {
-            AddTemplateForm atf = new AddTemplateForm(series);
+            AddTemplateForm atf = new AddTemplateForm(series, capture);
             atf.ShowDialog();
+        }
+
+        private void btnRecord_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            if (capture != null)
+            {
+             
+                capture.Reset();
+            }
         }
     }
 }
