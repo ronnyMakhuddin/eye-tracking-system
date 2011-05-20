@@ -138,6 +138,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OrderTypesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="serialize\CSVSerializer.cs" />
     <Compile Include="SqlServerUtils.cs" />
     <Compile Include="StimulusSetDataSet.Designer.cs">
       <AutoGen>True</AutoGen>

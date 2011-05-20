@@ -126,5 +126,12 @@ namespace ETS_Data
             }
             TemplateCoords.Add(coords);
         }
+
+        public void DeleteTemplate(Template template)
+        {
+            int index = templates.IndexOf(template);
+            templates.RemoveAt(index);
+            templateCoords.RemoveAt(index);
+        }
     }
 }
