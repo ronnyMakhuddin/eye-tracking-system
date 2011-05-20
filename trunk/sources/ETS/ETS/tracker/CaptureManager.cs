@@ -248,15 +248,18 @@ namespace ETS.tracker
         {
          
             if (Session.Instance.CurrentTrial == null) return;
-            foreach (Template t in Session.Instance.CurrentSeria.Templates)
+
+            for (int i = 0; i < Session.Instance.CurrentSeria.Templates.Count; i++)
             {
+                Template t = (Template)Session.Instance.CurrentSeria.Templates[i];
                 Rectangle match = GetMatchingRegionForTemplate(t, currentGrayFrame);
                 if (t.Added)
                 {
-                    t.Coords.Add(new SeriesRecord(match, CurrentTimePosition));
+                    Session.Instance.CurrentSeria.SetTemplateCoord(i, new SeriesRecord(match, CurrentTimePosition), CurrentTimePosition);
                 }
                 CurrentFrame.Draw(match, new Bgr(255.0, 0.0, 0.0), 1);
             }
+
         }
         public Rectangle GetMatchingRegionForTemplate(Template t, Image<Gray, Byte> image)
         {
