@@ -13,6 +13,9 @@ namespace ETS.controls
     public partial class CaptureSlider : UserControl
     {
         private Series series;
+        public delegate void ValueChangedHandler(int value);
+        public event ValueChangedHandler ValueChanged;
+      
         public CaptureSlider()
         {
             InitializeComponent();
@@ -83,6 +86,10 @@ namespace ETS.controls
         private void slider_ValueChanged(object sender, EventArgs e)
         {
             Value = (slider.Value / Constants.TIME_CHUNK_MS) * Constants.TIME_CHUNK_MS;
+            if (ValueChanged != null)
+            {
+                ValueChanged(Value);
+            }
         }
 
         public void InitWithSeries(ETS_Data.Series series)
