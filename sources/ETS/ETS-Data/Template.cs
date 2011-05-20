@@ -90,25 +90,21 @@ namespace ETS.tracker
             tm.MinMax(out minval, out maxval, out minloc, out maxloc);
             return new Rectangle(minloc[0], Rect.Size);
         }
-        public Rectangle GetLastCoordinate()
-        {
-            return Coords != null && Coords.Count != 0 ? (Rectangle)Coords[Coords.Count - 1] : Rectangle.Empty;
-        }
-
+      
+        private Rectangle prev = Rectangle.Empty;
+        private Rectangle now = Rectangle.Empty;
         public Rectangle QueryCoordinate(Image <Gray,Byte> image){
-            Rectangle rect = GetMatchingRegion(image);
-            Rectangle prev = GetLastCoordinate();
-         
+            now = GetMatchingRegion(image);
             Rectangle current = Rectangle.Empty;
-            if ((rect.X < prev.X - prev.Width || rect.X > prev.X + prev.Width || rect.Y < prev.Y - prev.Height || rect.Y > prev.Y + prev.Height) && (prev != Rectangle.Empty))
+            if ((now.X < prev.X - now.Width || now.X > prev.X + now.Width || now.Y < prev.Y - now.Height || now.Y > prev.Y + now.Height) && (prev != Rectangle.Empty))
             {
                 current = prev;
             }
             else
             {
-                current = rect;
+                current = now;
             }
-            
+            prev = current;
             return current;
         }
 
