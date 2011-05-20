@@ -147,5 +147,12 @@ namespace ETS.ui
         {
             SqlUtils.SaveSeries(series, Settings.Default.DBConnectionString);
         }
+
+        private void btnEditTemplates_Click(object sender, EventArgs e)
+        {
+            EditTemplatesForm etf = new EditTemplatesForm(series);
+            etf.ShowDialog
+                ();
+        }
     }
 }
