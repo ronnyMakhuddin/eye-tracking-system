@@ -78,6 +78,7 @@ namespace ETS.ui
         {
             seria.GetLastTemplate().Added = true;
             seria.GetLastTemplate().Name = txtName.Text;
+            seria.AddTemplateCoordArray();
             Close();
         }
 

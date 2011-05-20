@@ -111,6 +111,7 @@ namespace ETS.ui
             if (capture != null)
             {
                 capture.StopTracking();
+                capture.StopCapture();
                 capture.Reset();
             }
         }
