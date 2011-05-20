@@ -97,7 +97,7 @@
     <Compile Include="controls\StimulusControl.Designer.cs">
       <DependentUpon>StimulusControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="controls\TrialTreeNode.cs" />
+    <Compile Include="datasets\TrialTreeNode.cs" />
     <Compile Include="datasets\PatientsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -11,11 +11,13 @@ namespace ETS_Data
 {
     public class Series
     {
+        private const int TIME_CHUNK_MS = 40;
         private string name;
         private long id;
         public Series()
         {
             templates = new ArrayList();
+            TemplateCoords = new ArrayList();
         }
         private SeriesConfig config;
 
@@ -45,7 +47,14 @@ namespace ETS_Data
             set { templates = value; }
         }
 
-        
+        private ArrayList templateCoords;
+
+        public ArrayList TemplateCoords
+        {
+            get { return templateCoords; }
+            set { templateCoords = value; }
+        }
+
 
         public void AddTemplate(Template template)
         {
@@ -63,20 +72,26 @@ namespace ETS_Data
 
         public void RemoveLastTemplate()
         {
-            templates.RemoveAt(templates.Count - 1);
+            if (templates.Count > 0)
+            {
+                int index = templates.Count - 1;
+                templates.RemoveAt(index);
+            }
         }
 
         public void SetLastTemplate(Template template)
         {
             RemoveLastTemplate();
             AddTemplate(template);
+            
         }
         public Hashtable GetSeriesRecords()
         {
             Hashtable result = new Hashtable();
-            foreach (Template t in Templates)
-            {
-                result.Add(t, t.Coords);
+            for(int i=0;i<Templates.Count; i++){
+                Template t = (Template)Templates[i];
+                ArrayList coords = (ArrayList)TemplateCoords[i];
+                result.Add(t,coords);
             }
             return result;
         }
@@ -90,8 +105,26 @@ namespace ETS_Data
         {
             get {
                    return (Config.StimulusSet.Count + 1) * Config.MaxInt;
-
             }
+        }
+        public void SetTemplateCoord(int templateIndex, SeriesRecord coord, int timePosition)
+        {
+            ArrayList coords = (ArrayList)TemplateCoords[templateIndex];
+            int index = timePosition / TIME_CHUNK_MS;
+            if (index < coords.Count)
+            {
+                coords[index] = coord;
+            }
+        }
+        public void AddTemplateCoordArray()
+        {
+            int coordsSize = (int)Length / 40;
+            ArrayList coords = new ArrayList(coordsSize);
+            for (int i = 0; i < coordsSize; i++)
+            {
+                coords.Add(null);
+            }
+            TemplateCoords.Add(coords);
         }
     }
 }

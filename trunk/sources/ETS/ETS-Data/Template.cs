@@ -21,12 +21,13 @@ namespace ETS.tracker
             set { name = value; }
         }
 
-
         Rectangle rect;
 
         public Rectangle Rect
         {
-            get { return rect; }
+            get { 
+                
+                return rect; }
             set { rect = value; }
         }
         Image<Gray, Byte> tpl;
@@ -37,13 +38,7 @@ namespace ETS.tracker
             set { tpl = value; }
         }
 
-        private ArrayList coords;
-
-        public ArrayList Coords
-        {
-            get { return coords; }
-            set { coords = value; }
-        }
+       
         private bool added;
         public bool Added
         {
@@ -55,7 +50,7 @@ namespace ETS.tracker
         {
             this.rect = rect;
             this.tpl = tpl;
-            this.Coords = new ArrayList();
+           
             added = false;
             this.Name = string.Empty;
         }
@@ -63,7 +58,7 @@ namespace ETS.tracker
         {
             Rect = Rectangle.Empty;
             Tpl = null;
-            Coords = new ArrayList();
+ 
             Added = true;
             Name = string.Empty;
         }
