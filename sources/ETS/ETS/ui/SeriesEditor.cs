@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using ETS.tracker;
 using ETS_Data;
+using ETS.Properties;
 
 namespace ETS.ui
 {
@@ -140,6 +141,11 @@ namespace ETS.ui
                 capture.StopTracking();
                 slider.Value = slider.Maximum;
             }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            SqlUtils.SaveSeries(series, Settings.Default.DBConnectionString);
         }
     }
 }
