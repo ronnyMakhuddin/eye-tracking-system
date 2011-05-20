@@ -40,6 +40,7 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.slider = new ETS.controls.CaptureSlider();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnEditTemplates = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCapture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,7 +112,7 @@
             // 
             this.btnReset.Location = new System.Drawing.Point(767, 74);
             this.btnReset.Name = "btnReset";
-            this.btnReset.Size = new System.Drawing.Size(99, 50);
+            this.btnReset.Size = new System.Drawing.Size(88, 50);
             this.btnReset.TabIndex = 8;
             this.btnReset.Text = "Reset Capture";
             this.btnReset.UseVisualStyleBackColor = true;
@@ -137,11 +138,22 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnEditTemplates
+            // 
+            this.btnEditTemplates.Location = new System.Drawing.Point(767, 131);
+            this.btnEditTemplates.Name = "btnEditTemplates";
+            this.btnEditTemplates.Size = new System.Drawing.Size(88, 48);
+            this.btnEditTemplates.TabIndex = 11;
+            this.btnEditTemplates.Text = "Edit Templates";
+            this.btnEditTemplates.UseVisualStyleBackColor = true;
+            this.btnEditTemplates.Click += new System.EventHandler(this.btnEditTemplates_Click);
+            // 
             // SeriesEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 639);
+            this.Controls.Add(this.btnEditTemplates);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.slider);
             this.Controls.Add(this.btnReset);
@@ -171,5 +183,6 @@
         private System.Windows.Forms.ToolTip toolTip1;
         private controls.CaptureSlider slider;
         private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnEditTemplates;
     }
 }
