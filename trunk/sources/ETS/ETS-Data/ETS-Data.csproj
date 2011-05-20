@@ -51,6 +51,7 @@
     </Compile>
     <Compile Include="SeriesConfig.cs" />
     <Compile Include="SqlUtils.cs" />
+    <Compile Include="StimulusWrapper.cs" />
     <Compile Include="StimulusType.cs" />
     <Compile Include="Template.cs" />
     <Compile Include="Trial.cs" />
@@ -63,6 +64,7 @@
     <Compile Include="SeriesFrame.cs" />
     <Compile Include="SeriesRecord.cs" />
     <Compile Include="Stimulus.cs" />
+    <Compile Include="Util.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

@@ -7,7 +7,7 @@ namespace ETS_Data
 {
     public enum Order
     {
-        Fixed = 0,
-        Probability = 1,
+        Fixed = 1,
+        Probability = 2
     }
 }

@@ -86,5 +86,12 @@ namespace ETS_Data
                 return Templates.Count > 0;
             }
         }
+        public long Length
+        {
+            get {
+                   return (Config.StimulusSet.Count + 1) * Config.MaxInt;
+
+            }
+        }
     }
 }
