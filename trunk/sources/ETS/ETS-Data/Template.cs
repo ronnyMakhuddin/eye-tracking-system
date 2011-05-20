@@ -13,6 +13,14 @@ namespace ETS.tracker
 {
     public class Template
     {
+        private long id;
+
+        public long Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
+        
         private string name;
 
         public string Name
