@@ -93,6 +93,7 @@
             this.btnStart.TabIndex = 6;
             this.toolTip1.SetToolTip(this.btnStart, "To Seria start");
             this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnEnd
             // 
@@ -103,6 +104,7 @@
             this.btnEnd.TabIndex = 7;
             this.toolTip1.SetToolTip(this.btnEnd, "To Seria end");
             this.btnEnd.UseVisualStyleBackColor = true;
+            this.btnEnd.Click += new System.EventHandler(this.btnEnd_Click);
             // 
             // btnReset
             // 
@@ -117,10 +119,10 @@
             // slider
             // 
             this.slider.Location = new System.Drawing.Point(12, 514);
-            this.slider.Maximum = 10;
+            this.slider.Maximum = 0;
             this.slider.Minimum = 0;
             this.slider.Name = "slider";
-            this.slider.Size = new System.Drawing.Size(638, 91);
+            this.slider.Size = new System.Drawing.Size(638, 113);
             this.slider.TabIndex = 9;
             this.slider.Value = 0;
             // 

@@ -6,31 +6,35 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using ETS_Data;
 
 namespace ETS.controls
 {
     public partial class CaptureSlider : UserControl
     {
+        private Series series;
         public CaptureSlider()
         {
             InitializeComponent();
             slider.SmallChange = Constants.TIME_CHUNK_MS;
             slider.LargeChange = Constants.TIME_CHUNK_MS;
             slider.TickFrequency = Constants.TIME_CHUNK_MS;
-            
+
         }
         public int Value
         {
             get { return slider.Value; }
-            set { slider.Value = value;
-            UpdateLabel(Value, Maximum);
-
+            set
+            {
+                slider.Value = value;
+                UpdateLabel(Value, Maximum);
             }
         }
         public int Maximum
         {
             get { return slider.Maximum; }
-            set {
+            set
+            {
                 slider.Maximum = Constants.TIME_CHUNK_MS * (value / Constants.TIME_CHUNK_MS);
                 UpdateLabel(Value, Maximum);
             }
@@ -38,8 +42,10 @@ namespace ETS.controls
         public int Minimum
         {
             get { return slider.Minimum; }
-            set { slider.Minimum = value;
-            UpdateLabel(Value, Maximum);
+            set
+            {
+                slider.Minimum = value;
+                UpdateLabel(Value, Maximum);
             }
         }
         private void btnIncrease_Click(object sender, EventArgs e)
@@ -76,7 +82,45 @@ namespace ETS.controls
 
         private void slider_ValueChanged(object sender, EventArgs e)
         {
-            Value = slider.Value;
+            Value = (slider.Value / Constants.TIME_CHUNK_MS) * Constants.TIME_CHUNK_MS;
         }
+
+        public void InitWithSeries(ETS_Data.Series series)
+        {
+            this.series = series;
+            if (series.Config.OrderTypeId == (long)Order.Fixed)
+            {
+                Minimum = 0;
+                Maximum = (int)series.Length;
+                Value = 0;
+                long interval = series.Config.MaxInt;
+
+                for (int i = 0; i < series.Config.StimulusSet.Count; i++)
+                {
+                    Stimulus s = (Stimulus)series.Config.StimulusSet[i];
+                    StimulusWrapper sw = new StimulusWrapper();
+                    sw.Stimul = s;
+                    sw.TimePosition = (i+1) * (int)interval;
+                    cmbStimuluses.Items.Add(sw);
+                }
+            }
+            else
+            {
+            }
+
+
+
+
+        }
+
+        private void cmbStimuluses_SelectedValueChanged(object sender, EventArgs e)
+        {
+            StimulusWrapper sw = (StimulusWrapper)cmbStimuluses.SelectedItem;
+            if (sw != null)
+            {
+                Value = sw.TimePosition;
+            }
+        }
+        
     }
 }
