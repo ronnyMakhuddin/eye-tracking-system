@@ -9,6 +9,8 @@ using System.Windows.Forms;
 using ETS.tracker;
 using ETS_Data;
 using ETS.Properties;
+using ETS.serialize;
+using System.IO;
 
 namespace ETS.ui
 {
@@ -153,6 +155,16 @@ namespace ETS.ui
             EditTemplatesForm etf = new EditTemplatesForm(series);
             etf.ShowDialog
                 ();
+        }
+
+        private void btnSaveCSV_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.FileName = series.Name.Trim() + ".CSV";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                CSVSerializer.SaveSeria(series, (FileStream)sfd.OpenFile());
+            }
         }
     }
 }

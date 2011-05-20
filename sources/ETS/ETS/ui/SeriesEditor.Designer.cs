@@ -38,9 +38,10 @@
             this.btnEnd = new System.Windows.Forms.Button();
             this.btnReset = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.slider = new ETS.controls.CaptureSlider();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnEditTemplates = new System.Windows.Forms.Button();
+            this.slider = new ETS.controls.CaptureSlider();
+            this.btnSaveCSV = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCapture)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,7 @@
             // 
             // btnAddTemplate
             // 
-            this.btnAddTemplate.Location = new System.Drawing.Point(673, 74);
+            this.btnAddTemplate.Location = new System.Drawing.Point(662, 12);
             this.btnAddTemplate.Name = "btnAddTemplate";
             this.btnAddTemplate.Size = new System.Drawing.Size(88, 51);
             this.btnAddTemplate.TabIndex = 3;
@@ -110,13 +111,33 @@
             // 
             // btnReset
             // 
-            this.btnReset.Location = new System.Drawing.Point(767, 74);
+            this.btnReset.Location = new System.Drawing.Point(756, 12);
             this.btnReset.Name = "btnReset";
             this.btnReset.Size = new System.Drawing.Size(88, 50);
             this.btnReset.TabIndex = 8;
             this.btnReset.Text = "Reset Capture";
             this.btnReset.UseVisualStyleBackColor = true;
             this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(662, 69);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(88, 48);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Text = "Save Series";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnEditTemplates
+            // 
+            this.btnEditTemplates.Location = new System.Drawing.Point(756, 69);
+            this.btnEditTemplates.Name = "btnEditTemplates";
+            this.btnEditTemplates.Size = new System.Drawing.Size(88, 48);
+            this.btnEditTemplates.TabIndex = 11;
+            this.btnEditTemplates.Text = "Edit Templates";
+            this.btnEditTemplates.UseVisualStyleBackColor = true;
+            this.btnEditTemplates.Click += new System.EventHandler(this.btnEditTemplates_Click);
             // 
             // slider
             // 
@@ -128,31 +149,22 @@
             this.slider.TabIndex = 9;
             this.slider.Value = 0;
             // 
-            // btnSave
+            // btnSaveCSV
             // 
-            this.btnSave.Location = new System.Drawing.Point(673, 131);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(88, 48);
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Text = "Save Series";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnEditTemplates
-            // 
-            this.btnEditTemplates.Location = new System.Drawing.Point(767, 131);
-            this.btnEditTemplates.Name = "btnEditTemplates";
-            this.btnEditTemplates.Size = new System.Drawing.Size(88, 48);
-            this.btnEditTemplates.TabIndex = 11;
-            this.btnEditTemplates.Text = "Edit Templates";
-            this.btnEditTemplates.UseVisualStyleBackColor = true;
-            this.btnEditTemplates.Click += new System.EventHandler(this.btnEditTemplates_Click);
+            this.btnSaveCSV.Location = new System.Drawing.Point(850, 12);
+            this.btnSaveCSV.Name = "btnSaveCSV";
+            this.btnSaveCSV.Size = new System.Drawing.Size(88, 48);
+            this.btnSaveCSV.TabIndex = 12;
+            this.btnSaveCSV.Text = "Save As CSV";
+            this.btnSaveCSV.UseVisualStyleBackColor = true;
+            this.btnSaveCSV.Click += new System.EventHandler(this.btnSaveCSV_Click);
             // 
             // SeriesEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(992, 639);
+            this.Controls.Add(this.btnSaveCSV);
             this.Controls.Add(this.btnEditTemplates);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.slider);
@@ -184,5 +196,6 @@
         private controls.CaptureSlider slider;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnEditTemplates;
+        private System.Windows.Forms.Button btnSaveCSV;
     }
 }

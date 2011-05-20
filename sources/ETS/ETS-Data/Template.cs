@@ -14,7 +14,7 @@ namespace ETS.tracker
     public class Template
     {
         private long id;
-
+        private int skip = 0;
         public long Id
         {
             get { return id; }
@@ -99,13 +99,22 @@ namespace ETS.tracker
         public Rectangle QueryCoordinate(Image <Gray,Byte> image){
             now = GetMatchingRegion(image);
             Rectangle current = Rectangle.Empty;
-            if ((now.X < prev.X - now.Width || now.X > prev.X + now.Width || now.Y < prev.Y - now.Height || now.Y > prev.Y + now.Height) && (prev != Rectangle.Empty))
+              
+            if (skip > 10)
             {
-                current = prev;
+                if ((now.X < prev.X - now.Width || now.X > prev.X + now.Width || now.Y < prev.Y - now.Height || now.Y > prev.Y + now.Height) && (prev != Rectangle.Empty))
+                {
+                    current = prev;
+                }
+                else
+                {
+                    current = now;
+                }
             }
             else
             {
                 current = now;
+                skip++;
             }
             prev = current;
             return current;
