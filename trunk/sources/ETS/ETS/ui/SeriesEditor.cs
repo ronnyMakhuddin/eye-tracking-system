@@ -24,13 +24,31 @@ namespace ETS.ui
             capture.OnFinishInit += new CaptureManager.FinishInitEventHandler(capture_OnFinishInit);
             capture.OnImageQuery += new CaptureManager.ImageEventHandler(capture_OnImageQuery);
             capture.OnStartInit += new CaptureManager.StartInitEventHandler(capture_OnStartInit);
+            capture.OnTimeChanged += new CaptureManager.CurrentTimeChangedEventHandler(capture_OnTimeChanged);
             capture.CameraWidth = 640;
             capture.CameraHeight = 480; 
             capture.Init();
             capture.StartCapture();
 
             slider.InitWithSeries(series);
-            
+            slider.ValueChanged += new controls.CaptureSlider.ValueChangedHandler(slider_ValueChanged);
+        }
+
+        void capture_OnTimeChanged(int currentTime)
+        {
+            slider.Value = currentTime;
+            if (slider.Value == slider.Maximum)
+            {
+                if (capture != null)
+                {
+                    capture.StopTracking();
+                }
+            }
+        }
+
+        void slider_ValueChanged(int value)
+        {
+            capture.CurrentTimePosition = value;
         }
 
       

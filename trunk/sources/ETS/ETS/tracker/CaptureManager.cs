@@ -33,7 +33,9 @@ namespace ETS.tracker
         public event InitErrorEventHandler OnErrorInit;
         public delegate void ImageEventHandler(Image<Bgr, Byte> image);
         public event ImageEventHandler OnImageQuery;
-
+        public delegate void CurrentTimeChangedEventHandler(int currentTime);
+        public event CurrentTimeChangedEventHandler OnTimeChanged;
+        
         #endregion
         #region -- Properties --
         private Image<Bgr, Byte> currentFrame;
@@ -217,6 +219,10 @@ namespace ETS.tracker
                 if (State == States.STATE_TRACKING)
                 {
                     CurrentTimePosition += QueryInterval;
+                    if (OnTimeChanged != null)
+                    {
+                        OnTimeChanged(CurrentTimePosition);
+                    }
                 }
                 DrawTime();
             }
