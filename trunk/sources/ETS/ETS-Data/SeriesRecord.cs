@@ -3,41 +3,44 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Collections;
+using System.Drawing;
 
 namespace ETS_Data
 {
     public class SeriesRecord
     {
-        /// <summary>
-        /// Стимулы в момент времени
-        /// </summary>
-        private ArrayList stimulusArray;
+        private long time;
 
-        public ArrayList StimulusArray
+        public long Time
         {
-            get { return stimulusArray; }
-            set { stimulusArray = value; }
+            get { return time; }
+            set { time = value; }
         }
-        private Hashtable templateDirectionMap;
+        private int x;
 
-        public Hashtable TemplateDirectionMap
+        public int X
         {
-            get { return templateDirectionMap; }
-            set { templateDirectionMap = value; }
+            get { return x; }
+            set { x = value; }
         }
-        private char keyPressed;
+        private int y;
 
-        public char KeyPressed
+        public int Y
         {
-            get { return keyPressed; }
-            set { keyPressed = value; }
+            get { return y; }
+            set { y = value; }
         }
-        private int keyPressedTimeLength;
-
-        public int KeyPressedTimeLength
+        public SeriesRecord()
         {
-            get { return keyPressedTimeLength; }
-            set { keyPressedTimeLength = value; }
+            X = 0;
+            Y = 0;
+            Time = 0;
+        }
+        public SeriesRecord(Rectangle r, long time)
+        {
+            X = r.Right;
+            Y = r.Top;
+            Time = time;
         }
     }
 }

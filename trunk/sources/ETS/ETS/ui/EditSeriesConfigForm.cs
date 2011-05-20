@@ -62,8 +62,9 @@ namespace ETS.ui
                 { 
                     string str = (string)grdConfigs["stimulusOrder", e.RowIndex].Value;
                     long interval = (long)grdConfigs["maxInt", e.RowIndex].Value;
-                 
-                    EditStimulusOrderForm esof = new EditStimulusOrderForm(str, interval);
+                    string order = (string)grdConfigs["orderType", e.RowIndex].Value;
+                    Order orderType = order.Trim().Equals("FIXED") ? Order.Fixed : Order.Probability;
+                    EditStimulusOrderForm esof = new EditStimulusOrderForm(str, interval, orderType);
                     if (esof.ShowDialog() == DialogResult.OK)
                     {
                         grdConfigs["stimulusOrder", e.RowIndex].Value = esof.Result;

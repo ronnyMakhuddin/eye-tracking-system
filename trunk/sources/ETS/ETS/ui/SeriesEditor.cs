@@ -27,9 +27,12 @@ namespace ETS.ui
             capture.CameraWidth = 640;
             capture.CameraHeight = 480; 
             capture.Init();
-          
-       
             capture.StartCapture();
+
+
+            slider.Minimum = 0;
+            slider.Maximum = 100;
+            slider.Value = 0;
         }
 
       
@@ -74,7 +77,16 @@ namespace ETS.ui
 
         private void btnRecord_Click(object sender, EventArgs e)
         {
+            if (!series.ContainsTemplates)
+            {
 
+                Util.ShowError("Please, add some template before tracking");
+                return;
+            }
+            if (capture != null)
+            {
+                capture.StartTracking();
+            }
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -83,6 +95,15 @@ namespace ETS.ui
             {
              
                 capture.Reset();
+            }
+        }
+
+        private void btnPause_Click(object sender, EventArgs e)
+        {
+            if (capture != null)
+            {
+
+                capture.StopTracking();
             }
         }
     }

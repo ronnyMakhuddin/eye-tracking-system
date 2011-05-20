@@ -89,8 +89,8 @@ namespace ETS.tracker
             get { return cameraHeight; }
             set { cameraHeight = value; }
         }
-      
-       
+
+
         private Series seria;
 
         public Series Seria
@@ -99,12 +99,12 @@ namespace ETS.tracker
             set { seria = value; }
         }
 
-        private int length;
+        private int currentTimePosition;
 
-        public int Length
+        public int CurrentTimePosition
         {
-            get { return length; }
-            set { length = value; }
+            get { return currentTimePosition; }
+            set { currentTimePosition = value; }
         }
 
         #endregion
@@ -116,7 +116,7 @@ namespace ETS.tracker
         {
             State = States.STATE_NOT_INITED;
             Seria = s;
-            Length = 0;
+            CurrentTimePosition = 0;
             QueryInterval = 40;
             try
             {
@@ -140,7 +140,7 @@ namespace ETS.tracker
                 {
                     cameraCapture = new Capture();
                 }
-               
+
                 State = States.STATE_INITED;
                 cameraCapture.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_WIDTH, CameraWidth);
                 cameraCapture.SetCaptureProperty(Emgu.CV.CvEnum.CAP_PROP.CV_CAP_PROP_FRAME_HEIGHT, CameraHeight);
@@ -174,8 +174,10 @@ namespace ETS.tracker
             {
             }
             CloseCapture();
-          
+
         }
+        
+        
         void timer_Tick(object sender, EventArgs e)
         {
             Image<Bgr, Byte> image = QueryFrame();
@@ -201,9 +203,9 @@ namespace ETS.tracker
         {
             if (Session.Instance.CurrentTrial == null) return;
             foreach (Template r in Session.Instance.CurrentSeria.Templates)
-             {
-                 CurrentFrame.Draw(r.Rect, new Bgr(0.0, 0.0, 255.0), 1);
-             }
+            {
+                CurrentFrame.Draw(r.Rect, new Bgr(0.0, 0.0, 255.0), 1);
+            }
         }
 
         public void ProcessFrame()
@@ -214,21 +216,19 @@ namespace ETS.tracker
                 DrawMatchingRegions();
                 if (State == States.STATE_TRACKING)
                 {
-                    Length += QueryInterval;
+                    CurrentTimePosition += QueryInterval;
                 }
                 DrawTime();
             }
         }
         public void DrawTime()
         {
-            if (State == States.STATE_TRACKING)
-            {
-                TimeSpan ts = TimeSpan.FromMilliseconds(Length);
-                string time = string.Format("{0:D2}:{1:D2}:{2:D2}:{3:D3} ", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
-                MCvFont f = new MCvFont(Emgu.CV.CvEnum.FONT.CV_FONT_HERSHEY_COMPLEX, 0.5, 0.5);
-                Size textSize = f.GetTextSize(time, 0);
-                CurrentFrame.Draw(time, ref f, new Point(CurrentFrame.Width-textSize.Width-10,CurrentFrame.Height-textSize.Height-10), new Bgr(0, 0, 255));
-            }
+            TimeSpan ts = TimeSpan.FromMilliseconds(CurrentTimePosition);
+            string time = string.Format("{0:D2}:{1:D2}:{2:D2}:{3:D3} ", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
+            MCvFont f = new MCvFont(Emgu.CV.CvEnum.FONT.CV_FONT_HERSHEY_COMPLEX, 0.5, 0.5);
+            Size textSize = f.GetTextSize(time, 0);
+            CurrentFrame.Draw(time, ref f, new Point(CurrentFrame.Width - textSize.Width - 10, CurrentFrame.Height - textSize.Height - 10), new Bgr(0, 0, 255));
+
         }
         public void Reset()
         {
@@ -240,30 +240,24 @@ namespace ETS.tracker
 
         public void DrawMatchingRegions()
         {
-            ArrayList matches = GetMatchingRegions(currentGrayFrame);
-            if (matches == null) return;
-            foreach (Rectangle r in matches)
+         
+            if (Session.Instance.CurrentTrial == null) return;
+            foreach (Template t in Session.Instance.CurrentSeria.Templates)
             {
-                CurrentFrame.Draw(r, new Bgr(255.0, 0.0, 0.0), 1);
-
+                Rectangle match = GetMatchingRegionForTemplate(t, currentGrayFrame);
+                if (t.Added)
+                {
+                    t.Coords.Add(new SeriesRecord(match, CurrentTimePosition));
+                }
+                CurrentFrame.Draw(match, new Bgr(255.0, 0.0, 0.0), 1);
             }
         }
-        public ArrayList GetMatchingRegions(Image<Gray, Byte> image)
+        public Rectangle GetMatchingRegionForTemplate(Template t, Image<Gray, Byte> image)
         {
-            if (Session.Instance.CurrentTrial == null) return null;
-            ArrayList result = new ArrayList();
-            foreach (Template r in Session.Instance.CurrentSeria.Templates)
-              {
-                  Rectangle current = r.QueryCoordinate(image);
-                  result.Add(current);
-                  if (r.Added)
-                  {
-                      r.Coords.Add(current);
-                    
-                  }
-              }
-            return result;
+            Rectangle current = t.QueryCoordinate(image);
+            return current;
         }
+      
 
         internal void CloseCapture()
         {
@@ -276,6 +270,16 @@ namespace ETS.tracker
             {
             }
             cameraCapture = null;
+        }
+
+        internal void StartTracking()
+        {
+            State = States.STATE_TRACKING;
+        }
+
+        internal void StopTracking()
+        {
+            State = States.IDLE;
         }
     }
 

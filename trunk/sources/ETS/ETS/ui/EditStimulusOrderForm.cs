@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Collections;
+using ETS_Data;
 
 namespace ETS.ui
 {
@@ -16,7 +17,7 @@ namespace ETS.ui
         private string order;
         private long interval;
         private int comboY;
-
+        private Order orderType;
         private string result;
 
         public string Result
@@ -24,9 +25,10 @@ namespace ETS.ui
             get { return result; }
             set { result = value; }
         }
-        public EditStimulusOrderForm(string order, long interval)
+        public EditStimulusOrderForm(string order, long interval, Order orderType)
         {
             this.order = order;
+            this.orderType = orderType;
             this.interval = interval;
             this.orderArray = new ArrayList();
             this.comboY = 20;
@@ -50,16 +52,34 @@ namespace ETS.ui
         {
             // TODO: This line of code loads data into the 'stimDataSet.SelectStimuluses' table. You can move, or remove it, as needed.
             this.selectStimulusesTableAdapter.Fill(this.stimDataSet.SelectStimuluses);
-
-            string[] tokens = order.Split(',');
-            orderArray = new ArrayList();
-
-            for (int i = 0; i < tokens.Length; i++)
+            switch (orderType)
             {
-                long id = long.Parse(tokens[i]);
-                ComboBox cb = addCombo();
-                cb.SelectedValue = (long)id;
+                case Order.Fixed:
+                    {
+                        if (order != null) order = order.Trim();
+                        if (!string.IsNullOrEmpty(order))
+                        {
+                            string[] tokens = order.Split(',');
+                            orderArray = new ArrayList();
+
+                            for (int i = 0; i < tokens.Length; i++)
+                            {
+                                long id = long.Parse(tokens[i]);
+                                ComboBox cb = addCombo();
+                                cb.SelectedValue = (long)id;
+                            }
+                        }
+                    }
+                    break;
+                case Order.Probability:
+                    {
+                    
+                    }
+                    break;
             }
+
+
+            updateLabels();
         }
         public ComboBox addCombo()
         {
@@ -74,7 +94,7 @@ namespace ETS.ui
         {
             lblInterval.Text = interval + " ms";
             TimeSpan ts = TimeSpan.FromMilliseconds((double)(interval * orderArray.Count));
-            lblLength.Text = string.Format("{0:D2}:{1:D2}:{2:D2}:{3:D3} ", ts.Hours, ts.Minutes, ts.Seconds,ts.Milliseconds);
+            lblLength.Text = string.Format("{0:D2}:{1:D2}:{2:D2}:{3:D3} ", ts.Hours, ts.Minutes, ts.Seconds, ts.Milliseconds);
         }
         private void btnOk_Click(object sender, EventArgs e)
         {

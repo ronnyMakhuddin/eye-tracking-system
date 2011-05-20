@@ -47,7 +47,7 @@ namespace ETS.ui
             this.minintDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textbeforeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textafterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orderTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.orderType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.editStimSet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clmStimulusOrder = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clmTest = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -71,7 +71,7 @@ namespace ETS.ui
             this.minintDataGridViewTextBoxColumn,
             this.textbeforeDataGridViewTextBoxColumn,
             this.textafterDataGridViewTextBoxColumn,
-            this.orderTypeDataGridViewTextBoxColumn,
+            this.orderType,
             this.editStimSet,
             this.clmStimulusOrder,
             this.clmTest});
@@ -183,16 +183,16 @@ namespace ETS.ui
             this.textafterDataGridViewTextBoxColumn.HeaderText = "Text After Serries";
             this.textafterDataGridViewTextBoxColumn.Name = "textafterDataGridViewTextBoxColumn";
             // 
-            // orderTypeDataGridViewTextBoxColumn
+            // orderType
             // 
-            this.orderTypeDataGridViewTextBoxColumn.DataPropertyName = "orderType";
-            this.orderTypeDataGridViewTextBoxColumn.DataSource = this.orderTypeBindingSource;
-            this.orderTypeDataGridViewTextBoxColumn.DisplayMember = "name";
-            this.orderTypeDataGridViewTextBoxColumn.HeaderText = "Order Type";
-            this.orderTypeDataGridViewTextBoxColumn.Name = "orderTypeDataGridViewTextBoxColumn";
-            this.orderTypeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.orderTypeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.orderTypeDataGridViewTextBoxColumn.ValueMember = "name";
+            this.orderType.DataPropertyName = "orderType";
+            this.orderType.DataSource = this.orderTypeBindingSource;
+            this.orderType.DisplayMember = "name";
+            this.orderType.HeaderText = "Order Type";
+            this.orderType.Name = "orderType";
+            this.orderType.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.orderType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.orderType.ValueMember = "name";
             // 
             // editStimSet
             // 
@@ -252,7 +252,7 @@ namespace ETS.ui
         private System.Windows.Forms.DataGridViewTextBoxColumn minintDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn textbeforeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn textafterDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn orderTypeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn orderType;
         private System.Windows.Forms.DataGridViewButtonColumn editStimSet;
         private System.Windows.Forms.DataGridViewButtonColumn clmStimulusOrder;
         private System.Windows.Forms.DataGridViewButtonColumn clmTest;

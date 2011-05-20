@@ -45,7 +45,7 @@ namespace ETS_Data
             set { templates = value; }
         }
 
-
+        
 
         public void AddTemplate(Template template)
         {
@@ -70,6 +70,21 @@ namespace ETS_Data
         {
             RemoveLastTemplate();
             AddTemplate(template);
+        }
+        public Hashtable GetSeriesRecords()
+        {
+            Hashtable result = new Hashtable();
+            foreach (Template t in Templates)
+            {
+                result.Add(t, t.Coords);
+            }
+            return result;
+        }
+        public bool ContainsTemplates
+        {
+            get {
+                return Templates.Count > 0;
+            }
         }
     }
 }
