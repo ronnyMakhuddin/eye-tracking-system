@@ -29,10 +29,8 @@ namespace ETS.ui
             capture.Init();
             capture.StartCapture();
 
-
-            slider.Minimum = 0;
-            slider.Maximum = 100;
-            slider.Value = 0;
+            slider.InitWithSeries(series);
+            
         }
 
       
@@ -85,6 +83,7 @@ namespace ETS.ui
             }
             if (capture != null)
             {
+                capture.StopTracking();
                 capture.StartTracking();
             }
         }
@@ -93,7 +92,7 @@ namespace ETS.ui
         {
             if (capture != null)
             {
-             
+                capture.StopTracking();
                 capture.Reset();
             }
         }
@@ -102,8 +101,25 @@ namespace ETS.ui
         {
             if (capture != null)
             {
-
                 capture.StopTracking();
+            }
+        }
+
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            if (capture != null)
+            {
+                capture.StopTracking();
+                slider.Value = 0;
+            }
+        }
+
+        private void btnEnd_Click(object sender, EventArgs e)
+        {
+            if (capture != null)
+            {
+                capture.StopTracking();
+                slider.Value = slider.Maximum;
             }
         }
     }

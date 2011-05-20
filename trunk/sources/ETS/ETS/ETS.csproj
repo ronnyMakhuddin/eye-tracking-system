@@ -91,6 +91,12 @@
       <DependentUpon>CaptureSlider.cs</DependentUpon>
     </Compile>
     <Compile Include="controls\SeriesTreeNode.cs" />
+    <Compile Include="controls\StimulusControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="controls\StimulusControl.Designer.cs">
+      <DependentUpon>StimulusControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="controls\TrialTreeNode.cs" />
     <Compile Include="datasets\PatientsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -201,6 +207,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="controls\CaptureSlider.resx">
       <DependentUpon>CaptureSlider.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="controls\StimulusControl.resx">
+      <DependentUpon>StimulusControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ui\AddSeriesForm.resx">
       <DependentUpon>AddSeriesForm.cs</DependentUpon>

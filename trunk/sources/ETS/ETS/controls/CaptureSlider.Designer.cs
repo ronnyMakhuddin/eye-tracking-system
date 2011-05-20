@@ -32,13 +32,15 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.btnIncrease = new System.Windows.Forms.Button();
             this.btnDecrease = new System.Windows.Forms.Button();
+            this.cmbStimuluses = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.slider)).BeginInit();
             this.SuspendLayout();
             // 
             // slider
             // 
             this.slider.LargeChange = 40;
-            this.slider.Location = new System.Drawing.Point(0, 21);
+            this.slider.Location = new System.Drawing.Point(1, 49);
             this.slider.Name = "slider";
             this.slider.Size = new System.Drawing.Size(603, 45);
             this.slider.SmallChange = 40;
@@ -48,7 +50,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(3, 69);
+            this.lblTime.Location = new System.Drawing.Point(3, 96);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(42, 13);
             this.lblTime.TabIndex = 2;
@@ -56,7 +58,7 @@
             // 
             // btnIncrease
             // 
-            this.btnIncrease.Location = new System.Drawing.Point(609, 9);
+            this.btnIncrease.Location = new System.Drawing.Point(609, 29);
             this.btnIncrease.Name = "btnIncrease";
             this.btnIncrease.Size = new System.Drawing.Size(25, 23);
             this.btnIncrease.TabIndex = 3;
@@ -66,7 +68,7 @@
             // 
             // btnDecrease
             // 
-            this.btnDecrease.Location = new System.Drawing.Point(610, 38);
+            this.btnDecrease.Location = new System.Drawing.Point(610, 58);
             this.btnDecrease.Name = "btnDecrease";
             this.btnDecrease.Size = new System.Drawing.Size(25, 23);
             this.btnDecrease.TabIndex = 4;
@@ -74,16 +76,36 @@
             this.btnDecrease.UseVisualStyleBackColor = true;
             this.btnDecrease.Click += new System.EventHandler(this.btnDecrease_Click);
             // 
+            // cmbStimuluses
+            // 
+            this.cmbStimuluses.FormattingEnabled = true;
+            this.cmbStimuluses.Location = new System.Drawing.Point(138, 12);
+            this.cmbStimuluses.Name = "cmbStimuluses";
+            this.cmbStimuluses.Size = new System.Drawing.Size(466, 21);
+            this.cmbStimuluses.TabIndex = 5;
+            this.cmbStimuluses.SelectedValueChanged += new System.EventHandler(this.cmbStimuluses_SelectedValueChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(126, 13);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Select Stimulus Location:";
+            // 
             // CaptureSlider
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cmbStimuluses);
             this.Controls.Add(this.btnDecrease);
             this.Controls.Add(this.btnIncrease);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.slider);
             this.Name = "CaptureSlider";
-            this.Size = new System.Drawing.Size(638, 91);
+            this.Size = new System.Drawing.Size(638, 120);
             ((System.ComponentModel.ISupportInitialize)(this.slider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -96,5 +118,7 @@
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.Button btnIncrease;
         private System.Windows.Forms.Button btnDecrease;
+        private System.Windows.Forms.ComboBox cmbStimuluses;
+        private System.Windows.Forms.Label label1;
     }
 }
