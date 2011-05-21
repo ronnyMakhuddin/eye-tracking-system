@@ -101,6 +101,7 @@ namespace ETS.ui
             {
                capture.StopCapture();
             }
+            player.Close();
         }
 
         private void btnAddTemplate_Click(object sender, EventArgs e)
