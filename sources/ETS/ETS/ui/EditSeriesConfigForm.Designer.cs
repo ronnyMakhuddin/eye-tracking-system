@@ -45,8 +45,8 @@ namespace ETS.ui
             this.maxInt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.minintDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textbeforeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textafterDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.textBefore = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.textAfter = new System.Windows.Forms.DataGridViewButtonColumn();
             this.orderType = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.editStimSet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clmStimulusOrder = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -69,8 +69,8 @@ namespace ETS.ui
             this.maxInt,
             this.id,
             this.minintDataGridViewTextBoxColumn,
-            this.textbeforeDataGridViewTextBoxColumn,
-            this.textafterDataGridViewTextBoxColumn,
+            this.textBefore,
+            this.textAfter,
             this.orderType,
             this.editStimSet,
             this.clmStimulusOrder,
@@ -171,17 +171,21 @@ namespace ETS.ui
             this.minintDataGridViewTextBoxColumn.HeaderText = "Min Interval";
             this.minintDataGridViewTextBoxColumn.Name = "minintDataGridViewTextBoxColumn";
             // 
-            // textbeforeDataGridViewTextBoxColumn
+            // textBefore
             // 
-            this.textbeforeDataGridViewTextBoxColumn.DataPropertyName = "text_before";
-            this.textbeforeDataGridViewTextBoxColumn.HeaderText = "Text Before Series";
-            this.textbeforeDataGridViewTextBoxColumn.Name = "textbeforeDataGridViewTextBoxColumn";
+            this.textBefore.DataPropertyName = "text_before";
+            this.textBefore.HeaderText = "Text Before Series";
+            this.textBefore.Name = "textBefore";
+            this.textBefore.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.textBefore.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // textafterDataGridViewTextBoxColumn
+            // textAfter
             // 
-            this.textafterDataGridViewTextBoxColumn.DataPropertyName = "text_after";
-            this.textafterDataGridViewTextBoxColumn.HeaderText = "Text After Serries";
-            this.textafterDataGridViewTextBoxColumn.Name = "textafterDataGridViewTextBoxColumn";
+            this.textAfter.DataPropertyName = "text_after";
+            this.textAfter.HeaderText = "Text After Serries";
+            this.textAfter.Name = "textAfter";
+            this.textAfter.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.textAfter.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
             // orderType
             // 
@@ -250,8 +254,8 @@ namespace ETS.ui
         private System.Windows.Forms.DataGridViewTextBoxColumn maxInt;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn minintDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn textbeforeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn textafterDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewButtonColumn textBefore;
+        private System.Windows.Forms.DataGridViewButtonColumn textAfter;
         private System.Windows.Forms.DataGridViewComboBoxColumn orderType;
         private System.Windows.Forms.DataGridViewButtonColumn editStimSet;
         private System.Windows.Forms.DataGridViewButtonColumn clmStimulusOrder;

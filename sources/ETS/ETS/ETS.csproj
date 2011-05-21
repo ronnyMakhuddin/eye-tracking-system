@@ -200,6 +200,12 @@
     <Compile Include="ui\EditTemplatesForm.Designer.cs">
       <DependentUpon>EditTemplatesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ui\EditTextForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\EditTextForm.Designer.cs">
+      <DependentUpon>EditTextForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="ui\EditTrialsForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -252,6 +258,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ui\EditTemplatesForm.resx">
       <DependentUpon>EditTemplatesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ui\EditTextForm.resx">
+      <DependentUpon>EditTextForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ui\EditTrialsForm.resx">
       <DependentUpon>EditTrialsForm.cs</DependentUpon>

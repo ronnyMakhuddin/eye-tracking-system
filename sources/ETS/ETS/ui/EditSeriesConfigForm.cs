@@ -16,6 +16,9 @@ namespace ETS.ui
         private const int EDIT_STIMULUS_SET = 9;
         private const int EDIT_STIMULUS_ORDER = 10;
         private const int TEST_SERIES = 11;
+        private const int EDIT_TEXT_BEFORE = 6;
+        private const int EDIT_TEXT_AFTER = 7;
+
         public EditSeriesConfigForm()
         {
             InitializeComponent();
@@ -77,6 +80,24 @@ namespace ETS.ui
                     SeriesConfig config = SqlUtils.SelectSeriesConfig(id, Settings.Default.DBConnectionString);
                     SeriesConfigProcessForm scpf = new SeriesConfigProcessForm(config);
                     scpf.Show();
+                }
+                else if (e.ColumnIndex == EDIT_TEXT_BEFORE)
+                {
+                    string text = (string)grdConfigs["textBefore", e.RowIndex].Value;
+                    EditTextForm etf = new EditTextForm(text);
+                    if (etf.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        grdConfigs["textBefore", e.RowIndex].Value = etf.EditText;
+                    }
+                }
+                else if (e.ColumnIndex == EDIT_TEXT_AFTER)
+                {
+                    string text = (string)grdConfigs["textAfter", e.RowIndex].Value;
+                    EditTextForm etf = new EditTextForm(text);
+                    if (etf.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                    {
+                        grdConfigs["textAfter", e.RowIndex].Value = etf.EditText;
+                    }
                 }
             }
         }
