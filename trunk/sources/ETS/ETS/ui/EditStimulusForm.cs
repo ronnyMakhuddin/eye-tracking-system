@@ -56,7 +56,7 @@ namespace ETS.ui
                     FileInfo info = new FileInfo(filename);
                     if (info.Length > 200 * 1024)
                     {
-                        Util.ShowError("Maximum file size is limited to 200 Kb. Cannot user this file.");
+                        Util.ShowError("Maximum file size is limited to 200 Kb. Cannot use this file. Please, select another");
                         return;
                     }
                     c.Value = filename;
