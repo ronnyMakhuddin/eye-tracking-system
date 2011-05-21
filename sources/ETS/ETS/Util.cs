@@ -14,9 +14,13 @@ namespace ETS
         {
             MessageBox.Show(message, Resources.ERROR,MessageBoxButtons.OK,MessageBoxIcon.Error,MessageBoxDefaultButton.Button1);
         }
-        public static void ShowInfo(string message)
+        public static DialogResult ShowInfo(string message)
         {
-            MessageBox.Show(message, Resources.INFO, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+           return MessageBox.Show(message, Resources.INFO, MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1);
+        }
+        public static DialogResult ShowQuestion(string message)
+        {
+            return MessageBox.Show(message, Resources.INFO, MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1);
         }
         public static string MsToStandardTimeRepresentation(int ms)
         {

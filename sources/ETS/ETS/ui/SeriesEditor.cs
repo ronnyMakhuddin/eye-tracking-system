@@ -80,9 +80,6 @@ namespace ETS.ui
             capture.CurrentTimePosition = value;
         }
 
-      
-       
-
         void capture_OnImageQuery(Emgu.CV.Image<Emgu.CV.Structure.Bgr, Byte> image)
         {
             if (image != null)

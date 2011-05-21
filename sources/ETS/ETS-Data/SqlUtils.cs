@@ -28,7 +28,7 @@ namespace ETS_Data
                }
            }
        }
-        public static void InsertSeries(string name, object seriesConfigId, int trialId, string dbConnectionString)
+        public static void InsertSeries(string name, object seriesConfigId, int trialId, string dbConnectionString, long series_id)
         {
             using (SqlConnection connection = new SqlConnection(dbConnectionString))
             {
@@ -44,6 +44,8 @@ namespace ETS_Data
                     param1.Value = seriesConfigId;
                     SqlParameter param2 = insert.Parameters.Add("@trialId", SqlDbType.BigInt, 1);
                     param2.Value = trialId;
+                    SqlParameter param3 = insert.Parameters.Add("@series_id", SqlDbType.BigInt, 1);
+                    param3.Value = series_id;
                     int rows = insert.ExecuteNonQuery();
                 }
             }
@@ -166,11 +168,15 @@ namespace ETS_Data
                             c.OrderTypeId = reader.GetInt64(5);
                             c.Name = reader.GetString(6);
                             string order = reader.GetString(8);
-                            string[] strIds = order.Split(',');
                             c.StimulusOrder = new ArrayList();
-                            for (int i = 0; i < strIds.Length; i++)
+                             
+                            if (!string.IsNullOrEmpty(order) && !string.IsNullOrEmpty(order.Trim()))
                             {
-                                c.StimulusOrder.Add(long.Parse(strIds[i]));
+                                string[] strIds = order.Split(',');
+                                for (int i = 0; i < strIds.Length; i++)
+                                {
+                                    c.StimulusOrder.Add(long.Parse(strIds[i]));
+                                }
                             }
                             c.StimulusSet = SelectStimulusSet(c.Id, dbConnectionString);
                         }
@@ -366,6 +372,26 @@ namespace ETS_Data
             }
         }
 
-      
+
+
+        public static void DeleteSeries(Series series, string dbConnectionString)
+        {
+            using (SqlConnection connection = new SqlConnection(dbConnectionString))
+            {
+                connection.Open();
+                using (SqlCommand delete = new SqlCommand())
+                {
+                    delete.CommandType = CommandType.StoredProcedure;
+                    delete.CommandText = "DeleteSeries";
+                    delete.Connection = connection;
+
+                    SqlParameter param = delete.Parameters.Add("@id", SqlDbType.BigInt, 1);
+                    param.Value = series.Id;
+
+                    delete.ExecuteNonQuery();
+                }
+            }
+          
+        }
     }
 }
