@@ -74,7 +74,35 @@ namespace ETS_Data
             set { stimulusOrder = value; }
         }
 
-       
-        
+        public Order OrderType
+        {
+            get {
+                return (Order)orderTypeId;
+            }
+        }
+        public ArrayList SelectedStimulusSet
+        {
+            get {
+                ArrayList result = new ArrayList();
+                for (int i = 0; i < stimulusOrder.Count; i++)
+                {
+                    long id = (long)stimulusOrder[i];
+                    Stimulus forId = null;
+                    foreach (Stimulus s in stimulusSet)
+                    {
+                        if (s.Id == id)
+                        {
+                            forId = s;
+                            break;
+                        }
+                    }
+                    if (forId != null)
+                    {
+                        result.Add(forId);
+                    }
+                }
+                return result;
+            }
+        }
     }
 }

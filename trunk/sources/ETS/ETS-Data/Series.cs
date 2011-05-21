@@ -104,7 +104,7 @@ namespace ETS_Data
         public long Length
         {
             get {
-                   return (Config.StimulusSet.Count + 1) * Config.MaxInt;
+                   return (Config.SelectedStimulusSet.Count + 1) * Config.MaxInt;
             }
         }
         public void SetTemplateCoord(int templateIndex, SeriesRecord coord, int timePosition)

@@ -57,7 +57,13 @@ namespace ETS_Data
             get { return pos; }
             set { pos = value; }
         }
-       
 
+        private Bitmap pictureData;
+
+        public Bitmap PictureData
+        {
+            get { return pictureData; }
+            set { pictureData = value; }
+        }
     }
 }

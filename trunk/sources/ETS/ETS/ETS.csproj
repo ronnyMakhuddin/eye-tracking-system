@@ -279,6 +279,9 @@
     <EmbeddedResource Include="ui\SeriesEditor.resx">
       <DependentUpon>SeriesEditor.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ui\SeriesPlayer.resx">
+      <DependentUpon>SeriesPlayer.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="app.config">
       <SubType>Designer</SubType>
     </None>
@@ -331,6 +334,12 @@
     </Compile>
     <Compile Include="ui\SeriesEditor.Designer.cs">
       <DependentUpon>SeriesEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ui\SeriesPlayer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ui\SeriesPlayer.Designer.cs">
+      <DependentUpon>SeriesPlayer.cs</DependentUpon>
     </Compile>
     <Compile Include="Util.cs" />
     <None Include="datasets\StimDataSet.xsc">

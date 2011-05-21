@@ -7,8 +7,8 @@ namespace ETS_Data
 {
     public enum StimulusType
     {
-        TEXT,
-        PICTURE,
-        SOUND
+        TEXT = 1,
+        PICTURE = 2,
+        SOUND = 3
     }
 }
