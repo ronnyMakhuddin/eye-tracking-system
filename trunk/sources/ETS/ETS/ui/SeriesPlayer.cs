@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ETS_Data;
+using System.Media;
 
 namespace ETS.ui
 {
@@ -31,6 +32,12 @@ namespace ETS.ui
                         }
                         SetPictureLocation(stimul.Pos);
                         image.Image = stimul.PictureData;
+                    }
+                    break;
+                case StimulusType.SOUND:
+                    {
+                        SoundPlayer simpleSound = new SoundPlayer(stimul.Filename);
+                        simpleSound.Play();
                     }
                     break;
             }
