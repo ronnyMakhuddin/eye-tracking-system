@@ -18,8 +18,33 @@ namespace ETS.ui
         {
             InitializeComponent();
             this.series = series;
+            Screen[] sc = Screen.AllScreens;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.WindowState = FormWindowState.Maximized;
+            if (sc.Length > 1)
+            {
+                this.StartPosition = FormStartPosition.Manual;
+                this.Left = sc[1].Bounds.Left; 
+                this.Top = sc[1].Bounds.Top;
+            }
+           
         }
+        private void SetFormLocation(Form form, Screen screen)
+        {
+            // first method
+            Rectangle bounds = screen.Bounds;
+            form.SetBounds(bounds.X, bounds.Y, bounds.Width, bounds.Height);
 
+            // second method
+            //Point location = screen.Bounds.Location;
+            //Size size = screen.Bounds.Size;
+
+            //form.Left = location.X;
+            //form.Top = location.Y;
+            //form.Width = size.Width;
+            //form.Height = size.Height;
+
+        }
         public void ShowStimul(Stimulus stimul)
         {
             switch (stimul.Type)
