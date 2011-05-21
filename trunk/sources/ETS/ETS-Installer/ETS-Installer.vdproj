@@ -33,6 +33,24 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_211034CED65506AF6F055B8FC59E1690"
+        "OwnerKey" = "8:_7E9B21FEC3CB477DA570BEBAC7DF5D7E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_211034CED65506AF6F055B8FC59E1690"
+        "OwnerKey" = "8:_F35A0BEF19E84CFD802EFF29BF098502"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_211034CED65506AF6F055B8FC59E1690"
+        "OwnerKey" = "8:_C11C1DF2F18E48CA8F6721C0BB901837"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_24D9D4768B8D4265A3673071AA3EDD9A"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -57,30 +75,6 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_3DEF9815F1DCD6001087A5E083AA6BC5"
-        "OwnerKey" = "8:_C11C1DF2F18E48CA8F6721C0BB901837"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3DEF9815F1DCD6001087A5E083AA6BC5"
-        "OwnerKey" = "8:_F35A0BEF19E84CFD802EFF29BF098502"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3DEF9815F1DCD6001087A5E083AA6BC5"
-        "OwnerKey" = "8:_7E9B21FEC3CB477DA570BEBAC7DF5D7E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_3DEF9815F1DCD6001087A5E083AA6BC5"
-        "OwnerKey" = "8:_2B0791236223090BEB88594646654877"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
         "MsmKey" = "8:_3F501168956B44FB86C3D16DFFFC3136"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -100,13 +94,7 @@
         "Entry"
         {
         "MsmKey" = "8:_848014B499CE30726E07E2E17BE0F035"
-        "OwnerKey" = "8:_C11C1DF2F18E48CA8F6721C0BB901837"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_848014B499CE30726E07E2E17BE0F035"
-        "OwnerKey" = "8:_068E8B0A96F43670901C992E72A2C11D"
+        "OwnerKey" = "8:_7E9B21FEC3CB477DA570BEBAC7DF5D7E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -118,13 +106,7 @@
         "Entry"
         {
         "MsmKey" = "8:_848014B499CE30726E07E2E17BE0F035"
-        "OwnerKey" = "8:_2B0791236223090BEB88594646654877"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_848014B499CE30726E07E2E17BE0F035"
-        "OwnerKey" = "8:_7E9B21FEC3CB477DA570BEBAC7DF5D7E"
+        "OwnerKey" = "8:_C11C1DF2F18E48CA8F6721C0BB901837"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -160,7 +142,7 @@
         "Entry"
         {
         "MsmKey" = "8:_AD7564CAFD6586BA1D1E81FFCD0A8CDD"
-        "OwnerKey" = "8:_EEB3EF35B90842E8BCE1E0C67F635532"
+        "OwnerKey" = "8:_7E9B21FEC3CB477DA570BEBAC7DF5D7E"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -172,25 +154,13 @@
         "Entry"
         {
         "MsmKey" = "8:_AD7564CAFD6586BA1D1E81FFCD0A8CDD"
-        "OwnerKey" = "8:_7E9B21FEC3CB477DA570BEBAC7DF5D7E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AD7564CAFD6586BA1D1E81FFCD0A8CDD"
-        "OwnerKey" = "8:_2B0791236223090BEB88594646654877"
+        "OwnerKey" = "8:_EEB3EF35B90842E8BCE1E0C67F635532"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_AD7564CAFD6586BA1D1E81FFCD0A8CDD"
         "OwnerKey" = "8:_C11C1DF2F18E48CA8F6721C0BB901837"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_AD7564CAFD6586BA1D1E81FFCD0A8CDD"
-        "OwnerKey" = "8:_848014B499CE30726E07E2E17BE0F035"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -244,31 +214,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_AD7564CAFD6586BA1D1E81FFCD0A8CDD"
+        "OwnerKey" = "8:_EEB3EF35B90842E8BCE1E0C67F635532"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_F35A0BEF19E84CFD802EFF29BF098502"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_068E8B0A96F43670901C992E72A2C11D"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_7E9B21FEC3CB477DA570BEBAC7DF5D7E"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_2B0791236223090BEB88594646654877"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -286,19 +238,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_3DEF9815F1DCD6001087A5E083AA6BC5"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_848014B499CE30726E07E2E17BE0F035"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_EEB3EF35B90842E8BCE1E0C67F635532"
+        "OwnerKey" = "8:_7E9B21FEC3CB477DA570BEBAC7DF5D7E"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -309,7 +249,7 @@
         "DisplayName" = "8:Debug"
         "IsDebugOnly" = "11:TRUE"
         "IsReleaseOnly" = "11:FALSE"
-        "OutputFilename" = "8:Debug\\ETS-Installer.msi"
+        "OutputFilename" = "8:..\\..\\..\\deliverables\\ETS-Installer.msi"
         "PackageFilesAs" = "3:2"
         "PackageFileSize" = "3:-2147483648"
         "CabType" = "3:1"
@@ -406,37 +346,6 @@
         }
         "File"
         {
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_068E8B0A96F43670901C992E72A2C11D"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ETS-Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_068E8B0A96F43670901C992E72A2C11D"
-                    {
-                    "Name" = "8:ETS-Data.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:ETS-Data.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_72AC89C93C3F4A22927B4D3B748AEBD7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_0FC0BFCF37734194A6D074597E26FE82"
             {
             "SourcePath" = "8:..\\lib\\opencv_flann220.dll"
@@ -497,37 +406,6 @@
             "IsDependency" = "11:FALSE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2B0791236223090BEB88594646654877"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Emgu.CV.UI, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_2B0791236223090BEB88594646654877"
-                    {
-                    "Name" = "8:Emgu.CV.UI.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Emgu.CV.UI.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_72AC89C93C3F4A22927B4D3B748AEBD7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
-            "IsolateTo" = "8:"
-            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3A5B6E92BF2F4BFCB634DAE2E9FD7765"
             {
             "SourcePath" = "8:..\\lib\\opencv_imgproc220.dll"
@@ -546,37 +424,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3DEF9815F1DCD6001087A5E083AA6BC5"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:ZedGraph, Version=5.1.5.28844, Culture=neutral, PublicKeyToken=02a83cbd123fcd60, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_3DEF9815F1DCD6001087A5E083AA6BC5"
-                    {
-                    "Name" = "8:ZedGraph.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:ZedGraph.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_72AC89C93C3F4A22927B4D3B748AEBD7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_3F501168956B44FB86C3D16DFFFC3136"
@@ -617,37 +464,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_848014B499CE30726E07E2E17BE0F035"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Emgu.CV, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_848014B499CE30726E07E2E17BE0F035"
-                    {
-                    "Name" = "8:Emgu.CV.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Emgu.CV.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_72AC89C93C3F4A22927B4D3B748AEBD7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_980FB04078F84C8DB1D6D373F12B2C18"
@@ -748,37 +564,6 @@
             "Register" = "3:1"
             "Exclude" = "11:FALSE"
             "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_AD7564CAFD6586BA1D1E81FFCD0A8CDD"
-            {
-            "AssemblyRegister" = "3:1"
-            "AssemblyIsInGAC" = "11:FALSE"
-            "AssemblyAsmDisplayName" = "8:Emgu.Util, Version=2.2.1.1150, Culture=neutral, PublicKeyToken=7281126722ab4438, processorArchitecture=MSIL"
-                "ScatterAssemblies"
-                {
-                    "_AD7564CAFD6586BA1D1E81FFCD0A8CDD"
-                    {
-                    "Name" = "8:Emgu.Util.dll"
-                    "Attributes" = "3:512"
-                    }
-                }
-            "SourcePath" = "8:Emgu.Util.dll"
-            "TargetName" = "8:"
-            "Tag" = "8:"
-            "Folder" = "8:_72AC89C93C3F4A22927B4D3B748AEBD7"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_C2886013095D47C48BB27633CF53D336"
