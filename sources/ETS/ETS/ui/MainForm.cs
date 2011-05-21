@@ -44,8 +44,18 @@ namespace ETS.ui
 
         public void ConnectToDatabase()
         {
-
-            ServiceSwitch.StartSQLExpressServiceIfStopped(true);
+            try
+            {
+                SetStatusLabel("Connecting to database: stop services");
+                ServiceSwitch.StopAllSQLServices(true);
+                SetStatusLabel("Connecting to database: start services");
+                ServiceSwitch.StartSQLExpressServiceIfStopped(true);
+            }
+            catch (Exception e)
+            {
+                Util.ShowError(e.Message+". Please, restart program");
+                return;
+            }
             for (int i = 0; i < 10; i++)
             {
                 SetStatusLabel("Connecting to database: " + (i+1) + " attempt");
