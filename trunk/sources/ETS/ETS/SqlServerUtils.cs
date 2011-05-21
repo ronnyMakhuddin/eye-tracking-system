@@ -17,7 +17,7 @@ namespace SQLServiceController
         /// Stops the SQL Services.
         /// </summary>
         /// <param name="showErrorMessage"></param>
-        public void StopAllServices(bool showErrorMessage)
+        public static void StopAllServices(bool showErrorMessage)
         {
             ServiceController[] scServicesToStop = ServiceController.GetServices();
             int counter = 0;
@@ -50,7 +50,7 @@ namespace SQLServiceController
         /// Stops the SQL Services.
         /// </summary>
         /// <param name="showErrorMessage"></param>
-        public void StopAllSQLServices(bool showErrorMessage)
+        public static void StopAllSQLServices(bool showErrorMessage)
         {
             //string[] sqlServices = {"MsDtsServer100", "MSSQL$SQLEXPRESS", "MSSQLFDLauncher", "MSSQLSERVER",
             //"MSSQLServerOLAPService", "SQLBrowser", "SQLWriter"};
