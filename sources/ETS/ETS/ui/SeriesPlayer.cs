@@ -8,12 +8,15 @@ using System.Text;
 using System.Windows.Forms;
 using ETS_Data;
 using System.Media;
+using System.Threading;
 
 namespace ETS.ui
 {
     public partial class SeriesPlayer : Form
     {
         private Series series;
+        public delegate void StartEventHandler();
+        public event StartEventHandler OnStart;
         public SeriesPlayer(Series series)
         {
             InitializeComponent();
@@ -136,6 +139,43 @@ namespace ETS.ui
                   );
                     break;
             }
+        }
+
+        public void ShowStartText()
+        {
+            HideLabel();
+            ShowLabel(series.Config.TextBefore);
+            btnStartTest.Visible = true;
+        }
+        public void ShowLabel(string text)
+        {
+            lblText.Text = text;
+            lblText.Visible = true;
+           
+        }
+        public void HideLabel()
+        {
+            lblText.Visible = false;
+        }
+        public void ShowEndText()
+        {
+            ShowLabel(series.Config.TextAfter);
+        }
+
+        private void btnStartTest_Click(object sender, EventArgs e)
+        {
+            HideLabel();
+            btnStartTest.Visible = false;
+            if (OnStart != null)
+            {
+                OnStart();
+            }
+        }
+
+        public void HideAll()
+        {
+            HideLabel();
+            btnStartTest.Visible = false;
         }
     }
 }
