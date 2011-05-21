@@ -11,9 +11,12 @@ using ETS_Data;
 using ETS.Properties;
 using ETS.serialize;
 using System.IO;
+using System.Threading;
 
 namespace ETS.ui
 {
+    delegate void EnableFromCallback(bool enable);
+      
     public partial class SeriesEditor : Form
     {
         private ETS_Data.Series series;
@@ -150,14 +153,20 @@ namespace ETS.ui
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            SqlUtils.SaveSeries(series, Settings.Default.DBConnectionString);
+            EnableForm(false);
+            Thread t = new Thread(new ThreadStart(SaveSeries));
+            t.Start();
+           
         }
-
+        public void SaveSeries()
+        {
+            SqlUtils.SaveSeries(series, Settings.Default.DBConnectionString);
+            EnableForm(true);
+        }
         private void btnEditTemplates_Click(object sender, EventArgs e)
         {
             EditTemplatesForm etf = new EditTemplatesForm(series);
-            etf.ShowDialog
-                ();
+            etf.ShowDialog();
         }
 
         private void btnSaveCSV_Click(object sender, EventArgs e)
@@ -167,6 +176,18 @@ namespace ETS.ui
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 CSVSerializer.SaveSeria(series, (FileStream)sfd.OpenFile());
+            }
+        }
+        public void EnableForm(bool enable)
+        {
+            if (this.InvokeRequired)
+            {
+                EnableFromCallback clb = new EnableFromCallback(EnableForm);
+                this.Invoke(clb, new object[] { enable });
+            }
+            else
+            {
+                this.Enabled = enable;
             }
         }
     }
