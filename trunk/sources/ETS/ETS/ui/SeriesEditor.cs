@@ -42,9 +42,19 @@ namespace ETS.ui
             slider.ValueChanged += new controls.CaptureSlider.ValueChangedHandler(slider_ValueChanged);
 
             player = new SeriesPlayer(series);
+            player.OnStart += new SeriesPlayer.StartEventHandler(player_OnStart);
             player.Show();
 
            
+        }
+
+        void player_OnStart()
+        {
+            if (capture != null)
+            {
+                capture.StopTracking();
+                capture.StartTracking();
+            }
         }
 
         void capture_OnStimul(Stimulus stimul)
@@ -61,6 +71,7 @@ namespace ETS.ui
                 {
                     capture.StopTracking();
                 }
+                player.ShowEndText();
             }
         }
 
@@ -121,11 +132,21 @@ namespace ETS.ui
             {
                 return;
             }
-            if (capture != null)
+            if (capture.CurrentTimePosition == 0)
             {
-                capture.StopTracking();
-                capture.StartTracking();
+                player.ShowStartText();
             }
+            else
+            {
+                player.HideAll();
+                if (capture != null)
+                {
+                    capture.StopTracking();
+                    capture.StartTracking();
+                }
+            }
+
+            
         }
 
         private void btnReset_Click(object sender, EventArgs e)
