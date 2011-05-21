@@ -43,6 +43,8 @@ namespace ETS.ui
 
             player = new SeriesPlayer(series);
             player.Show();
+
+           
         }
 
         void capture_OnStimul(Stimulus stimul)
