@@ -19,10 +19,10 @@ namespace ETS.ui
             InitializeComponent();
             this.series = series;
             Screen[] sc = Screen.AllScreens;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.WindowState = FormWindowState.Maximized;
             if (sc.Length > 1)
             {
+                this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
                 this.StartPosition = FormStartPosition.Manual;
                 this.Left = sc[1].Bounds.Left; 
                 this.Top = sc[1].Bounds.Top;
