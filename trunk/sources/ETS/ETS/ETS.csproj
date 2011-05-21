@@ -103,7 +103,7 @@
     <Compile Include="controls\TemplateControl.Designer.cs">
       <DependentUpon>TemplateControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="datasets\TrialTreeNode.cs" />
+    <Compile Include="controls\TrialTreeNode.cs" />
     <Compile Include="datasets\PatientsDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
