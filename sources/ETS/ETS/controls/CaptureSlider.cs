@@ -102,9 +102,9 @@ namespace ETS.controls
                 Value = 0;
                 long interval = series.Config.MaxInt;
 
-                for (int i = 0; i < series.Config.StimulusSet.Count; i++)
+                for (int i = 0; i < series.Config.SelectedStimulusSet.Count; i++)
                 {
-                    Stimulus s = (Stimulus)series.Config.StimulusSet[i];
+                    Stimulus s = (Stimulus)series.Config.SelectedStimulusSet[i];
                     StimulusWrapper sw = new StimulusWrapper();
                     sw.Stimul = s;
                     sw.TimePosition = (i+1) * (int)interval;

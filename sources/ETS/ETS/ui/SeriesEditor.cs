@@ -21,6 +21,7 @@ namespace ETS.ui
     {
         private ETS_Data.Series series;
         private CaptureManager capture;
+        private SeriesPlayer player;
         public SeriesEditor(Series s)
         {
             InitializeComponent();
@@ -31,6 +32,7 @@ namespace ETS.ui
             capture.OnImageQuery += new CaptureManager.ImageEventHandler(capture_OnImageQuery);
             capture.OnStartInit += new CaptureManager.StartInitEventHandler(capture_OnStartInit);
             capture.OnTimeChanged += new CaptureManager.CurrentTimeChangedEventHandler(capture_OnTimeChanged);
+            capture.OnStimul += new CaptureManager.StimulusEventHandler(capture_OnStimul);
             capture.CameraWidth = 640;
             capture.CameraHeight = 480; 
             capture.Init();
@@ -38,6 +40,14 @@ namespace ETS.ui
 
             slider.InitWithSeries(series);
             slider.ValueChanged += new controls.CaptureSlider.ValueChangedHandler(slider_ValueChanged);
+
+            player = new SeriesPlayer(series);
+            player.Show();
+        }
+
+        void capture_OnStimul(Stimulus stimul)
+        {
+            player.ShowStimul(stimul);
         }
 
         void capture_OnTimeChanged(int currentTime)

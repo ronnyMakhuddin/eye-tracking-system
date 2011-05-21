@@ -35,6 +35,8 @@ namespace ETS.tracker
         public event ImageEventHandler OnImageQuery;
         public delegate void CurrentTimeChangedEventHandler(int currentTime);
         public event CurrentTimeChangedEventHandler OnTimeChanged;
+        public delegate void StimulusEventHandler(Stimulus stimul);
+        public event StimulusEventHandler OnStimul;
         
         #endregion
         #region -- Properties --
@@ -185,6 +187,32 @@ namespace ETS.tracker
             Image<Bgr, Byte> image = QueryFrame();
             OnImageQuery(image);
             ProcessFrame();
+            ProcessStimul();
+        }
+
+        private void ProcessStimul()
+        {
+            Series currentSeria = Session.Instance.CurrentSeria;
+            Order order = currentSeria.Config.OrderType;
+            switch (order)
+            {
+                case Order.Fixed:
+                    {
+                        int interval = (int)currentSeria.Config.MaxInt;
+                        int index = CurrentTimePosition / interval -1;
+                        if (index >= 0 && index < currentSeria.Config.SelectedStimulusSet.Count)
+                        {
+                            Stimulus s = (Stimulus)currentSeria.Config.SelectedStimulusSet[index];
+                            if (OnStimul != null)
+                            {
+                                OnStimul(s);
+                            }
+                        }
+                    }
+                    break;
+                case Order.Probability:
+                    break;
+            }
         }
 
         public Image<Bgr, Byte> QueryFrame()
