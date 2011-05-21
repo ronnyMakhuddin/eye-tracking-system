@@ -98,8 +98,11 @@ namespace ETS.ui
         {
             if (!series.ContainsTemplates)
             {
-
                 Util.ShowError("Please, add some template before tracking");
+                return;
+            }
+            if (slider.Value == slider.Maximum)
+            {
                 return;
             }
             if (capture != null)
