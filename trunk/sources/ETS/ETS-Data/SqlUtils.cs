@@ -76,7 +76,7 @@ namespace ETS_Data
                             for (int i = 0; i < templates.Count; i++)
                             {
                                 Template t = (Template)templates[i];
-                                s.SetLastTemplate(t);
+                                s.AddTemplate(t);
                                 s.AddTemplateCoordArray();
                             }
                            
@@ -188,7 +188,10 @@ namespace ETS_Data
             {
                 Template t = (Template)series.Templates[i];
                 long id =  SaveTemplate(series, t, dbConnectionString);
-                t.Id = id;
+                if (id != -1)
+                {
+                    t.Id = id;
+                }
             }
             for (int i = 0; i < series.TemplateCoords.Count; i++)
             {
@@ -300,9 +303,17 @@ namespace ETS_Data
                             string name = reader.GetString(4);
                             byte[] picture = reader.GetSqlBinary(5).Value;
                             long id = reader.GetInt64(6);
-                            Emgu.CV.Image<Emgu.CV.Structure.Gray,byte> image = new Emgu.CV.Image<Emgu.CV.Structure.Gray,byte>(r.Width,r.Height);
-                            image.Bytes = picture;
+                            Emgu.CV.Image<Emgu.CV.Structure.Gray, byte> image = null;
+                            try
+                            {
+                                image = new Emgu.CV.Image<Emgu.CV.Structure.Gray, byte>(r.Width, r.Height);
+                                image.Bytes = picture;
+                            }
+                            catch (Exception) { }
 
+                            finally
+                            {
+                            }
                             Template t = new Template(r, image);
                             t.Name = name;
                             t.Added = true;
@@ -345,7 +356,11 @@ namespace ETS_Data
                     SqlParameter pSeriaId = insert.Parameters.Add("@seria_id", SqlDbType.BigInt, 1);
                     pSeriaId.Value = series.Id;
 
-                    return Int64.Parse(insert.ExecuteScalar().ToString());
+                    long id = -1;
+                    try{
+                      id=  Int64.Parse(insert.ExecuteScalar().ToString());
+                    }catch(Exception e){}
+                    return id;
                    
                 }
             }
