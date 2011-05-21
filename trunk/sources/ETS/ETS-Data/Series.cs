@@ -18,6 +18,7 @@ namespace ETS_Data
         {
             templates = new ArrayList();
             TemplateCoords = new ArrayList();
+            Id = -1;
         }
         private SeriesConfig config;
 
@@ -35,7 +36,7 @@ namespace ETS_Data
 
         public string Name
         {
-            get { return name; }
+            get { return string.IsNullOrEmpty(name) ? "" : name.Trim(); }
             set { name = value; }
         }
 

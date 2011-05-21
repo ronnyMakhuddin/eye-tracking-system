@@ -12,12 +12,14 @@ using ETS.controls;
 using System.Threading;
 using ETS_Data;
 using SQLServiceController;
+using ETS.Properties;
 
 namespace ETS.ui
 {
     public partial class MainForm : Form
     {
         delegate void SetStatusCallback(string status);
+        delegate void EnableFromCallback(bool enable);
         public MainForm()
         {
             InitializeComponent();
@@ -90,7 +92,11 @@ namespace ETS.ui
             trwTrials.Nodes.Clear();
             TrialTreeNode rootNode = new TrialTreeNode(Session.Instance.CurrentTrial);
             trwTrials.Nodes.Add(rootNode);
+            rootNode.Expand();
+
             miAddSeries.Visible = true;
+            miDeleteSeries.Visible = true;
+            miEditSeries.Visible = true;
         }
 
         private void miAddSeries_Click(object sender, EventArgs e)
@@ -128,6 +134,48 @@ namespace ETS.ui
             else
             {
                 lblDbStatus.Text = status;
+            }
+        }
+
+        private void miEditSeries_Click(object sender, EventArgs e)
+        {
+            if (trwTrials.SelectedNode is SeriesTreeNode)
+            {
+                SeriesTreeNode stn = (SeriesTreeNode)trwTrials.SelectedNode;
+                EnableForm(false);
+                AddSeriesForm asf = new AddSeriesForm(stn.Seria);
+                asf.ShowDialog();
+                Session.Instance.CurrentTrial.Refresh();
+                LoadTrialsTreeView();
+                EnableForm(true);
+            }
+        }
+
+        private void miDeleteSeries_Click(object sender, EventArgs e)
+        {
+            if (trwTrials.SelectedNode is SeriesTreeNode)
+            {
+                SeriesTreeNode stn = (SeriesTreeNode)trwTrials.SelectedNode;
+                EnableForm(false);
+                if (Util.ShowQuestion("Are you sure want to delete this series and all its data?") == DialogResult.Yes)
+                {
+                    SqlUtils.DeleteSeries(stn.Seria, Settings.Default.DBConnectionString);
+                }
+                Session.Instance.CurrentTrial.Refresh();
+                LoadTrialsTreeView();
+                EnableForm(true);
+            }
+        }
+        public void EnableForm(bool enable)
+        {
+            if (this.InvokeRequired)
+            {
+                EnableFromCallback clb = new EnableFromCallback(EnableForm);
+                this.Invoke(clb, new object[] { enable });
+            }
+            else
+            {
+                this.Enabled = enable;
             }
         }
     }

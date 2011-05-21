@@ -46,6 +46,8 @@
             this.strStatus = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblDbStatus = new System.Windows.Forms.ToolStripStatusLabel();
+            this.miEditSeries = new System.Windows.Forms.ToolStripMenuItem();
+            this.miDeleteSeries = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newSelectCommandBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusTypeBindingSource)).BeginInit();
@@ -69,22 +71,24 @@
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.miNewTrial,
             this.miAddSeries,
+            this.miEditSeries,
+            this.miDeleteSeries,
             this.miClose});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(35, 20);
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
             // miNewTrial
             // 
             this.miNewTrial.Name = "miNewTrial";
-            this.miNewTrial.Size = new System.Drawing.Size(136, 22);
+            this.miNewTrial.Size = new System.Drawing.Size(152, 22);
             this.miNewTrial.Text = "Load Trial";
             this.miNewTrial.Click += new System.EventHandler(this.miNewTrial_Click);
             // 
             // miAddSeries
             // 
             this.miAddSeries.Name = "miAddSeries";
-            this.miAddSeries.Size = new System.Drawing.Size(136, 22);
+            this.miAddSeries.Size = new System.Drawing.Size(152, 22);
             this.miAddSeries.Text = "Add Series";
             this.miAddSeries.Visible = false;
             this.miAddSeries.Click += new System.EventHandler(this.miAddSeries_Click);
@@ -92,7 +96,7 @@
             // miClose
             // 
             this.miClose.Name = "miClose";
-            this.miClose.Size = new System.Drawing.Size(136, 22);
+            this.miClose.Size = new System.Drawing.Size(152, 22);
             this.miClose.Text = "Close";
             this.miClose.Click += new System.EventHandler(this.miClose_Click);
             // 
@@ -104,34 +108,34 @@
             this.miEditSeriesConfigs,
             this.editSeriesToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // miViewPatients
             // 
             this.miViewPatients.Name = "miViewPatients";
-            this.miViewPatients.Size = new System.Drawing.Size(174, 22);
+            this.miViewPatients.Size = new System.Drawing.Size(171, 22);
             this.miViewPatients.Text = "Edit Patients";
             this.miViewPatients.Click += new System.EventHandler(this.miViewPatients_Click);
             // 
             // miEditStimuluses
             // 
             this.miEditStimuluses.Name = "miEditStimuluses";
-            this.miEditStimuluses.Size = new System.Drawing.Size(174, 22);
+            this.miEditStimuluses.Size = new System.Drawing.Size(171, 22);
             this.miEditStimuluses.Text = "Edit Stimuluses";
             this.miEditStimuluses.Click += new System.EventHandler(this.miEditStimuluses_Click);
             // 
             // miEditSeriesConfigs
             // 
             this.miEditSeriesConfigs.Name = "miEditSeriesConfigs";
-            this.miEditSeriesConfigs.Size = new System.Drawing.Size(174, 22);
+            this.miEditSeriesConfigs.Size = new System.Drawing.Size(171, 22);
             this.miEditSeriesConfigs.Text = "Edit Series Configs";
             this.miEditSeriesConfigs.Click += new System.EventHandler(this.miEditSeriesConfigs_Click);
             // 
             // editSeriesToolStripMenuItem
             // 
             this.editSeriesToolStripMenuItem.Name = "editSeriesToolStripMenuItem";
-            this.editSeriesToolStripMenuItem.Size = new System.Drawing.Size(174, 22);
+            this.editSeriesToolStripMenuItem.Size = new System.Drawing.Size(171, 22);
             this.editSeriesToolStripMenuItem.Text = "Edit Trials";
             this.editSeriesToolStripMenuItem.Click += new System.EventHandler(this.editSeriesToolStripMenuItem_Click);
             // 
@@ -165,14 +169,30 @@
             // toolStripStatusLabel1
             // 
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
-            this.toolStripStatusLabel1.Size = new System.Drawing.Size(145, 17);
+            this.toolStripStatusLabel1.Size = new System.Drawing.Size(155, 17);
             this.toolStripStatusLabel1.Text = "Database connection status:";
             // 
             // lblDbStatus
             // 
             this.lblDbStatus.Name = "lblDbStatus";
-            this.lblDbStatus.Size = new System.Drawing.Size(107, 17);
+            this.lblDbStatus.Size = new System.Drawing.Size(108, 17);
             this.lblDbStatus.Text = "%database status%";
+            // 
+            // miEditSeries
+            // 
+            this.miEditSeries.Name = "miEditSeries";
+            this.miEditSeries.Size = new System.Drawing.Size(152, 22);
+            this.miEditSeries.Text = "Edit Series";
+            this.miEditSeries.Visible = false;
+            this.miEditSeries.Click += new System.EventHandler(this.miEditSeries_Click);
+            // 
+            // miDeleteSeries
+            // 
+            this.miDeleteSeries.Name = "miDeleteSeries";
+            this.miDeleteSeries.Size = new System.Drawing.Size(152, 22);
+            this.miDeleteSeries.Text = "Delete Series";
+            this.miDeleteSeries.Visible = false;
+            this.miDeleteSeries.Click += new System.EventHandler(this.miDeleteSeries_Click);
             // 
             // MainForm
             // 
@@ -221,5 +241,7 @@
         private System.Windows.Forms.StatusStrip strStatus;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.ToolStripStatusLabel lblDbStatus;
+        private System.Windows.Forms.ToolStripMenuItem miEditSeries;
+        private System.Windows.Forms.ToolStripMenuItem miDeleteSeries;
     }
 }
