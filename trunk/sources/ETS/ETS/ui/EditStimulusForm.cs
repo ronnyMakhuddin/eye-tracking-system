@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
 
 namespace ETS.ui
 {
@@ -52,6 +53,12 @@ namespace ETS.ui
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     string filename = ofd.FileName;
+                    FileInfo info = new FileInfo(filename);
+                    if (info.Length > 200 * 1024)
+                    {
+                        Util.ShowError("Maximum file size is limited to 200 Kb. Cannot user this file.");
+                        return;
+                    }
                     c.Value = filename;
                 }
             }
