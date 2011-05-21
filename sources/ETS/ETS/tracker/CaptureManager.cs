@@ -200,7 +200,8 @@ namespace ETS.tracker
                     {
                         int interval = (int)currentSeria.Config.MaxInt;
                         int index = CurrentTimePosition / interval -1;
-                        if (index >= 0 && index < currentSeria.Config.SelectedStimulusSet.Count)
+                        bool exact = CurrentTimePosition % interval == 0;
+                        if (index >= 0 && index < currentSeria.Config.SelectedStimulusSet.Count && exact)
                         {
                             Stimulus s = (Stimulus)currentSeria.Config.SelectedStimulusSet[index];
                             if (OnStimul != null)
