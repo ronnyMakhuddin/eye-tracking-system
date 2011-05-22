@@ -42,15 +42,17 @@
             this.slider.LargeChange = 40;
             this.slider.Location = new System.Drawing.Point(1, 49);
             this.slider.Name = "slider";
-            this.slider.Size = new System.Drawing.Size(603, 45);
+            this.slider.Size = new System.Drawing.Size(603, 42);
             this.slider.SmallChange = 40;
             this.slider.TabIndex = 0;
             this.slider.ValueChanged += new System.EventHandler(this.slider_ValueChanged);
             // 
             // lblTime
             // 
+            this.lblTime.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(3, 96);
+            this.lblTime.Location = new System.Drawing.Point(307, 78);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(42, 13);
             this.lblTime.TabIndex = 2;
@@ -78,6 +80,7 @@
             // 
             // cmbStimuluses
             // 
+            this.cmbStimuluses.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cmbStimuluses.FormattingEnabled = true;
             this.cmbStimuluses.Location = new System.Drawing.Point(138, 12);
             this.cmbStimuluses.Name = "cmbStimuluses";
@@ -105,7 +108,7 @@
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.slider);
             this.Name = "CaptureSlider";
-            this.Size = new System.Drawing.Size(638, 120);
+            this.Size = new System.Drawing.Size(638, 94);
             ((System.ComponentModel.ISupportInitialize)(this.slider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

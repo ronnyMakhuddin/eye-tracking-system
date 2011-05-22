@@ -80,6 +80,10 @@ namespace ETS_Data
                 return (Order)orderTypeId;
             }
         }
+        public string StringOrderType
+        {
+            get { return OrderType == Order.Fixed ? "FIXED" : "PROBABILITY"; }
+        }
         public ArrayList SelectedStimulusSet
         {
             get {

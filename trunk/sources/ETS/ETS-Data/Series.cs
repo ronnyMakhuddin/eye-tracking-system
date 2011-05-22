@@ -120,7 +120,7 @@ namespace ETS_Data
         }
         public void AddTemplateCoordArray()
         {
-            int coordsSize = (int)Length / 40;
+            int coordsSize = (int)Length / Constants.TIME_CHUNK_MS;
             ArrayList coords = new ArrayList(coordsSize);
             for (int i = 0; i < coordsSize; i++)
             {
@@ -135,5 +135,28 @@ namespace ETS_Data
             templates.RemoveAt(index);
             templateCoords.RemoveAt(index);
         }
+        public Stimulus GetStimulusForTime(int time)
+        {
+            Order order = Config.OrderType;
+            switch (order)
+            {
+                case Order.Fixed:
+                    {
+                        int interval = (int)Config.MaxInt;
+                        int index = time / interval - 1;
+                        bool exact = time % interval < Constants.TIME_CHUNK_MS;
+                        if (index >= 0 && index < Config.SelectedStimulusSet.Count && exact)
+                        {
+                            Stimulus s = (Stimulus)Config.SelectedStimulusSet[index];
+                            return s;
+                        }
+                    }
+                    break;
+                case Order.Probability:
+                    break;
+            }
+            return null;
+        }
+
     }
 }

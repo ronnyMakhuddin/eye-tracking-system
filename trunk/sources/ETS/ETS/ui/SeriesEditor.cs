@@ -203,7 +203,8 @@ namespace ETS.ui
         private void btnSaveCSV_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.FileName = series.Name.Trim() + ".CSV";
+            sfd.FileName = series.Name.Trim();
+            sfd.Filter = "Text Files (*.txt)|*.txt|All Files (*.*)|*.*";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 CSVSerializer.SaveSeria(series, (FileStream)sfd.OpenFile());
