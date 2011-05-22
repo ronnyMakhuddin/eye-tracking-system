@@ -121,7 +121,7 @@ namespace ETS.tracker
             State = States.STATE_NOT_INITED;
             Seria = s;
             CurrentTimePosition = 0;
-            QueryInterval = 40;
+            QueryInterval = Constants.TIME_CHUNK_MS;
             try
             {
                 stor = new MemStorage();
@@ -130,7 +130,7 @@ namespace ETS.tracker
             {
             }
             timer = new Timer();
-            timer.Interval = QueryInterval;
+            timer.Interval = queryInterval;
             timer.Enabled = true;
             timer.Tick += new EventHandler(timer_Tick);
         }
@@ -184,10 +184,12 @@ namespace ETS.tracker
         
         void timer_Tick(object sender, EventArgs e)
         {
+            DateTime dt = DateTime.Now;
             Image<Bgr, Byte> image = QueryFrame();
             OnImageQuery(image);
             ProcessFrame();
             ProcessStimul();
+            Console.WriteLine("Time:" +(DateTime.Now.Millisecond - dt.Millisecond));
         }
 
         private void ProcessStimul()
@@ -200,8 +202,7 @@ namespace ETS.tracker
                     {
                         int interval = (int)currentSeria.Config.MaxInt;
                         int index = CurrentTimePosition / interval -1;
-                        bool exact = CurrentTimePosition % interval == 0;
-                        if (index >= 0 && index < currentSeria.Config.SelectedStimulusSet.Count && exact)
+                         if (index >= 0 && index < currentSeria.Config.SelectedStimulusSet.Count)
                         {
                             Stimulus s = (Stimulus)currentSeria.Config.SelectedStimulusSet[index];
                             if (OnStimul != null)

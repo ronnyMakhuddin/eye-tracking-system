@@ -6,12 +6,13 @@ using System.Collections;
 using System.Xml.Serialization;
 using System.IO;
 using ETS.tracker;
+using ETS;
 
 namespace ETS_Data
 {
     public class Series
     {
-        private const int TIME_CHUNK_MS = 40;
+       
         private string name;
         private long id;
         public Series()
@@ -111,7 +112,7 @@ namespace ETS_Data
         public void SetTemplateCoord(int templateIndex, SeriesRecord coord, int timePosition)
         {
             ArrayList coords = (ArrayList)TemplateCoords[templateIndex];
-            int index = timePosition / TIME_CHUNK_MS;
+            int index = timePosition / Constants.TIME_CHUNK_MS;
             if (index < coords.Count)
             {
                 coords[index] = coord;

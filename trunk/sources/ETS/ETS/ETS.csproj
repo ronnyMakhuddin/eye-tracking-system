@@ -77,7 +77,6 @@
     <Reference Include="System.Configuration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Constants.cs" />
     <Compile Include="controls\AdvancedSlider.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -446,8 +445,8 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Resources\DB_log.ldf">
-      <DependentUpon>DB.mdf</DependentUpon>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DB.mdf</DependentUpon>
     </Content>
     <Content Include="Tao.OpenGl.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
