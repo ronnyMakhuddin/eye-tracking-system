@@ -24,14 +24,14 @@ namespace ETS_Data
 
         public string Name
         {
-            get { return name; }
+            get { return string.IsNullOrEmpty(name) ? "" : name.Trim(); }
             set { name = value; }
         }
         private string filename;
 
         public string Filename
         {
-            get { return filename; }
+            get { return string.IsNullOrEmpty(filename) ? "" : filename.Trim(); }
             set { filename = value; }
         }
         private StimulusType type;
@@ -64,6 +64,21 @@ namespace ETS_Data
         {
             get { return pictureData; }
             set { pictureData = value; }
+        }
+
+        public string StringType { 
+            get {
+                switch (Type)
+                {
+                    case StimulusType.PICTURE:
+                        return "Picture";
+                    case StimulusType.SOUND:
+                        return "Sound";
+                    case StimulusType.TEXT:
+                        return "Text";
+                }
+                return "";
+            } 
         }
     }
 }

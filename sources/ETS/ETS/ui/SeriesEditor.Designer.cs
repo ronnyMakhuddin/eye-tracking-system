@@ -40,14 +40,14 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnSave = new System.Windows.Forms.Button();
             this.btnEditTemplates = new System.Windows.Forms.Button();
-            this.slider = new ETS.controls.CaptureSlider();
             this.btnSaveCSV = new System.Windows.Forms.Button();
+            this.slider = new ETS.controls.CaptureSlider();
             ((System.ComponentModel.ISupportInitialize)(this.pbxCapture)).BeginInit();
             this.SuspendLayout();
             // 
             // pbxCapture
             // 
-            this.pbxCapture.Location = new System.Drawing.Point(12, 12);
+            this.pbxCapture.Location = new System.Drawing.Point(12, 0);
             this.pbxCapture.Name = "pbxCapture";
             this.pbxCapture.Size = new System.Drawing.Size(640, 480);
             this.pbxCapture.TabIndex = 2;
@@ -139,31 +139,31 @@
             this.btnEditTemplates.UseVisualStyleBackColor = true;
             this.btnEditTemplates.Click += new System.EventHandler(this.btnEditTemplates_Click);
             // 
-            // slider
-            // 
-            this.slider.Location = new System.Drawing.Point(12, 514);
-            this.slider.Maximum = 0;
-            this.slider.Minimum = 0;
-            this.slider.Name = "slider";
-            this.slider.Size = new System.Drawing.Size(638, 113);
-            this.slider.TabIndex = 9;
-            this.slider.Value = 0;
-            // 
             // btnSaveCSV
             // 
             this.btnSaveCSV.Location = new System.Drawing.Point(850, 12);
             this.btnSaveCSV.Name = "btnSaveCSV";
             this.btnSaveCSV.Size = new System.Drawing.Size(88, 48);
             this.btnSaveCSV.TabIndex = 12;
-            this.btnSaveCSV.Text = "Save As CSV";
+            this.btnSaveCSV.Text = "Export As CSV";
             this.btnSaveCSV.UseVisualStyleBackColor = true;
             this.btnSaveCSV.Click += new System.EventHandler(this.btnSaveCSV_Click);
+            // 
+            // slider
+            // 
+            this.slider.Location = new System.Drawing.Point(12, 477);
+            this.slider.Maximum = 0;
+            this.slider.Minimum = 0;
+            this.slider.Name = "slider";
+            this.slider.Size = new System.Drawing.Size(638, 93);
+            this.slider.TabIndex = 9;
+            this.slider.Value = 0;
             // 
             // SeriesEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 639);
+            this.ClientSize = new System.Drawing.Size(992, 573);
             this.Controls.Add(this.btnSaveCSV);
             this.Controls.Add(this.btnEditTemplates);
             this.Controls.Add(this.btnSave);

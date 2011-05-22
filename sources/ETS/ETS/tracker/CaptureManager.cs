@@ -189,31 +189,14 @@ namespace ETS.tracker
             OnImageQuery(image);
             ProcessFrame();
             ProcessStimul();
-            Console.WriteLine("Time:" +(DateTime.Now.Millisecond - dt.Millisecond));
         }
 
         private void ProcessStimul()
         {
             Series currentSeria = Session.Instance.CurrentSeria;
-            Order order = currentSeria.Config.OrderType;
-            switch (order)
+            if (OnStimul != null && currentSeria.GetStimulusForTime(CurrentTimePosition) != null)
             {
-                case Order.Fixed:
-                    {
-                        int interval = (int)currentSeria.Config.MaxInt;
-                        int index = CurrentTimePosition / interval -1;
-                         if (index >= 0 && index < currentSeria.Config.SelectedStimulusSet.Count)
-                        {
-                            Stimulus s = (Stimulus)currentSeria.Config.SelectedStimulusSet[index];
-                            if (OnStimul != null)
-                            {
-                                OnStimul(s);
-                            }
-                        }
-                    }
-                    break;
-                case Order.Probability:
-                    break;
+                OnStimul(currentSeria.GetStimulusForTime(CurrentTimePosition));
             }
         }
 

@@ -9,5 +9,6 @@ namespace ETS_Data
     {
         Fixed = 1,
         Probability = 2
+        
     }
 }
