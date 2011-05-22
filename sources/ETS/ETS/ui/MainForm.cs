@@ -47,7 +47,7 @@ namespace ETS.ui
             try
             {
                 SetStatusLabel("Connecting to database: stop services");
-                ServiceSwitch.StopAllSQLServices(true);
+             //   ServiceSwitch.StopAllSQLServices(true);
                 SetStatusLabel("Connecting to database: start services");
                 ServiceSwitch.StartSQLExpressServiceIfStopped(true);
             }

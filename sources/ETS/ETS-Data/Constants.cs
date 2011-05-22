@@ -7,6 +7,6 @@ namespace ETS
 {
     public class Constants
     {
-        public const int TIME_CHUNK_MS = 40;
+        public const int TIME_CHUNK_MS = 300;
     }
 }
