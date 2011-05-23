@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditTrialsForm));
             this.grdTrials = new System.Windows.Forms.DataGridView();
+            this.patientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patientsDataSet = new ETS.datasets.PatientsDataSet();
             this.selectTrialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.trialsDataSet = new ETS.TrialsDataSet();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.selectTrialsTableAdapter = new ETS.TrialsDataSetTableAdapters.SelectTrialsTableAdapter();
-            this.patientsDataSet = new ETS.datasets.PatientsDataSet();
-            this.patientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.patientsTableAdapter = new ETS.datasets.PatientsDataSetTableAdapters.PatientsTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -44,10 +45,10 @@
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdTrials)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectTrialsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trialsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grdTrials
@@ -63,8 +64,18 @@
             this.grdTrials.DataSource = this.selectTrialsBindingSource;
             this.grdTrials.Location = new System.Drawing.Point(12, 12);
             this.grdTrials.Name = "grdTrials";
-            this.grdTrials.Size = new System.Drawing.Size(559, 209);
+            this.grdTrials.Size = new System.Drawing.Size(499, 209);
             this.grdTrials.TabIndex = 0;
+            // 
+            // patientsBindingSource
+            // 
+            this.patientsBindingSource.DataMember = "Patients";
+            this.patientsBindingSource.DataSource = this.patientsDataSet;
+            // 
+            // patientsDataSet
+            // 
+            this.patientsDataSet.DataSetName = "PatientsDataSet";
+            this.patientsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // selectTrialsBindingSource
             // 
@@ -99,16 +110,6 @@
             // selectTrialsTableAdapter
             // 
             this.selectTrialsTableAdapter.ClearBeforeFill = true;
-            // 
-            // patientsDataSet
-            // 
-            this.patientsDataSet.DataSetName = "PatientsDataSet";
-            this.patientsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // patientsBindingSource
-            // 
-            this.patientsBindingSource.DataMember = "Patients";
-            this.patientsBindingSource.DataSource = this.patientsDataSet;
             // 
             // patientsTableAdapter
             // 
@@ -150,23 +151,25 @@
             this.patientnameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.patientnameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.patientnameDataGridViewTextBoxColumn.ValueMember = "shortname";
+            this.patientnameDataGridViewTextBoxColumn.Width = 150;
             // 
             // EditTrialsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(583, 262);
+            this.ClientSize = new System.Drawing.Size(523, 262);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.grdTrials);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditTrialsForm";
-            this.Text = "EditTrialsForm";
+            this.Text = "Edit trials";
             this.Load += new System.EventHandler(this.EditTrialsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdTrials)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.patientsDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectTrialsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trialsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

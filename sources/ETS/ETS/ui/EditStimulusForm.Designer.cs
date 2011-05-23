@@ -30,32 +30,33 @@ namespace ETS.ui
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditStimulusForm));
             this.grdStimuluses = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.filenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.stimulusTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stimulusTypeDataSet = new ETS.datasets.StimulusTypeDataSet();
+            this.prob = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.position = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.selectPositionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.positionSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.positionSet = new ETS.datasets.PositionSet();
             this.selectStimulusesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stimDataSet = new ETS.datasets.StimDataSet();
             this.selectStimulusesTableAdapter = new ETS.datasets.StimDataSetTableAdapters.SelectStimulusesTableAdapter();
             this.stimulusTypeTableAdapter = new ETS.datasets.StimulusTypeDataSetTableAdapters.StimulusTypeTableAdapter();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.positionSet = new ETS.datasets.PositionSet();
-            this.positionSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.selectPositionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.selectPositionsTableAdapter = new ETS.datasets.PositionSetTableAdapters.SelectPositionsTableAdapter();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.filenameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.typeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.prob = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.position = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdStimuluses)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusTypeDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectPositionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectStimulusesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.positionSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.positionSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.selectPositionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grdStimuluses
@@ -80,6 +81,36 @@ namespace ETS.ui
             this.grdStimuluses.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdStimuluses_CellClick);
             this.grdStimuluses.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdStimuluses_DataError);
             // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 200;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // filenameDataGridViewTextBoxColumn
+            // 
+            this.filenameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
+            this.filenameDataGridViewTextBoxColumn.DataPropertyName = "filename";
+            this.filenameDataGridViewTextBoxColumn.HeaderText = "Filename";
+            this.filenameDataGridViewTextBoxColumn.MinimumWidth = 200;
+            this.filenameDataGridViewTextBoxColumn.Name = "filenameDataGridViewTextBoxColumn";
+            this.filenameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.filenameDataGridViewTextBoxColumn.Width = 200;
+            // 
+            // typeDataGridViewTextBoxColumn
+            // 
+            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
+            this.typeDataGridViewTextBoxColumn.DataSource = this.stimulusTypeBindingSource;
+            this.typeDataGridViewTextBoxColumn.DisplayMember = "name";
+            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
+            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
+            this.typeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.typeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.typeDataGridViewTextBoxColumn.ValueMember = "name";
+            // 
             // stimulusTypeBindingSource
             // 
             this.stimulusTypeBindingSource.DataMember = "StimulusType";
@@ -89,6 +120,38 @@ namespace ETS.ui
             // 
             this.stimulusTypeDataSet.DataSetName = "StimulusTypeDataSet";
             this.stimulusTypeDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // prob
+            // 
+            this.prob.DataPropertyName = "prob";
+            this.prob.HeaderText = "prob";
+            this.prob.Name = "prob";
+            // 
+            // position
+            // 
+            this.position.DataPropertyName = "position";
+            this.position.DataSource = this.selectPositionsBindingSource;
+            this.position.DisplayMember = "name";
+            this.position.HeaderText = "Position";
+            this.position.Name = "position";
+            this.position.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.position.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.position.ValueMember = "name";
+            // 
+            // selectPositionsBindingSource
+            // 
+            this.selectPositionsBindingSource.DataMember = "SelectPositions";
+            this.selectPositionsBindingSource.DataSource = this.positionSetBindingSource;
+            // 
+            // positionSetBindingSource
+            // 
+            this.positionSetBindingSource.DataSource = this.positionSet;
+            this.positionSetBindingSource.Position = 0;
+            // 
+            // positionSet
+            // 
+            this.positionSet.DataSetName = "PositionSet";
+            this.positionSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // selectStimulusesBindingSource
             // 
@@ -130,71 +193,9 @@ namespace ETS.ui
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // positionSet
-            // 
-            this.positionSet.DataSetName = "PositionSet";
-            this.positionSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // positionSetBindingSource
-            // 
-            this.positionSetBindingSource.DataSource = this.positionSet;
-            this.positionSetBindingSource.Position = 0;
-            // 
-            // selectPositionsBindingSource
-            // 
-            this.selectPositionsBindingSource.DataMember = "SelectPositions";
-            this.selectPositionsBindingSource.DataSource = this.positionSetBindingSource;
-            // 
             // selectPositionsTableAdapter
             // 
             this.selectPositionsTableAdapter.ClearBeforeFill = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 200;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // filenameDataGridViewTextBoxColumn
-            // 
-            this.filenameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
-            this.filenameDataGridViewTextBoxColumn.DataPropertyName = "filename";
-            this.filenameDataGridViewTextBoxColumn.HeaderText = "Filename";
-            this.filenameDataGridViewTextBoxColumn.MinimumWidth = 200;
-            this.filenameDataGridViewTextBoxColumn.Name = "filenameDataGridViewTextBoxColumn";
-            this.filenameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.filenameDataGridViewTextBoxColumn.Width = 200;
-            // 
-            // typeDataGridViewTextBoxColumn
-            // 
-            this.typeDataGridViewTextBoxColumn.DataPropertyName = "type";
-            this.typeDataGridViewTextBoxColumn.DataSource = this.stimulusTypeBindingSource;
-            this.typeDataGridViewTextBoxColumn.DisplayMember = "name";
-            this.typeDataGridViewTextBoxColumn.HeaderText = "Type";
-            this.typeDataGridViewTextBoxColumn.Name = "typeDataGridViewTextBoxColumn";
-            this.typeDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.typeDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.typeDataGridViewTextBoxColumn.ValueMember = "name";
-            // 
-            // prob
-            // 
-            this.prob.DataPropertyName = "prob";
-            this.prob.HeaderText = "prob";
-            this.prob.Name = "prob";
-            // 
-            // position
-            // 
-            this.position.DataPropertyName = "position";
-            this.position.DataSource = this.selectPositionsBindingSource;
-            this.position.DisplayMember = "name";
-            this.position.HeaderText = "Position";
-            this.position.Name = "position";
-            this.position.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.position.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.position.ValueMember = "name";
             // 
             // EditStimulusForm
             // 
@@ -205,6 +206,7 @@ namespace ETS.ui
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grdStimuluses);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "EditStimulusForm";
@@ -213,11 +215,11 @@ namespace ETS.ui
             ((System.ComponentModel.ISupportInitialize)(this.grdStimuluses)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusTypeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusTypeDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectPositionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.positionSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectStimulusesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.positionSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.positionSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.selectPositionsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

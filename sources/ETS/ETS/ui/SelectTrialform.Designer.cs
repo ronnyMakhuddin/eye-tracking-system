@@ -29,23 +29,24 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SelectTrialform));
             this.grdTrials = new System.Windows.Forms.DataGridView();
-            this.selectTrialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.trialsDataSet = new ETS.TrialsDataSet();
-            this.trialsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.selectTrialsTableAdapter = new ETS.TrialsDataSetTableAdapters.SelectTrialsTableAdapter();
-            this.selectTrialsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.clmTrialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPatientName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmVideoFileName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmPatientId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.selectTrialsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.trialsDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.trialsDataSet = new ETS.TrialsDataSet();
+            this.selectTrialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.selectTrialsTableAdapter = new ETS.TrialsDataSetTableAdapters.SelectTrialsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.grdTrials)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.selectTrialsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trialsDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trialsDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectTrialsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trialsDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trialsDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectTrialsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // grdTrials
@@ -73,30 +74,6 @@
             this.grdTrials.Size = new System.Drawing.Size(550, 238);
             this.grdTrials.TabIndex = 0;
             this.grdTrials.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.grdTrials_CellMouseDoubleClick);
-            // 
-            // selectTrialsBindingSource
-            // 
-            this.selectTrialsBindingSource.DataMember = "SelectTrials";
-            this.selectTrialsBindingSource.DataSource = this.trialsDataSet;
-            // 
-            // trialsDataSet
-            // 
-            this.trialsDataSet.DataSetName = "TrialsDataSet";
-            this.trialsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // trialsDataSetBindingSource
-            // 
-            this.trialsDataSetBindingSource.DataSource = this.trialsDataSet;
-            this.trialsDataSetBindingSource.Position = 0;
-            // 
-            // selectTrialsTableAdapter
-            // 
-            this.selectTrialsTableAdapter.ClearBeforeFill = true;
-            // 
-            // selectTrialsBindingSource1
-            // 
-            this.selectTrialsBindingSource1.DataMember = "SelectTrials";
-            this.selectTrialsBindingSource1.DataSource = this.trialsDataSetBindingSource;
             // 
             // clmTrialName
             // 
@@ -143,20 +120,45 @@
             this.clmPatientId.ReadOnly = true;
             this.clmPatientId.Visible = false;
             // 
+            // selectTrialsBindingSource1
+            // 
+            this.selectTrialsBindingSource1.DataMember = "SelectTrials";
+            this.selectTrialsBindingSource1.DataSource = this.trialsDataSetBindingSource;
+            // 
+            // trialsDataSetBindingSource
+            // 
+            this.trialsDataSetBindingSource.DataSource = this.trialsDataSet;
+            this.trialsDataSetBindingSource.Position = 0;
+            // 
+            // trialsDataSet
+            // 
+            this.trialsDataSet.DataSetName = "TrialsDataSet";
+            this.trialsDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // selectTrialsBindingSource
+            // 
+            this.selectTrialsBindingSource.DataMember = "SelectTrials";
+            this.selectTrialsBindingSource.DataSource = this.trialsDataSet;
+            // 
+            // selectTrialsTableAdapter
+            // 
+            this.selectTrialsTableAdapter.ClearBeforeFill = true;
+            // 
             // SelectTrialform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(574, 262);
             this.Controls.Add(this.grdTrials);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SelectTrialform";
             this.Text = "Select the trial from the list:";
             this.Load += new System.EventHandler(this.SelectTrialform_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdTrials)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.selectTrialsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trialsDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trialsDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectTrialsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trialsDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trialsDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectTrialsBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

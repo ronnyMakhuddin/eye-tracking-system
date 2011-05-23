@@ -444,6 +444,10 @@
     <Content Include="Resources\DB.mdf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Resources\DB_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>DB.mdf</DependentUpon>
+    </Content>
     <Content Include="Tao.OpenGl.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
