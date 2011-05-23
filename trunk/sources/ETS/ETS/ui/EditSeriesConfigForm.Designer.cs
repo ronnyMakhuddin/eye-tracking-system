@@ -30,15 +30,8 @@ namespace ETS.ui
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditSeriesConfigForm));
             this.grdConfigs = new System.Windows.Forms.DataGridView();
-            this.orderTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.orderTypesDataSet = new ETS.datasets.OrderTypesDataSet();
-            this.selectSeriesConfigsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.seriesConfigDataSet = new ETS.datasets.SeriesConfigDataSet();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.orderTypeTableAdapter = new ETS.datasets.OrderTypesDataSetTableAdapters.OrderTypeTableAdapter();
-            this.selectSeriesConfigsTableAdapter = new ETS.datasets.SeriesConfigDataSetTableAdapters.SelectSeriesConfigsTableAdapter();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.length = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stimulusOrder = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,9 +41,17 @@ namespace ETS.ui
             this.textBefore = new System.Windows.Forms.DataGridViewButtonColumn();
             this.textAfter = new System.Windows.Forms.DataGridViewButtonColumn();
             this.orderType = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.orderTypeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.orderTypesDataSet = new ETS.datasets.OrderTypesDataSet();
             this.editStimSet = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clmStimulusOrder = new System.Windows.Forms.DataGridViewButtonColumn();
             this.clmTest = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.selectSeriesConfigsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.seriesConfigDataSet = new ETS.datasets.SeriesConfigDataSet();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.orderTypeTableAdapter = new ETS.datasets.OrderTypesDataSetTableAdapters.OrderTypeTableAdapter();
+            this.selectSeriesConfigsTableAdapter = new ETS.datasets.SeriesConfigDataSetTableAdapters.SelectSeriesConfigsTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.grdConfigs)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderTypeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderTypesDataSet)).BeginInit();
@@ -82,54 +83,6 @@ namespace ETS.ui
             this.grdConfigs.TabIndex = 0;
             this.grdConfigs.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdConfigs_CellClick);
             this.grdConfigs.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.grdConfigs_DataError);
-            // 
-            // orderTypeBindingSource
-            // 
-            this.orderTypeBindingSource.DataMember = "OrderType";
-            this.orderTypeBindingSource.DataSource = this.orderTypesDataSet;
-            // 
-            // orderTypesDataSet
-            // 
-            this.orderTypesDataSet.DataSetName = "OrderTypesDataSet";
-            this.orderTypesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // selectSeriesConfigsBindingSource
-            // 
-            this.selectSeriesConfigsBindingSource.DataMember = "SelectSeriesConfigs";
-            this.selectSeriesConfigsBindingSource.DataSource = this.seriesConfigDataSet;
-            // 
-            // seriesConfigDataSet
-            // 
-            this.seriesConfigDataSet.DataSetName = "SeriesConfigDataSet";
-            this.seriesConfigDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(570, 308);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(75, 23);
-            this.btnSave.TabIndex = 1;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // btnCancel
-            // 
-            this.btnCancel.Location = new System.Drawing.Point(651, 308);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // orderTypeTableAdapter
-            // 
-            this.orderTypeTableAdapter.ClearBeforeFill = true;
-            // 
-            // selectSeriesConfigsTableAdapter
-            // 
-            this.selectSeriesConfigsTableAdapter.ClearBeforeFill = true;
             // 
             // name
             // 
@@ -198,6 +151,16 @@ namespace ETS.ui
             this.orderType.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.orderType.ValueMember = "name";
             // 
+            // orderTypeBindingSource
+            // 
+            this.orderTypeBindingSource.DataMember = "OrderType";
+            this.orderTypeBindingSource.DataSource = this.orderTypesDataSet;
+            // 
+            // orderTypesDataSet
+            // 
+            this.orderTypesDataSet.DataSetName = "OrderTypesDataSet";
+            this.orderTypesDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // editStimSet
             // 
             this.editStimSet.HeaderText = "Stimulus Set";
@@ -217,6 +180,44 @@ namespace ETS.ui
             this.clmTest.HeaderText = "Test";
             this.clmTest.Name = "clmTest";
             // 
+            // selectSeriesConfigsBindingSource
+            // 
+            this.selectSeriesConfigsBindingSource.DataMember = "SelectSeriesConfigs";
+            this.selectSeriesConfigsBindingSource.DataSource = this.seriesConfigDataSet;
+            // 
+            // seriesConfigDataSet
+            // 
+            this.seriesConfigDataSet.DataSetName = "SeriesConfigDataSet";
+            this.seriesConfigDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Location = new System.Drawing.Point(570, 308);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(75, 23);
+            this.btnSave.TabIndex = 1;
+            this.btnSave.Text = "Save";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // btnCancel
+            // 
+            this.btnCancel.Location = new System.Drawing.Point(651, 308);
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnCancel.TabIndex = 2;
+            this.btnCancel.Text = "Cancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // orderTypeTableAdapter
+            // 
+            this.orderTypeTableAdapter.ClearBeforeFill = true;
+            // 
+            // selectSeriesConfigsTableAdapter
+            // 
+            this.selectSeriesConfigsTableAdapter.ClearBeforeFill = true;
+            // 
             // EditSeriesConfigForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -225,8 +226,9 @@ namespace ETS.ui
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.grdConfigs);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "EditSeriesConfigForm";
-            this.Text = "EditSeriesConfigForm";
+            this.Text = "Edit series config";
             this.Load += new System.EventHandler(this.EditSeriesConfigForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdConfigs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.orderTypeBindingSource)).EndInit();

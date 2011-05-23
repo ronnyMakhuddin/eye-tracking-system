@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SeriesPlayer));
             this.image = new System.Windows.Forms.PictureBox();
             this.lblText = new System.Windows.Forms.TextBox();
             this.btnStartTest = new System.Windows.Forms.Button();
@@ -76,8 +77,9 @@
             this.Controls.Add(this.btnStartTest);
             this.Controls.Add(this.lblText);
             this.Controls.Add(this.image);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SeriesPlayer";
-            this.Text = "SeriesPlayer";
+            this.Text = "Series player";
             ((System.ComponentModel.ISupportInitialize)(this.image)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

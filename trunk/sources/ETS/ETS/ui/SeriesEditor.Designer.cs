@@ -175,8 +175,9 @@
             this.Controls.Add(this.btnRecord);
             this.Controls.Add(this.btnAddTemplate);
             this.Controls.Add(this.pbxCapture);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SeriesEditor";
-            this.Text = "SeriesEditor";
+            this.Text = "Edit series";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SeriesEditor_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pbxCapture)).EndInit();
             this.ResumeLayout(false);

@@ -30,16 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             this.grdSet = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.selectStimulusesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stimDataSet = new ETS.datasets.StimDataSet();
+            this.series_config_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.selectStimulusSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.stimulusSetDataSet = new ETS.StimulusSetDataSet();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.selectStimulusesTableAdapter = new ETS.datasets.StimDataSetTableAdapters.SelectStimulusesTableAdapter();
             this.selectStimulusSetTableAdapter = new ETS.StimulusSetDataSetTableAdapters.SelectStimulusSetTableAdapter();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.series_config_id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectStimulusesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimDataSet)).BeginInit();
@@ -61,6 +61,17 @@
             this.grdSet.TabIndex = 0;
             this.grdSet.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.grdSet_RowsAdded);
             // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.DataSource = this.selectStimulusesBindingSource;
+            this.nameDataGridViewTextBoxColumn.DisplayMember = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.nameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.nameDataGridViewTextBoxColumn.ValueMember = "name";
+            // 
             // selectStimulusesBindingSource
             // 
             this.selectStimulusesBindingSource.DataMember = "SelectStimuluses";
@@ -70,6 +81,13 @@
             // 
             this.stimDataSet.DataSetName = "StimDataSet";
             this.stimDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // series_config_id
+            // 
+            this.series_config_id.DataPropertyName = "series_config_id";
+            this.series_config_id.HeaderText = "series_config_id";
+            this.series_config_id.Name = "series_config_id";
+            this.series_config_id.Visible = false;
             // 
             // selectStimulusSetBindingSource
             // 
@@ -109,24 +127,6 @@
             // 
             this.selectStimulusSetTableAdapter.ClearBeforeFill = true;
             // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.DataSource = this.selectStimulusesBindingSource;
-            this.nameDataGridViewTextBoxColumn.DisplayMember = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.nameDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.nameDataGridViewTextBoxColumn.ValueMember = "name";
-            // 
-            // series_config_id
-            // 
-            this.series_config_id.DataPropertyName = "series_config_id";
-            this.series_config_id.HeaderText = "series_config_id";
-            this.series_config_id.Name = "series_config_id";
-            this.series_config_id.Visible = false;
-            // 
             // EditStimulusSetForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,7 +136,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.grdSet);
             this.Name = "EditStimulusSetForm";
-            this.Text = "EditStimulusSetForm";
+            this.Text = "Edit stimuluses";
             this.Load += new System.EventHandler(this.EditStimulusSetForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectStimulusesBindingSource)).EndInit();

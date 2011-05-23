@@ -29,19 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddSeriesForm));
             this.txtSeriesName = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbSeriesConfig = new System.Windows.Forms.ComboBox();
+            this.selectSeriesConfigsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.seriesConfigDataSet = new ETS.datasets.SeriesConfigDataSet();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnOk = new System.Windows.Forms.Button();
-            this.seriesConfigDataSet = new ETS.datasets.SeriesConfigDataSet();
             this.seriesConfigDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.selectSeriesConfigsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.selectSeriesConfigsTableAdapter = new ETS.datasets.SeriesConfigDataSetTableAdapters.SelectSeriesConfigsTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.selectSeriesConfigsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seriesConfigDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.seriesConfigDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.selectSeriesConfigsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // txtSeriesName
@@ -80,6 +81,16 @@
             this.cmbSeriesConfig.TabIndex = 3;
             this.cmbSeriesConfig.ValueMember = "id";
             // 
+            // selectSeriesConfigsBindingSource
+            // 
+            this.selectSeriesConfigsBindingSource.DataMember = "SelectSeriesConfigs";
+            this.selectSeriesConfigsBindingSource.DataSource = this.seriesConfigDataSet;
+            // 
+            // seriesConfigDataSet
+            // 
+            this.seriesConfigDataSet.DataSetName = "SeriesConfigDataSet";
+            this.seriesConfigDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnCancel
             // 
             this.btnCancel.Location = new System.Drawing.Point(261, 130);
@@ -100,20 +111,10 @@
             this.btnOk.UseVisualStyleBackColor = true;
             this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
-            // seriesConfigDataSet
-            // 
-            this.seriesConfigDataSet.DataSetName = "SeriesConfigDataSet";
-            this.seriesConfigDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // seriesConfigDataSetBindingSource
             // 
             this.seriesConfigDataSetBindingSource.DataSource = this.seriesConfigDataSet;
             this.seriesConfigDataSetBindingSource.Position = 0;
-            // 
-            // selectSeriesConfigsBindingSource
-            // 
-            this.selectSeriesConfigsBindingSource.DataMember = "SelectSeriesConfigs";
-            this.selectSeriesConfigsBindingSource.DataSource = this.seriesConfigDataSet;
             // 
             // selectSeriesConfigsTableAdapter
             // 
@@ -130,12 +131,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.txtSeriesName);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddSeriesForm";
             this.Text = "Add new series:";
             this.Load += new System.EventHandler(this.AddSeriesForm_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.selectSeriesConfigsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seriesConfigDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.seriesConfigDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.selectSeriesConfigsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

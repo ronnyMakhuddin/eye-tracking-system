@@ -67,8 +67,9 @@
             this.ClientSize = new System.Drawing.Size(596, 266);
             this.Controls.Add(this.pbxPicture);
             this.Controls.Add(this.label1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "SeriesConfigProcessForm";
-            this.Text = "SeriesConfigProcessForm";
+            this.Text = "Test series config";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SeriesConfigProcessForm_FormClosing);
             this.Resize += new System.EventHandler(this.SeriesConfigProcessForm_Resize);
             ((System.ComponentModel.ISupportInitialize)(this.pbxPicture)).EndInit();

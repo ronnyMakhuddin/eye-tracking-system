@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddTemplateForm));
             this.sldLeftX = new ETS.controls.AdvancedSlider();
             this.sldLeftY = new ETS.controls.AdvancedSlider();
             this.sldRightX = new ETS.controls.AdvancedSlider();
@@ -142,6 +143,7 @@
             this.Controls.Add(this.sldRightX);
             this.Controls.Add(this.sldLeftY);
             this.Controls.Add(this.sldLeftX);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Location = new System.Drawing.Point(200, 0);
             this.Name = "AddTemplateForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;

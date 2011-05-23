@@ -29,10 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miNewTrial = new System.Windows.Forms.ToolStripMenuItem();
             this.miAddSeries = new System.Windows.Forms.ToolStripMenuItem();
+            this.miEditSeries = new System.Windows.Forms.ToolStripMenuItem();
+            this.miDeleteSeries = new System.Windows.Forms.ToolStripMenuItem();
             this.miClose = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.miViewPatients = new System.Windows.Forms.ToolStripMenuItem();
@@ -46,8 +49,6 @@
             this.strStatus = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblDbStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.miEditSeries = new System.Windows.Forms.ToolStripMenuItem();
-            this.miDeleteSeries = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.newSelectCommandBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.stimulusTypeBindingSource)).BeginInit();
@@ -81,22 +82,38 @@
             // miNewTrial
             // 
             this.miNewTrial.Name = "miNewTrial";
-            this.miNewTrial.Size = new System.Drawing.Size(152, 22);
+            this.miNewTrial.Size = new System.Drawing.Size(140, 22);
             this.miNewTrial.Text = "Load Trial";
             this.miNewTrial.Click += new System.EventHandler(this.miNewTrial_Click);
             // 
             // miAddSeries
             // 
             this.miAddSeries.Name = "miAddSeries";
-            this.miAddSeries.Size = new System.Drawing.Size(152, 22);
+            this.miAddSeries.Size = new System.Drawing.Size(140, 22);
             this.miAddSeries.Text = "Add Series";
             this.miAddSeries.Visible = false;
             this.miAddSeries.Click += new System.EventHandler(this.miAddSeries_Click);
             // 
+            // miEditSeries
+            // 
+            this.miEditSeries.Name = "miEditSeries";
+            this.miEditSeries.Size = new System.Drawing.Size(140, 22);
+            this.miEditSeries.Text = "Edit Series";
+            this.miEditSeries.Visible = false;
+            this.miEditSeries.Click += new System.EventHandler(this.miEditSeries_Click);
+            // 
+            // miDeleteSeries
+            // 
+            this.miDeleteSeries.Name = "miDeleteSeries";
+            this.miDeleteSeries.Size = new System.Drawing.Size(140, 22);
+            this.miDeleteSeries.Text = "Delete Series";
+            this.miDeleteSeries.Visible = false;
+            this.miDeleteSeries.Click += new System.EventHandler(this.miDeleteSeries_Click);
+            // 
             // miClose
             // 
             this.miClose.Name = "miClose";
-            this.miClose.Size = new System.Drawing.Size(152, 22);
+            this.miClose.Size = new System.Drawing.Size(140, 22);
             this.miClose.Text = "Close";
             this.miClose.Click += new System.EventHandler(this.miClose_Click);
             // 
@@ -178,22 +195,6 @@
             this.lblDbStatus.Size = new System.Drawing.Size(108, 17);
             this.lblDbStatus.Text = "%database status%";
             // 
-            // miEditSeries
-            // 
-            this.miEditSeries.Name = "miEditSeries";
-            this.miEditSeries.Size = new System.Drawing.Size(152, 22);
-            this.miEditSeries.Text = "Edit Series";
-            this.miEditSeries.Visible = false;
-            this.miEditSeries.Click += new System.EventHandler(this.miEditSeries_Click);
-            // 
-            // miDeleteSeries
-            // 
-            this.miDeleteSeries.Name = "miDeleteSeries";
-            this.miDeleteSeries.Size = new System.Drawing.Size(152, 22);
-            this.miDeleteSeries.Text = "Delete Series";
-            this.miDeleteSeries.Visible = false;
-            this.miDeleteSeries.Click += new System.EventHandler(this.miDeleteSeries_Click);
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -202,9 +203,10 @@
             this.Controls.Add(this.strStatus);
             this.Controls.Add(this.trwTrials);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
-            this.Text = "MainForm";
+            this.Text = "ETS";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.menuStrip1.ResumeLayout(false);
